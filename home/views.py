@@ -1,3 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+class Home(generic.TemplateView):
+    # Opens start page
+    template_name = "index.html"
