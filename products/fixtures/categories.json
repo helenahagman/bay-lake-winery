@@ -1,0 +1,43 @@
+[
+    {
+        "pk": 1,
+        "model": "products.category",
+        "fields": {
+            "name": "white",
+            "friendly_name": "White Wine"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.category",
+        "fields": {
+            "name": "red",
+            "friendly_name": "Red Wine"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.category",
+        "fields": {
+            "name": "rose",
+            "friendly_name": "Rose Wine"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.category",
+        "fields": {
+            "name": "sparkling",
+            "friendly_name": "Sparkling Wine"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.category",
+        "fields": {
+            "name": "accessories",
+            "friendly_name": "Wine Accessories"
+        }
+    },
+       
+]
