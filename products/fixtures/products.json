@@ -3,13 +3,13 @@
         "pk": 1,
         "model": "products.product",
         "fields": {
-            "sku": "pp5001340155",
+            "sku": "w-18-wl",
             "name": "White Lady",
             "description": "White Lady - one of our first white wines. Fresh, fruity and semi-dry. 2018",
             "price": 23.99,
             "category": 1,
             "rating": 4.6,
-            "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP0709201205510679M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
+            "image_url": "https://photos.google.com/album/AF1QipPaDYChouLluelZWBQ6Arlja7au6kds2gG1iQNh/photo/AF1QipNm4evMjMZIXPy6lqFDkQF6OLpUISlTRXmMhnt2",
             "image": "pexels-ylanite-koppens-2820146-white-lady.jpg"
         }
     },
@@ -17,7 +17,7 @@
         "pk": 2,
         "model": "products.product",
         "fields": {
-            "sku": "pp5001600425",
+            "sku": "w-21-wlg",
             "name": "White little grape",
             "description": "White Little Grape - A dry, well balaced and light wine. 2021",
             "price": 21.95,
@@ -31,7 +31,7 @@
         "pk": 3,
         "model": "products.product",
         "fields": {
-            "sku": "pp5001730010",
+            "sku": "r-18-blr",
             "name": "Bay Lake Red",
             "description": "Our first red wine produced in 2018. Mild, light, fruity and semi-dry. 2018",
             "price": 25.90,
@@ -45,7 +45,7 @@
         "pk": 4,
         "model": "products.product",
         "fields": {
-            "sku": "pp5001890157",
+            "sku": "r-20-tro",
             "name": "The red one",
             "description": "Red Wine  - a deep and dark red wine with musty flavours. Dry wine perfect with a steak. 2020",
             "price": 19.99,
@@ -59,7 +59,7 @@
         "pk": 5,
         "model": "products.product",
         "fields": {
-            "sku": "pp5002111605",
+            "sku": "ro-19-rar",
             "name": "Rose among roses",
             "description": "Rose wine - classic rose wine with a fruity and sweet flavour. 2019",
             "price": 22.99,
@@ -73,7 +73,7 @@
         "pk": 6,
         "model": "products.product",
         "fields": {
-            "sku": "pp5002260206",
+            "sku": "ro-22-nr2",
             "name": "Rose nr 2",
             "description": "Rose nr 2 - a rose wine with a deeper taste than Rose among roses but still fresh and fruity taste. 2022",
             "price": 21.99,
@@ -87,7 +87,7 @@
         "pk": 7,
         "model": "products.product",
         "fields": {
-            "sku": "pp5002440521",
+            "sku": "sp-22",
             "name": "Sparkle",
             "description": "Sparkle - our first sparkling wine is a dry white sparkling wine with fruity and sweet taste 2022 ",
             "price": 59.0,
@@ -101,7 +101,7 @@
         "pk": 8,
         "model": "products.product",
         "fields": {
-            "sku": "pp5002601115",
+            "sku": "sp-rose-22",
             "name": "Sparkle rose",
             "description": "The best of 2 worlds, Sparkling Rose 2022",
             "price": 36.99,
@@ -115,12 +115,12 @@
         "pk": 9,
         "model": "products.product",
         "fields": {
-            "sku": "pp5002690715",
+            "sku": "w-glass-1",
             "name": "Wine glass",
-            "description": "2 glasses",
-            "price": 169.99,
+            "description": "2 hand made wine glasses",
+            "price": 69.99,
             "category": 5,
-            "rating": 4.7,
+            "rating": 4.1,
             "image_url": "http://s7d2.scene7.com/is/image/JCPenney/DP1020201517025390M.tif?wid=65&hei=65&fmt=jpg&op_usm=.4,.8,0,0&resmode=sharp2",
             "image": "pexels-cottonbro-studios-4255489-glass.jpg"
         }
@@ -129,7 +129,7 @@
         "pk": 10,
         "model": "products.product",
         "fields": {
-            "sku": "pp5002701115",
+            "sku": "t-book-1",
             "name": "Tasting book",
             "description": "the book on what to look for",
             "price": 33.99,
@@ -143,7 +143,7 @@
         "pk": 11,
         "model": "products.product",
         "fields": {
-            "sku": "pp5002761055",
+            "sku": "bottle-1",
             "name": "Bottle",
             "description": "Bottle",
             "price": 29.99,
@@ -157,7 +157,7 @@
         "pk": 12,
         "model": "products.product",
         "fields": {
-            "sku": "pp5002820069",
+            "sku": "s-kit-1",
             "name": "Start-kit",
             "description": "Starter-kit include all you need to make a bottle of your own",
             "price": 35.99,
