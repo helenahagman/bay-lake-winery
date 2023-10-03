@@ -52,7 +52,7 @@
             "category": 2,
             "rating": 4.8,
             "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP0716201503423610M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
-            "image": "DP0716201503423610M.jpg"
+            "image": "pexels-cottonbro-studios-4691211-r.jpg"
         }
     },
     {
@@ -66,7 +66,7 @@
             "category": 3,
             "rating": 4.0,
             "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP1115201210371197C.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
-            "image": "DP1115201210371197C.jpg"
+            "image": "20191123_134814-ro.jpg"
         }
     },
     {
@@ -80,7 +80,7 @@
             "category": 3,
             "rating": 4.1,
             "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP0624201520422666C.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
-            "image": "DP0624201520422666C.jpg"
+            "image": "pexels-cottonbro-studios-3402804-ro.jpg"
         }
     },
     {
@@ -94,7 +94,7 @@
             "category": 4,
             "rating": 4.4,
             "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP0226201317034754M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
-            "image": "DP0226201317034754M.jpg"
+            "image": "pexels-cottonbro-studios-4877867-s.jpg"
         }
     },
     {
@@ -108,7 +108,7 @@
             "category": 4,
             "rating": 4.5,
             "image_url": "http://s7d2.scene7.com/is/image/JCPenney/DP0926201317071162M.tif?wid=65&hei=65&fmt=jpg&op_usm=.4,.8,0,0&resmode=sharp2",
-            "image": "DP0926201317071162M.jpg"
+            "image": "pexels-maria-orlova-4947565-s.jpg"
         }
     },
     {
@@ -122,7 +122,7 @@
             "category": 5,
             "rating": 4.7,
             "image_url": "http://s7d2.scene7.com/is/image/JCPenney/DP1020201517025390M.tif?wid=65&hei=65&fmt=jpg&op_usm=.4,.8,0,0&resmode=sharp2",
-            "image": "DP1020201517025390M.jpg"
+            "image": "pexels-cottonbro-studios-4255489-glass.jpg"
         }
     },
     {
@@ -136,7 +136,7 @@
             "category": 5,
             "rating": 4.4,
             "image_url": "http://s7d2.scene7.com/is/image/JCPenney/DP0418201317011949M.tif?wid=65&hei=65&fmt=jpg&op_usm=.4,.8,0,0&resmode=sharp2",
-            "image": "DP0418201317011949M.jpg"
+            "image": "pexels-nati-9589646-book.jpg"
         }
     },
     {
@@ -150,7 +150,7 @@
             "category": 5,
             "rating": 3.0,
             "image_url": "http://s7d2.scene7.com/is/image/JCPenney/0900631B81B0C2D9M.tif?wid=65&hei=65&fmt=jpg&op_usm=.4,.8,0,0&resmode=sharp2",
-            "image": "0900631B81B0C2D9M.jpg"
+            "image": "pexels-grape-things-2647933-bottle.jpg"
         }
     },
     {
@@ -159,12 +159,12 @@
         "fields": {
             "sku": "pp5002820069",
             "name": "Start-kit",
-            "description": "Starter-kit include bottle, cork, essence and grapes to make a small bottle of your own",
-            "price": 19.99,
+            "description": "Starter-kit include all you need to make a bottle of your own",
+            "price": 35.99,
             "category": 5,
             "rating": 4.6,
             "image_url": "http://s7d2.scene7.com/is/image/JCPenney/DP0510201317010521M.tif?wid=65&hei=65&fmt=jpg&op_usm=.4,.8,0,0&resmode=sharp2",
-            "image": "DP0510201317010521M.jpg"
+            "image": "pexels-cottonbro-studios-4254031-startkit.jpg"
         }
     }
     
