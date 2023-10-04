@@ -2,26 +2,26 @@
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item dropdown">
             <a class="logo-font dont-weight-bold nav-link text-black nr-5" 
-            href="#" id="all-products-link" data-toggle="dropdown"
+            href="{% url 'products' %}" id="all-products-link" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">All Products</a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item">By Category</a>
-                <a href="" class="dropdown-item">By Rating</a>
-                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+                <a href="{% url 'products' %}?category=wine" class="dropdown-item">Wine</a>
+                <a href="{% url 'products' %}?category=sparkling" class="dropdown-item">Sparkling</a>
+                <a href="{% url 'products' %}?category=accessories" class="dropdown-item">Accessories</a>
+                <a href="{% url 'products' %}?category=wine, sparkling, accessories" class="dropdown-item">All Products</a>
             </div>
         </li>
         <li class="nav-item dropdown">
             <a class="logo-font dont-weight-bold nav-link text-black nr-5" 
-            href="#" id="all-products-link" data-toggle="dropdown" 
+            href="{% url 'products' %}" id="all-products-link" data-toggle="dropdown" 
             aria-haspopup="true" aria-expanded="false">
             Wine Selection
             </a>
             <div class="dropdown-menu border-0" 
             aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item">By Rating</a>
-                <a href="" class="dropdown-item">Special Offers</a>
+                <a href="{% url 'products' %}?category=price" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?category=rating" class="dropdown-item">By Rating</a>
+                <a href="{% url 'products' %}?category=offers" class="dropdown-item">Special Offers</a>
             </div>
         </li>
     </ul>
