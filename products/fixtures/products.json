@@ -9,7 +9,7 @@
             "price": 23.99,
             "category": 1,
             "rating": 4.6,
-            "image_url": "https://photos.google.com/album/AF1QipPaDYChouLluelZWBQ6Arlja7au6kds2gG1iQNh/photo/AF1QipNm4evMjMZIXPy6lqFDkQF6OLpUISlTRXmMhnt2",
+            "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403772/pexels-ylanite-koppens-2820146-white-lady_m9jnhr.jpg",
             "image": "pexels-ylanite-koppens-2820146-white-lady.jpg"
         }
     },
@@ -23,7 +23,7 @@
             "price": 21.95,
             "category": 1,
             "rating": 4.6,
-            "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP0113201617034987M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
+            "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403771/PP5/pexels-polina-tankilevitch-4110415-w_pzgvwc.jpg",
             "image": "pexels-polina-tankilevitch-4110415-r.jpg"
         }
     },
@@ -37,7 +37,7 @@
             "price": 25.90,
             "category": 2,
             "rating": 4.2,
-            "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP1230201417013175M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
+            "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403741/PP5/20180828_185325-r_b781ro.jpg",
             "image": "20180828-185325-r.jpg"
         }
     },
@@ -51,7 +51,7 @@
             "price": 19.99,
             "category": 2,
             "rating": 4.8,
-            "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP0716201503423610M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
+            "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403742/PP5/pexels-cottonbro-studio-4691211-r_gp5nsm.jpg",
             "image": "pexels-cottonbro-studios-4691211-r.jpg"
         }
     },
@@ -65,7 +65,7 @@
             "price": 22.99,
             "category": 3,
             "rating": 4.0,
-            "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP1115201210371197C.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
+            "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403698/PP5/20191123_134814-ro_z2pyt9.jpg",
             "image": "20191123_134814-ro.jpg"
         }
     },
@@ -79,7 +79,7 @@
             "price": 21.99,
             "category": 3,
             "rating": 4.1,
-            "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP0624201520422666C.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
+            "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403697/PP5/pexels-cottonbro-studio-3402804-ro_cydmp1.jpg",
             "image": "pexels-cottonbro-studios-3402804-ro.jpg"
         }
     },
@@ -93,7 +93,7 @@
             "price": 59.0,
             "category": 4,
             "rating": 4.4,
-            "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP0226201317034754M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
+            "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403642/PP5/pexels-cottonbro-studio-4877867-s_lkact7.jpg",
             "image": "pexels-cottonbro-studios-4877867-s.jpg"
         }
     },
@@ -107,7 +107,7 @@
             "price": 36.99,
             "category": 4,
             "rating": 4.5,
-            "image_url": "http://s7d2.scene7.com/is/image/JCPenney/DP0926201317071162M.tif?wid=65&hei=65&fmt=jpg&op_usm=.4,.8,0,0&resmode=sharp2",
+            "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403642/PP5/pexels-maria-orlova-4947565-s_ycxwyv.jpg",
             "image": "pexels-maria-orlova-4947565-s.jpg"
         }
     },
@@ -121,7 +121,7 @@
             "price": 69.99,
             "category": 5,
             "rating": 4.1,
-            "image_url": "http://s7d2.scene7.com/is/image/JCPenney/DP1020201517025390M.tif?wid=65&hei=65&fmt=jpg&op_usm=.4,.8,0,0&resmode=sharp2",
+            "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403804/PP5/pexels-cottonbro-studio-4255489-glass_me7tww.jpg",
             "image": "pexels-cottonbro-studios-4255489-glass.jpg"
         }
     },
@@ -135,7 +135,7 @@
             "price": 33.99,
             "category": 5,
             "rating": 4.4,
-            "image_url": "http://s7d2.scene7.com/is/image/JCPenney/DP0418201317011949M.tif?wid=65&hei=65&fmt=jpg&op_usm=.4,.8,0,0&resmode=sharp2",
+            "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403806/PP5/pexels-nati-9589646-book_oicnuc.jpg",
             "image": "pexels-nati-9589646-book.jpg"
         }
     },
@@ -149,7 +149,7 @@
             "price": 29.99,
             "category": 5,
             "rating": 3.0,
-            "image_url": "http://s7d2.scene7.com/is/image/JCPenney/0900631B81B0C2D9M.tif?wid=65&hei=65&fmt=jpg&op_usm=.4,.8,0,0&resmode=sharp2",
+            "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403805/PP5/pexels-grape-things-2647933-bottle_gzxr4l.jpg",
             "image": "pexels-grape-things-2647933-bottle.jpg"
         }
     },
@@ -163,7 +163,7 @@
             "price": 35.99,
             "category": 5,
             "rating": 4.6,
-            "image_url": "http://s7d2.scene7.com/is/image/JCPenney/DP0510201317010521M.tif?wid=65&hei=65&fmt=jpg&op_usm=.4,.8,0,0&resmode=sharp2",
+            "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403804/PP5/pexels-cottonbro-studio-4254031-startkit_zwkxdx.jpg",
             "image": "pexels-cottonbro-studios-4254031-startkit.jpg"
         }
     }
