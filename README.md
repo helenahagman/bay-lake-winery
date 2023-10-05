@@ -242,7 +242,7 @@ Throughout the process of building the website, I have tried to think of accessi
 
 Testing features, accessibility, links, responsiveness have been done throughout the project and after every step of the
 way tests have been performed to make sure that the new inserts has been working correctly and corrected thereafter.
-For complete view of testing please see <href="/workspaces/healthclub-PP4/TESTING.md">TESTING.md
+For complete view of testing please see <href="/bay-lake-winery/TESTING.md">TESTING.md
 
 ### Deployment
 
