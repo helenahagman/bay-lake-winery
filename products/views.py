@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product
+from .models import Product, Category
 
 
 def all_products(request):
@@ -26,7 +26,6 @@ def all_products(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
-
 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')

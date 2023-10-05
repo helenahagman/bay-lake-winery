@@ -54,10 +54,8 @@ I built this page for my 5th project in the Code Institute course for the Diplom
 
 #### Roles
 
-- Persons who want to get tips from a Personal Trainer
-- Persons who are interested in gym exercise
-- New users that are not yet registered
-- Current users that are registered
+- Persons who are looking to buy wine
+- Persons who are interested in winemaking
 
 #### Demographics
 
@@ -66,14 +64,11 @@ I built this page for my 5th project in the Code Institute course for the Diplom
 #### Psychographics
 
 - Persons who want to:
-  - Get in general shape
-  - Get stronger
-  - Lose weight
-  - Train for a specific goal (ex a competition)
-  - Increase their stamina
-  - Persons who are new to training in a gym
-  - Persons who want to get tips from a Personal Trainer
-
+  - Buy wine
+  - Make their own wine
+  - Buy wine related products
+  - Visit a vineyard
+  
 ## User Stories
 
 ### EPIC | Web Pages & Aesthetics
@@ -103,28 +98,32 @@ both the admin and the user
 - As the owner I can display my products to increase sales
 - As the owner I can display the current product stock to encourage purchases
 - As the user I want to be able to add products to a shopping cart to be able to
-- add more items
-- Administrator log in
-- Communicate with users/customers that have questions
-- Send emails/sms to registered users
-- See registered users
-- See booked sessions
-- Images that contribute to what the site is offering
-- Explanatory texts
-- Registration possibilities
-- Log in possibilities
-- Log out possibilities
-- Online booking for Personal Trainer Sessions
-- Contact
-- Login as a current user
-- Register as a new user
-- See available personal trainer sessions
-- Get information on what is offered on the site
-- Book personal trainer sessions
-- Cancel booked sessions
-- Sign up for membership
-- Get in contact
-- Edit registered user information
+  add multiple items before phurchases
+- As the administrator I can use the administrator log in to handle products
+  displayed on the site
+- As the owner I want to be able to communicate with users/customers that have 
+  questions
+- As the owner I want to be able to sens emails to registered users to increase
+  sales
+- As the administrator I want to be able to see registered users in the admin
+- As the administrator I want to be able to see phurchases to be able to handle
+  orders
+- As the user I want to be able to see my phurchases in a user page
+- As the owner I want to have images to the products offered to increase sales
+- As the owner I want to have explanatory texts to each product to increase
+  sales
+- As the administrator I want to be able to offer customers to register to be 
+  able collect user information
+- As a user I want to be able to log in to see previous orders 
+- As the user I want to be able to log out
+- As the owner I want to be able to offer online booking for tours of the 
+  vineyard 
+
+- As a user I want to be able to contact the admin if I have questions
+- As a user I want to be able to log in as a current user when I make a 
+  phurchase
+- As the owner I want customers to be able to register as new users
+- As the user I want to get information on availbale products 
 
 ### EPIC | Error Pages
 
@@ -159,16 +158,18 @@ problem on the site
 
 #### User Stories
 
-- As a user I want toRegister as a new user
-- Login as a current user
-- Log out as a logged-in user
-- Possibility to choose a custom username and password
-- Easy navigation on the site
-- Book available sessions
-- Get in contact
-- Send customized messages to registered customers
-- Cancel a booked session
-- Manage customer database
+- As a user I want to be able to register as a new user
+- As a user I want to be able to log in as a current user
+- As a user I want to be able to log out as a logged-in user
+- As a user I want to have the possibility to choose a custom username and password
+- As the administrator I want to display easy navigation on the site
+- As the owner I want to give the user the possibility to phurchase my products
+- As the user I want to be able to get in contact if I have queries
+- As the owner I want to be able to send customized messages to registered
+  customers
+- As the owner I want to be able to manage the customer database
+- As the user I want to be abel to search for products on the site
+- As the user I want to be able to filter categories and products on the site
 
 ### Link to KANBAN Board with User Stories on Trello
 
@@ -178,7 +179,7 @@ problem on the site
 
 ### Imagery
 
-The images for the site have been downloaded from [Pexels Free Images](https://www.pexels.com/sv-se/).
+The images for the site are a mix of private photos and downloaded images from [Pexels Free Images](https://www.pexels.com/sv-se/).
 
 ### Wire Frames
 
@@ -187,11 +188,14 @@ Wireframes were created using Miro and were created for mobile, tablet, and desk
 
 ### Features
 
-The website contains three main pages: start/about page, Personal Trainer page, Members page. All main pages are accessible from the navigation menu on the top of the page.
+The website contains three main pages: Start page, Product page and About page. 
+The Product page is accessible through a 'Shop' button the the Start page and 
+the About page is accessible from the navigation menu on the top of the page.
 
 #### EPIC | Landing page
 
-- Responsive navigation menu on the top of the page to be able to navigate to the three main pages. The links to the pages are placed on the right side of the navigation bar, to the left a logo with the project name is placed.
+- Responsive navigation menu on the top of the page to be able to navigate to 
+  the other pages. The links to the pages are placed on the right side of the navigation bar, to the left a logo with the project name is placed.
 - In the footer, social media links to Facebook and Instagram are placed in the form of icons.
 
 #### EPIC | Start/about page
