@@ -16,7 +16,7 @@ def shopbag_contents(request):
             product = get_object_or_404(Product, pk=item_id)
             total += item_data * product.price
             product_count += item_data
-            bag_items.append({
+            shopbag_items.append({
                 'item_id': item_id,
                 'quantity': item_data,
                 'product': product,
@@ -26,7 +26,7 @@ def shopbag_contents(request):
             for size, quantity in item_data['items_by_size'].items():
                 total += quantity * product.price
                 product_count += quantity
-                bag_items.append({
+                shopbag_items.append({
                     'item_id': item_id,
                     'quantity': quantity,
                     'product': product,

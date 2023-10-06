@@ -21,7 +21,7 @@ def add_to_shopbag(request, item_id):
     size = None
     if 'product_size' in request.POST:
         size = request.POST['product_size']
-    shopbag = request.session.get('shopbag', {})
+        shopbag = request.session.get('shopbag', {})
 
     if size:
         if item_id in list(shopbag.keys()):
@@ -67,7 +67,7 @@ def adjust_shopbag(request, item_id):
 
     if size:
         if quantity > 0:
-            bag[item_id]['items_by_size'][size] = quantity
+            shopbag[item_id]['items_by_size'][size] = quantity
             messages.success(request,
                              (f'Updated size {size.upper()} '
                               f'{product.name} quantity to '
