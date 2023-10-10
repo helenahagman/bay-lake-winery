@@ -135,3 +135,10 @@ a.category-badge>span.badge:hover {
         height: calc(100vh - 116px);
     }
 }
+
+@media (max-width: 991px) {
+/* Hide regular top header on smaller scrrens */
+    .row.bg-white {
+        display: none;
+    }
+}

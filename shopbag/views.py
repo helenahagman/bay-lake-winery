@@ -13,44 +13,23 @@ def view_shopbag(request):
 
 
 def add_to_shopbag(request, item_id):
-    """ Add a quantity of the specified product to the shopping bag """
+    """ Add a specified number of a product to the shopping bag """
 
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
-    size = None
-    if 'product_size' in request.POST:
-        size = request.POST['product_size']
-        shopbag = request.session.get('shopbag', {})
-
-    if size:
-        if item_id in list(shopbag.keys()):
-            if size in shopbag[item_id]['items_by_size'].keys():
-                shopbag[item_id]['items_by_size'][size] += quantity
-                messages.success(request,
-                                 (f'Updated size {size.upper()} '
-                                  f'{product.name} quantity to '
-                                  f'{shopbag[item_id]["items_by_size"][size]}'))
-            else:
-                shopbag[item_id]['items_by_size'][size] = quantity
-                messages.success(request,
-                                 (f'Added size {size.upper()} '
-                                  f'{product.name} to your shopping bag'))
-        else:
-            shopbag[item_id] = {'items_by_size': {size: quantity}}
-            messages.success(request,
-                             (f'Added size {size.upper()} '
-                              f'{product.name} to your shopping bag'))
-    else:
-        if item_id in list(shopbag.keys()):
+   
+    shopbag = request.session.get('shopbag', {})
+    if item_id in shopbag:
             shopbag[item_id] += quantity
             messages.success(request,
-                             (f'Updated {product.name} '
-                              f'quantity to {shopbag[item_id]}'))
-        else:
-            shopbag[item_id] = quantity
-            messages.success(request, f'Added {product.name} to your shopping bag')
-
+                            (f'Updated {product.name} quantity to '
+                             f'{shopbag[item_id]}'))
+    else:
+        shopbag[item_id] = quantity
+        messages.success(request,
+                        (f'Added {product.name} to shopping bag'))
+        
     request.session['shopbag'] = shopbag
     return redirect(redirect_url)
 
@@ -60,37 +39,20 @@ def adjust_shopbag(request, item_id):
 
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
-    size = None
-    if 'product_size' in request.POST:
-        size = request.POST['product_size']
+    
     shopbag = request.session.get('shopbag', {})
 
-    if size:
-        if quantity > 0:
-            shopbag[item_id]['items_by_size'][size] = quantity
-            messages.success(request,
-                             (f'Updated size {size.upper()} '
-                              f'{product.name} quantity to '
-                              f'{shopbag[item_id]["items_by_size"][size]}'))
-        else:
-            del shopbag[item_id]['items_by_size'][size]
-            if not shopbag[item_id]['items_by_size']:
-                shopbag.pop(item_id)
-            messages.success(request,
-                             (f'Removed size {size.upper()} '
-                              f'{product.name} from your shopping bag'))
-    else:
+    if item_id in shopbag:
         if quantity > 0:
             shopbag[item_id] = quantity
             messages.success(request,
-                             (f'Updated {product.name} '
-                              f'quantity to {shopbag[item_id]}'))
+                             (f'Updated {product.name} quantity to '
+                              f'{shopbag[item_id]}'))
         else:
             shopbag.pop(item_id)
             messages.success(request,
-                             (f'Removed {product.name} '
-                              f'from your shopping bag'))
-
+                             (f'Removed {product.name} from the shopping bag'))
+    
     request.session['shopbag'] = shopbag
     return redirect(reverse('view_shopbag'))
 
@@ -100,19 +62,9 @@ def remove_from_shopbag(request, item_id):
 
     try:
         product = get_object_or_404(Product, pk=item_id)
-        size = None
-        if 'product_size' in request.POST:
-            size = request.POST['product_size']
         shopbag = request.session.get('shopbag', {})
 
-        if size:
-            del shopbag[item_id]['items_by_size'][size]
-            if not shopbag[item_id]['items_by_size']:
-                shopbag.pop(item_id)
-            messages.success(request,
-                             (f'Removed size {size.upper()} '
-                              f'{product.name} from your shopping bag'))
-        else:
+        if item_id in shopbag:
             shopbag.pop(item_id)
             messages.success(request, f'Removed {product.name} from your shopping bag')
 
