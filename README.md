@@ -101,7 +101,7 @@ both the admin and the user
   add multiple items before phurchases
 - As the administrator I can use the administrator log in to handle products
   displayed on the site
-- As the owner I want to be able to communicate with users/customers that have 
+- As the owner I want to be able to communicate with users/customers that have
   questions
 - As the owner I want to be able to sens emails to registered users to increase
   sales
@@ -112,18 +112,18 @@ both the admin and the user
 - As the owner I want to have images to the products offered to increase sales
 - As the owner I want to have explanatory texts to each product to increase
   sales
-- As the administrator I want to be able to offer customers to register to be 
+- As the administrator I want to be able to offer customers to register to be
   able collect user information
-- As a user I want to be able to log in to see previous orders 
+- As a user I want to be able to log in to see previous orders
 - As the user I want to be able to log out
-- As the owner I want to be able to offer online booking for tours of the 
-  vineyard 
+- As the owner I want to be able to offer online booking for tours of the
+  vineyard
 
 - As a user I want to be able to contact the admin if I have questions
-- As a user I want to be able to log in as a current user when I make a 
+- As a user I want to be able to log in as a current user when I make a
   phurchase
 - As the owner I want customers to be able to register as new users
-- As the user I want to get information on availbale products 
+- As the user I want to get information on availbale products
 
 ### EPIC | Error Pages
 
@@ -188,13 +188,13 @@ Wireframes were created using Miro and were created for mobile, tablet, and desk
 
 ### Features
 
-The website contains three main pages: Start page, Product page and About page. 
-The Product page is accessible through a 'Shop' button the the Start page and 
+The website contains three main pages: Start page, Product page and About page.
+The Product page is accessible through a 'Shop' button the the Start page and
 the About page is accessible from the navigation menu on the top of the page.
 
 #### EPIC | Landing page
 
-- Responsive navigation menu on the top of the page to be able to navigate to 
+- Responsive navigation menu on the top of the page to be able to navigate to
   the other pages. The links to the pages are placed on the right side of the navigation bar, to the left a logo with the project name is placed.
 - In the footer, social media links to Facebook and Instagram are placed in the form of icons.
 
