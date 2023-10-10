@@ -1,3 +1,8 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
 html {
     height: 100%;
 }
@@ -7,7 +12,7 @@ body {
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
-    font-family: 'Lato';
+    font-family: 'Lato', sans-serif;
     padding-top: 70px;
 }
 
@@ -28,21 +33,15 @@ body {
     width: fit-content;
 }
 
-.buy-button {
+.btn-black, .buy-button {
     background: black;
     color: white;
     min-width: 260px;
 }
 
-.btn-black {
-    background: black;
-    color: white;
-}
-
 .btn-outline-black {
     background: white;
     color: black !important;
-    /* use important to override link colors for <a> elements */
     border: 1px solid black;
 }
 
@@ -60,9 +59,9 @@ body {
 .btn-black:active,
 .btn-black:focus {
     background: #222;
-    color: white;
 }
 
+/* Text and Border Styles*/
 .text-black {
     color: #000 !important;
 }
@@ -85,34 +84,34 @@ body {
     z-index: -1;
 }
 
+/* Category Badge Styles */
 a.category-badge>span.badge:hover {
     background: #212529 !important;
     color: #fff !important;
 }
 
+/* Back to Top Button Styles */
 .btt-button {
     height: 42px;
     width: 42px;
     position: fixed;
     bottom: 10px;
     right: 10px;
-}
-
-.btt-link {
     cursor: pointer;
 }
 
-/* -------------------------------- Media Queries */
 
-/* Slightly larger container on xl screens */
+/* Media Queries */
+
 @media (min-width: 1200px) {
+    /* Slightly larger container on xl screens */
     .container {
         max-width: 80%;
     }
 }
 
-/* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
+    /* fixed top navbar only on medium and up */
     .fixed-top-desktop-only {
         position: fixed;
         top: 0;
@@ -126,8 +125,8 @@ a.category-badge>span.badge:hover {
     }
 }
 
-/* top padding when navbar is collapsed on mobile */
 @media (max-width: 991px) {
+    /* top padding when navbar is collapsed on mobile */
     .header-container {
         padding-top: 116px;
     }
