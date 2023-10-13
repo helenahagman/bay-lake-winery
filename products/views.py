@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category
@@ -67,3 +68,53 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+@login_required
+def add_product(request):
+    """ Add a new product """
+    if request.method == 'POST':
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messade.success(request, 'Product added')
+            return redirect(reverse('products'))
+        else:
+            message.error(request, 'No product added')
+    else:
+        form = ProductForm()
+
+    context = {
+        'form': form,
+    }
+    return render(request, 'products/add_product.html', context)
+
+
+@login_required
+def edit_product(request, product_id):
+    """ Edit an existing product """
+    if request.method == 'POST':
+        form = ProductForm(request.POST, instance=product)
+        if form.is_valid():
+            form.save()
+            messade.success(request, 'Product updated')
+            return redirect(reverse('product_detail', args=[product_id]))
+        else:
+            message.error(request, 'No product updated')
+    else:
+        form = ProductForm(instance=product)
+
+    context = {
+        'form': form,
+        'product': product,
+    }
+    return render(request, 'products/edit_product.html', context)
+
+
+@login_required
+def delete_product(request, product_id):
+    """ Delete a product """
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, 'Product removed')
+    return redirect(reverse('products'))
