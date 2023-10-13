@@ -11,4 +11,6 @@ urlpatterns = [
          views.delete_product, name='delete_product'),
     path('products/edit/<int:product_id>/',
          views.edit_product, name='edit_product'),
+    path('render-quantity-input-script/', views.render_quantity_input_script,
+         name='render_quantity_input_script'),
 ]

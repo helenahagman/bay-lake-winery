@@ -74,3 +74,4 @@ def remove_from_shopbag(request, item_id):
         error_message = f'Error removing item: {e}'
         messages.error(request, error_message)
         return HttpResponse(status=500)
+

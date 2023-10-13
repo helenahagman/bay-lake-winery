@@ -118,3 +118,8 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product removed')
     return redirect(reverse('products'))
+
+
+def render_quantity_input_script(request):
+    """ A view to render the quantity input script template """
+    return render(request, 'products/includes/quantity_input_script.html')
