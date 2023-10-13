@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
 }
@@ -33,7 +34,8 @@ body {
     width: fit-content;
 }
 
-.btn-black, .buy-button {
+.btn-black,
+.buy-button {
     background: black;
     color: white;
     max-width: 260px;
@@ -104,10 +106,78 @@ a.category-badge>span.badge:hover {
     cursor: pointer;
 }
 
+/* ----- Bootstrap toasts -----*/
 
-/* Media Queries */
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 999999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+
+    border-bottom: 5px solid black;
+}
+
+
+/*  copied from Bootstrap */
+.arrow-primary {
+    border-bottom-color: #007bff !important;
+}
+
+.arrow-secondary {
+    border-bottom-color: #6c757d !important;
+}
+
+.arrow-success {
+    border-bottom-color: #28a745 !important;
+}
+
+.arrow-danger {
+    border-bottom-color: #dc3545 !important;
+}
+
+.arrow-warning {
+    border-bottom-color: #ffc107 !important;
+}
+
+.arrow-info {
+    border-bottom-color: #17a2b8 !important;
+}
+
+.arrow-light {
+    border-bottom-color: #f8f9fa !important;
+}
+
+.arrow-dark {
+    border-bottom-color: #343a40 !important;
+}
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+/* ------ Media Queries ------ */
 
 @media (min-width: 1200px) {
+
     /* Slightly larger container on xl screens */
     .container {
         max-width: 80%;
@@ -115,6 +185,7 @@ a.category-badge>span.badge:hover {
 }
 
 @media (min-width: 992px) {
+
     /* fixed top navbar only on medium and up */
     .fixed-top-desktop-only {
         position: fixed;
@@ -130,6 +201,7 @@ a.category-badge>span.badge:hover {
 }
 
 @media (max-width: 991px) {
+
     /* top padding when navbar is collapsed on mobile */
     .header-container {
         padding-top: 116px;
@@ -141,7 +213,8 @@ a.category-badge>span.badge:hover {
 }
 
 @media (max-width: 991px) {
-/* Hide regular top header on smaller scrrens */
+
+    /* Hide regular top header on smaller scrrens */
     .row.bg-white {
         display: none;
     }
