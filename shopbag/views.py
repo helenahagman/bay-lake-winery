@@ -1,10 +1,10 @@
-from django.shortcuts import (
-    render, redirect, reverse, HttpResponse, get_object_or_404
-)
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+import logging
 
 from products.models import Product
 
+logger = logging.getLogger(__name__)
 
 def view_shopbag(request):
     """ A view to render the shopping bag contents page """
@@ -13,46 +13,53 @@ def view_shopbag(request):
 
 def add_to_shopbag(request, item_id):
     """ Add a specified number of a product to the shopping bag """
-    product = get_object_or_404(Product, pk=item_id)
-    quantity = int(request.POST.get('quantity'))
-    redirect_url = request.POST.get('redirect_url')
+    try:
+        product = get_object_or_404(Product, pk=item_id)
+        quantity = int(request.POST.get('quantity'))
+        redirect_url = request.POST.get('redirect_url')
+        
+        if quantity > 0:
+            shopbag = request.session.get('shopbag', {})
+            shopbag[item_id] = shopbag.get(item_id, 0) + quantity
+            request.session['shopbag'] = shopbag
 
-    shopbag = request.session.get('shopbag', {})
-    if item_id in shopbag:
-        shopbag[item_id] += quantity
-        success_message = (
-            f'Updated {product.name} quantity to '
-            f'{shopbag[item_id]}'
-        )
-    else:
-        shopbag[item_id] = quantity
-        success_message = f'Added {product.name} to shopping bag'
+            success_message = f'Added {product.name} to your shopping bag'
+            messages.success(request, success_message)
+        else:
+            messages.error(request, 'Wrong amount')
+    
+    except Exception as e:
+        error_message = f'Error adding item: {e}'
+        logger.error(error_message)
+        messages.error(request, error_message)
 
-    messages.success(request, success_message)
-    request.session['shopbag'] = shopbag
+    print(request.session['shopbag'])
     return redirect(redirect_url)
 
 
 def adjust_shopbag(request, item_id):
     """Adjust the quantity of the specified product to the specified amount"""
-    product = get_object_or_404(Product, pk=item_id)
-    quantity = int(request.POST.get('quantity'))
+    try:
+        product = get_object_or_404(Product, pk=item_id)
+        quantity = int(request.POST.get('quantity'))
 
-    shopbag = request.session.get('shopbag', {})
-    if item_id in shopbag:
+    
         if quantity > 0:
+            shopbag = request.session.get('shopbag', {})
             shopbag[item_id] = quantity
-            success_message = (
-                f'Updated {product.name} quantity to '
-                f'{shopbag[item_id]}'
-            )
+            request.session['shopbag'] = shopbag
+
+            success_message = f'Updated {product.name} quantity to {quantity}'
         else:
-            shopbag.pop(item_id)
+            shopbag.pop(item_id, None)
             success_message = f'Removed {product.name} from the shopping bag'
+            messages.success(request, success_message)
 
-        messages.success(request, success_message)
+    except Exception as e:
+        error_message = f'Error adjusting item: {e}'
+        logger.error(error_message)
+        messages.error(request, error_message)
 
-    request.session['shopbag'] = shopbag
     return redirect(reverse('view_shopbag'))
 
 
@@ -61,17 +68,15 @@ def remove_from_shopbag(request, item_id):
     try:
         product = get_object_or_404(Product, pk=item_id)
         shopbag = request.session.get('shopbag', {})
-
-        if item_id in shopbag:
-            shopbag.pop(item_id)
-            success_message = f'Removed {product.name} from your shopping bag'
-            messages.success(request, success_message)
-
+        shopbag.pop(item_id, None)
         request.session['shopbag'] = shopbag
-        return HttpResponse(status=200)
 
+        success_message = f'Removed {product.name} from shopping bag'
+        messages.success(request, success_message)
+        
     except Exception as e:
         error_message = f'Error removing item: {e}'
         messages.error(request, error_message)
         return HttpResponse(status=500)
-
+    
+    return redirect(reverse('view_shopbag'))

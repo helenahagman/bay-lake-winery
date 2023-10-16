@@ -15,7 +15,7 @@ def shopbag_contents(request):
     for item_id, quantity in shopbag.items():
         product = get_object_or_404(Product, pk=item_id)
         item_total = quantity * product.price
-        total += item_data
+        total += item_total
         product_count += quantity
         shopbag_items.append({
             'item_id': item_id,
@@ -23,7 +23,9 @@ def shopbag_contents(request):
             'product': product,
             'item_total': item_total,
         })
-        
+
+    delivery_percentage = Decimal(settings.DELIVERY_PERCENTAGE)
+    delivery = total * (delivery_percentage / 100)    
         
     grand_total = delivery + total
 
