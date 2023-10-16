@@ -2,18 +2,18 @@
 {% load static %}
 
 {% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
     </div>
-</div>
 {% endblock%}
 
 {% block content %}
     <div class="overlay"></div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-7 col-md-6 my-auto text-center mt-3">
+            <div class="col text-center mt-3">
                 <h2 class="logo-font">Products</h2>
                  {% for c in current_categories %}
                     <a class="category-badge text-decoration-none" 
@@ -124,8 +124,15 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="card-footer bg-white pt-0 border-0 text-left">
+                                    <button class="btn btn-primary add-to-bag-btn" data-product-id="{{ product.id }}"
+                                        data-product-name="{{ product.name }}" data-product-price="{{ product.price }}">
+                                        Add to Bag
+                                    </button>
+                                </div>
                             </div>
                         </div>
+
                         {% if forloop.counter|divisibleby:1 %}
                             <div class="col-12 d-sm-none mb-5">
                                 <hr>

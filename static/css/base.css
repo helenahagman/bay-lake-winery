@@ -67,6 +67,17 @@ body {
     max-width: 50px;
 }
 
+
+.add-to-bag-btn {
+    color: black;
+    text-decoration: double;
+    background-color: powderblue;
+}
+
+.add-to-bag-btn:hover {
+    background: darkslategray;
+}
+
 /* Text and Border Styles*/
 .text-black {
     color: #000 !important;

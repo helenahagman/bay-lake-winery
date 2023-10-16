@@ -41,4 +41,30 @@
         var itemId = $(this).data('item_id');
         handleEnableDisable(itemId);
     });
+
+     // Add to Bag button click event
+        $('.add-to-bag-btn').click(function () {
+            var productId = $(this).data('product-id');
+            var productName = $(this).data('product-name');
+            var productPrice = $(this).data('product-price');
+            // Send AJAX request to add the product to the shopping bag
+            $.ajax({
+                type: 'POST',
+                url: '/add_to_bag/',  // Specify the URL to handle the request
+                data: {
+                    'product_id': productId,
+                    'product_name': productName,
+                    'product_price': productPrice
+                },
+                success: function (data) {
+                    // Handle success response, e.g., show a success message
+                    alert('Product added to the shopping bag!');
+                },
+                error: function (xhr, status, error) {
+                    // Handle errors, e.g., show an error message
+                    console.error('Error adding product to the shopping bag:', error);
+                }
+            });
+        });
+        
 </script>
