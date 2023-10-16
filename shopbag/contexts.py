@@ -9,25 +9,22 @@ def shopbag_contents(request):
     shopbag_items = []
     total = 0
     product_count = 0
+    delivery = 0
     shopbag = request.session.get('shopbag', {})
-
+    
     for item_id, quantity in shopbag.items():
         product = get_object_or_404(Product, pk=item_id)
-        total += item_data * product.price
+        item_total = quantity * product.price
+        total += item_data
         product_count += quantity
         shopbag_items.append({
             'item_id': item_id,
-            'quantity': item_data,
+            'quantity': quantity,
             'product': product,
+            'item_total': item_total,
         })
         
-    if total < settings.FREE_DELIVERY_THRESHOLD:
-        delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
-        free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
-    else:
-        delivery = 0
-        free_delivery_delta = 0
-
+        
     grand_total = delivery + total
 
     context = {
@@ -35,8 +32,6 @@ def shopbag_contents(request):
         'total': total,
         'product_count': product_count,
         'delivery': delivery,
-        'free_delivery_delta': free_delivery_delta,
-        'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
         'grand_total': grand_total,
     }
 

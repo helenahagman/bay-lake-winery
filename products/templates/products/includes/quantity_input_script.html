@@ -50,7 +50,7 @@
             // Send AJAX request to add the product to the shopping bag
             $.ajax({
                 type: 'POST',
-                url: '/add_to_bag/',  // Specify the URL to handle the request
+                url: '/add_to_shopbag/',
                 data: {
                     'product_id': productId,
                     'product_name': productName,
@@ -66,5 +66,5 @@
                 }
             });
         });
-        
+
 </script>

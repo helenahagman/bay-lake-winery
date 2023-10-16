@@ -77,6 +77,7 @@ TEMPLATES = [
                 # required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'shopbag.contexts.shopbag_contents',
             ],
         },
     },
