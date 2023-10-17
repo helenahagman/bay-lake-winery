@@ -127,25 +127,37 @@
         $(".btt-link").click(function (e) {
             window.scrollTo(0, 0);
         });
-    </script>
-    {% include 'products/includes/quantity_input_script.html' %}
 
-    <script type="text/javascript">
-    // Update quantity
-        $(".update-link").click(function (e) {
-        var form = $(this).prev(".update-form");
-        form.submit();
+        // Update quantity 
+        $(".update-form").submit(function (e) {
+            e.preventDefault();
+            var form = $(this);
+            $.ajax({
+                url: form.attr("action"),
+                method: form.attr("method"),
+                data: form.serialize(),
+                success: function(data) {
+                    // Handle success, update UI if needed
+                },
+                error: function(xhr, status, error) {
+                    // Handle error
+                }
+            });
         });
 
-      // Remove item and reload on click
+        // Remove item and update UI on click
         $(".remove-item").click(function (e) {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr("id").split("remove_")[1];
-        var url = `/shopbag/remove/${itemId}/`;
-        var data = { csrfmiddlewaretoken: csrfToken };
+            e.preventDefault();
+            var csrfToken = "{{ csrf_token }}";
+            var itemId = $(this).attr("id").split("remove_")[1];
+            var url = `/shopbag/remove/${itemId}/`;
+            var data = { csrfmiddlewaretoken: csrfToken };
 
             $.post(url, data).done(function () {
-            location.reload();
+                // Handle success, update UI if needed
+                $(`#remove_${itemId}`).closest(".row").remove();
+            }).fail(function(xhr, status, error) {
+                // Handle error if needed
             });
         });
     </script>
