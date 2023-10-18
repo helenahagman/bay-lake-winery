@@ -68,10 +68,12 @@ body {
 }
 
 
-.add-to-bag-btn {
+.add-to-bag-btn,
+.info-btn {
     color: black;
     text-decoration: double;
     background-color: powderblue;
+    border: 1px solid black;
 }
 
 .add-to-bag-btn:hover {
