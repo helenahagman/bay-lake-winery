@@ -28,7 +28,7 @@ SECRET_KEY = [
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-helenahagman-bay-lake-wi-p5vc3mu8rk.us2.codeanyapp.com'
+    '8000-helenahagman-bay-lake-wi-tcijqtegyu.us2.codeanyapp.com'
 ]
 
 
@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'profiles',
 
     'crispy_forms',
-    'storages',
+
 ]
 
 MIDDLEWARE = [
@@ -63,7 +63,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'bay_lake_winery.urls'
@@ -85,11 +84,12 @@ TEMPLATES = [
                 # required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
                 'shopbag.contexts.shopbag_contents',
             ],
             'builtins': [
-                'crispy_forms.tempatetags.crispy_forms_tags',
-                'crispy_forms.tempatetags.crispy_forms_field',
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
             ]
         },
     },
@@ -102,7 +102,7 @@ AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of 'allauth'
     'django.contrib.auth.backends.ModelBackend',
 
-    # 'allauth' specific authentication methods, such as logn by e-mail
+    # 'allauth' specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
@@ -124,12 +124,17 @@ WSGI_APPLICATION = 'bay_lake_winery.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR / 'db.sqlite3'),
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR / 'db.sqlite3'),
+        }
+    }
 
 
 # Password validation
