@@ -9,7 +9,12 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {% endblock %} {% block extra_meta %} {% endblock %} {% block corecss %}
+    {% endblock %}
+    
+    {% block extra_meta %}
+    {% endblock %}
+    
+    {% block corecss %}
     <link
       rel="stylesheet"
       href=
@@ -47,7 +52,10 @@
       src="https://kit.fontawesome.com/69d893ab62.js"
       crossorigin="anonymous">
     </script>
-    {% endblock %} {% block extra_js %} {% endblock %}
+    {% endblock %}
+    
+    {% block extra_js %}
+    {% endblock %}
 
     <title>Bay Lake Winery {% block extra_title %}{% endblock %}</title>
   </head>
