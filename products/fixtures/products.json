@@ -3,15 +3,14 @@
         "pk": 1,
         "model": "products.product",
         "fields": {
-            "sku": "w-18-wl",
+            "sku": "w-19-wl",
             "name": "White Lady",
-            "description": "White Lady - one of our first white wines. Fresh, fruity and semi-dry. 2018",
+            "description": "White Lady - one of our first white wines. Fresh, fruity and semi-dry. 2019",
             "price": 23.99,
             "category": 1,
             "rating": 4.6,
-            "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403772/pexels-ylanite-koppens-2820146-white-lady_m9jnhr.jpg",
-            "image": "/media/pexels-ylanite-koppens-2820146-white-lady.jpg"
-            "cloudinary_image_url":"https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403772/pexels-ylanite-koppens-2820146-white-lady_m9jnhr.jpg",
+            "image": "/media/pexels-ylanite-koppens-2820146-white-lady.jpg",
+            "cloudinary_image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403772/pexels-ylanite-koppens-2820146-white-lady_m9jnhr.jpg",
         }
     },
     {
@@ -24,8 +23,8 @@
             "price": 21.95,
             "category": 1,
             "rating": 4.6,
-            "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403771/PP5/pexels-polina-tankilevitch-4110415-w_pzgvwc.jpg",
-            "image": "pexels-polina-tankilevitch-4110415-r.jpg"
+            "image": "pexels-polina-tankilevitch-4110415-r.jpg",
+            "cloudinary_image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403771/PP5/pexels-polina-tankilevitch-4110415-w_pzgvwc.jpg"
         }
     },
     {
@@ -34,12 +33,12 @@
         "fields": {
             "sku": "r-18-blr",
             "name": "Bay Lake Red",
-            "description": "Our first red wine produced in 2018. Mild, light, fruity and semi-dry. 2018",
+            "description": "Our very first wine produced in 2018. A red wine with mild taste, fruity flavours and semi-dry. 2018",
             "price": 25.90,
             "category": 2,
             "rating": 4.2,
-            "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403741/PP5/20180828_185325-r_b781ro.jpg",
-            "image": "20180828-185325-r.jpg"
+            "image": "20180828-185325-r.jpg",
+            "cloudinary_image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403741/PP5/20180828_185325-r_b781ro.jpg"
         }
     },
     {
@@ -48,12 +47,12 @@
         "fields": {
             "sku": "r-20-tro",
             "name": "The red one",
-            "description": "Red Wine  - a deep and dark red wine with musty flavours. Dry wine perfect with a steak. 2020",
+            "description": "Red Wine  - a deep and dark red wine with musty flavours. Perfect with a good steak. 2020",
             "price": 19.99,
             "category": 2,
             "rating": 4.8,
-            "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403742/PP5/pexels-cottonbro-studio-4691211-r_gp5nsm.jpg",
-            "image": "pexels-cottonbro-studios-4691211-r.jpg"
+            "image": "pexels-cottonbro-studios-4691211-r.jpg",
+            "cloudinary_image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403742/PP5/pexels-cottonbro-studio-4691211-r_gp5nsm.jpg"
         }
     },
     {
@@ -62,12 +61,12 @@
         "fields": {
             "sku": "ro-19-rar",
             "name": "Rose among roses",
-            "description": "Rose wine - classic rose wine with a fruity and sweet flavour. 2019",
+            "description": "Rose wine - classic rose wine with a fruity and sweet flavour, perfect for summer nights. 2019",
             "price": 22.99,
             "category": 3,
             "rating": 4.0,
-            "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403698/PP5/20191123_134814-ro_z2pyt9.jpg",
-            "image": "20191123_134814-ro.jpg"
+            "image": "20191123_134814-ro.jpg",
+            "cloudinary_image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403698/PP5/20191123_134814-ro_z2pyt9.jpg"
         }
     },
     {
@@ -80,8 +79,8 @@
             "price": 21.99,
             "category": 3,
             "rating": 4.1,
-            "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403697/PP5/pexels-cottonbro-studio-3402804-ro_cydmp1.jpg",
-            "image": "pexels-cottonbro-studios-3402804-ro.jpg"
+            "image": "pexels-cottonbro-studios-3402804-ro.jpg",
+            "cloudinary_image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403697/PP5/pexels-cottonbro-studio-3402804-ro_cydmp1.jpg"
         }
     },
     {
@@ -94,8 +93,8 @@
             "price": 59.0,
             "category": 4,
             "rating": 4.4,
-            "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403642/PP5/pexels-cottonbro-studio-4877867-s_lkact7.jpg",
-            "image": "pexels-cottonbro-studios-4877867-s.jpg"
+            "image": "pexels-cottonbro-studios-4877867-s.jpg",
+            "cloudinary_image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403642/PP5/pexels-cottonbro-studio-4877867-s_lkact7.jpg"
         }
     },
     {
@@ -108,8 +107,8 @@
             "price": 36.99,
             "category": 4,
             "rating": 4.5,
-            "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403642/PP5/pexels-maria-orlova-4947565-s_ycxwyv.jpg",
-            "image": "pexels-maria-orlova-4947565-s.jpg"
+            "image": "pexels-maria-orlova-4947565-s.jpg",
+            "cloudinary_image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403642/PP5/pexels-maria-orlova-4947565-s_ycxwyv.jpg"
         }
     },
     {
@@ -122,8 +121,8 @@
             "price": 69.99,
             "category": 5,
             "rating": 4.1,
-            "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403804/PP5/pexels-cottonbro-studio-4255489-glass_me7tww.jpg",
-            "image": "pexels-cottonbro-studios-4255489-glass.jpg"
+            "image": "pexels-cottonbro-studios-4255489-glass.jpg",
+            "cloudinary_image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403804/PP5/pexels-cottonbro-studio-4255489-glass_me7tww.jpg"
         }
     },
     {
@@ -132,12 +131,12 @@
         "fields": {
             "sku": "t-book-1",
             "name": "Tasting book",
-            "description": "the book on what to look for",
+            "description": "the book on what to look for when tasting wine or choosing the best wine to go with your dinner",
             "price": 33.99,
             "category": 5,
             "rating": 4.4,
-            "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403806/PP5/pexels-nati-9589646-book_oicnuc.jpg",
-            "image": "pexels-nati-9589646-book.jpg"
+            "image": "pexels-nati-9589646-book.jpg",
+            "cloudinary_image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403806/PP5/pexels-nati-9589646-book_oicnuc.jpg"
         }
     },
     {
@@ -146,12 +145,12 @@
         "fields": {
             "sku": "bottle-1",
             "name": "Bottle",
-            "description": "Bottle",
+            "description": "Bottle for your own wine making, corc and seeling cap included",
             "price": 29.99,
             "category": 5,
             "rating": 3.0,
-            "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403805/PP5/pexels-grape-things-2647933-bottle_gzxr4l.jpg",
-            "image": "pexels-grape-things-2647933-bottle.jpg"
+            "image": "pexels-grape-things-2647933-bottle.jpg",
+            "cloudinary_image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403805/PP5/pexels-grape-things-2647933-bottle_gzxr4l.jpg"
         }
     },
     {
@@ -160,12 +159,12 @@
         "fields": {
             "sku": "s-kit-1",
             "name": "Start-kit",
-            "description": "Starter-kit include all you need to make a bottle of your own",
+            "description": "Starter-kit include all you need to make a bottle of your own wine",
             "price": 35.99,
             "category": 5,
             "rating": 4.6,
-            "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403804/PP5/pexels-cottonbro-studio-4254031-startkit_zwkxdx.jpg",
-            "image": "pexels-cottonbro-studios-4254031-startkit.jpg"
+            "image": "pexels-cottonbro-studios-4254031-startkit.jpg",
+            "cloudinary_image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403804/PP5/pexels-cottonbro-studio-4254031-startkit_zwkxdx.jpg"
         }
     }
     
