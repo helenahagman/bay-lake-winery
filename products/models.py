@@ -10,6 +10,8 @@ class Category(models.Model):
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
+    objects = models.Manager()
+
     def __str__(self):
         return self.name
 
@@ -29,6 +31,8 @@ class Product(models.Model):
                                  null=True, blank=True)
     image_url = models.URLField(max_length=1200, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+
+    objects = models.Manager()
 
     def __str__(self):
         return self.name

@@ -12,7 +12,7 @@ def checkout(request):
 
     order_form = OrderForm()
     template = 'checkout/checkout.html'
-    contect = {
+    context = {
         'order_form': order_form
     }
 

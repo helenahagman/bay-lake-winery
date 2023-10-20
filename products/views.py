@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category
+from .forms import ProductForm
 
 
 def all_products(request):
@@ -20,8 +21,11 @@ def all_products(request):
             sortkey = request.GET['sort']
             sort = sortkey
             if sortkey == 'name':
-                sortkey = 'name'
+                sortkey = 'lower_name'
                 products = products.annotate(lower_nameLower=Lower('name'))
+
+            if sortkey == 'category':
+                sortkey = 'category__name'
 
             if 'direction' in request.GET:
                 direction = request.GET['direction']
@@ -77,10 +81,10 @@ def add_product(request):
         form = ProductForm(request.POST)
         if form.is_valid():
             form.save()
-            messade.success(request, 'Product added')
+            messages.success(request, 'Product added')
             return redirect(reverse('products'))
         else:
-            message.error(request, 'No product added')
+            messages.error(request, 'No product added')
     else:
         form = ProductForm()
 
@@ -93,14 +97,15 @@ def add_product(request):
 @login_required
 def edit_product(request, product_id):
     """ Edit an existing product """
+    product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
         form = ProductForm(request.POST, instance=product)
         if form.is_valid():
             form.save()
-            messade.success(request, 'Product updated')
+            messages.success(request, 'Product updated')
             return redirect(reverse('product_detail', args=[product_id]))
         else:
-            message.error(request, 'No product updated')
+            messages.error(request, 'No product updated')
     else:
         form = ProductForm(instance=product)
 
