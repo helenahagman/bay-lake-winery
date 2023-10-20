@@ -6,6 +6,8 @@ from django.db.models.functions import Lower
 from .models import Product, Category
 from .forms import ProductForm
 
+import cloudinary.uploader
+
 
 def all_products(request):
     """ A view to return the product page """

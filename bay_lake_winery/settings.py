@@ -183,11 +183,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
 
-MEDIA_URL = '/products/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'products')
+# MEDIA_URL = '/products/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'products')
 
 
 # Default primary key field type
@@ -196,3 +197,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'products')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DELIVERY_PERCENTAGE = 5
+
+CLOUDINARY_URL = [
+    'cloudinary://431769971726414:tQzbeZqO7PTNVAW7AWK9iY0TE3c@tQzbeZqO7PTNVAW7AWK9iY0TE3c'
+]

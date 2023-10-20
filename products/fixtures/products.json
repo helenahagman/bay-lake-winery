@@ -11,6 +11,7 @@
             "rating": 4.6,
             "image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403772/pexels-ylanite-koppens-2820146-white-lady_m9jnhr.jpg",
             "image": "/media/pexels-ylanite-koppens-2820146-white-lady.jpg"
+            "cloudinary_image_url":"https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403772/pexels-ylanite-koppens-2820146-white-lady_m9jnhr.jpg",
         }
     },
     {
