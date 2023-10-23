@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col">
                 {% if shopbag_items %}
-                   <!-- <div class="d-block d-md-none">
+                    <div class="d-block d-md-none">
                         <div class="row">
                             <div class="col">
                                 {% include "shopbag/shopbag-total.html" %}
@@ -35,7 +35,7 @@
                             {% include "shopbag/checkout-buttons.html" %}
                             <p class="text-muted mb-5">Your shopping bag</p>
                         </div>
-                    </div>-->
+                    </div>
                     {% for item in shopbag_items %}
                         <div class="row">
                             <div class="col-12 col-sm-6 mb-2">
@@ -71,7 +71,7 @@
                     </a>
                 </div>
             </div>
-            <div class="table-responsive rounded d-none d-md-block">
+            <div class="table-responsive rounded">
                 <table class="table table-sm table-borderless">
                     <thead class="text-black">
                         <tr>
@@ -100,7 +100,11 @@
                     {% endfor %}
                     <tr>
                         <td colspan="5" class="pt-5 text-right">
-                            {% include "shopbag/shopbag-total.html" %}
+                            <!--<h6><strong>Your total: {% include "shopbag/shopbag-total.html" %}</strong></h6>-->
+                            <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
+                            <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
+                            <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                            
                         </td>
                     </tr>
                     <tr>

@@ -1,6 +1,6 @@
 {% if item.product.cloudinary_image %}
     <img class="img-fluid rounded"
-    src="{{ item.product.cloudinary_image.url }}"
+    src="{{ item.product.cloudinary_image_url }}"
     alt="{{ item.product.name }}">
 {% else %}
     <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
