@@ -9,8 +9,8 @@
             "price": 23.99,
             "category": 1,
             "rating": 4.6,
-            "image": "/media/pexels-ylanite-koppens-2820146-white-lady.jpg",
-            "cloudinary_image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403772/pexels-ylanite-koppens-2820146-white-lady_m9jnhr.jpg"
+            "image": "pexels-ylanite-koppens-2820146-white-lady.jpg",
+            "cloudinary_image_url": "https://res.cloudinary.com/dbjnqkn07/image/upload/v1696403772/PP5/pexels-ylanite-koppens-2820146-white-lady_m9jnhr.jpg"
         }
     },
     {

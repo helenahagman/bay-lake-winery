@@ -37,6 +37,7 @@
   - [Accessibility](#accessibility)
   - [Technology](#technology)
     - [Frameworks, Libraries \& Programs Used](#frameworks-libraries--programs-used)
+    - [Installed packages](#installed-packages)
   - [Testing](#testing)
     - [Deployment](#deployment)
       - [Deployment to heroku](#deployment-to-heroku)
@@ -237,6 +238,22 @@ Throughout the process of building the website, I have tried to think of accessi
 - Trello - KANBAN Board
 - Miro - wireframes
 - Pexels - images
+
+### Installed packages
+
+- asgiref             3.7.2
+- cloudinary          1.36.0
+- dj-database-url     2.1.0
+- Django              3.2.22
+- django-allauth      0.41.0
+- django-countries    7.5.1
+- django-crispy-forms 1.14.0
+- oauthlib            3.2.2
+- Pillow              10.1.0
+- python3-openid      3.2.0
+- pytz                2023.3.post1
+- requests-oauthlib   1.3.1
+- sqlparse            0.4.4
 
 ## Testing
 
