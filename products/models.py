@@ -32,6 +32,8 @@ class Product(models.Model):
                                  null=True, blank=True)
     image = CloudinaryField('image', default='default_cloudinary_url')
 
+    cloudinary_image_url = models.URLField(max_length=2000, null=True, blank=True)
+
     objects = models.Manager()
 
     def __str__(self):
