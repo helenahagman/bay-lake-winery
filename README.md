@@ -30,10 +30,9 @@
     - [Imagery](#imagery)
     - [Wire Frames](#wire-frames)
     - [Features](#features)
-      - [EPIC | Landing page](#epic--landing-page)
-      - [EPIC | Start/about page](#epic--startabout-page)
-      - [EPIC | Personal Trainer Page](#epic--personal-trainer-page)
-      - [EPIC | Member Page](#epic--member-page)
+      - [EPIC | Landing/start page](#epic--landingstart-page)
+      - [EPIC | Product page](#epic--product-page)
+      - [EPIC | About Page](#epic--about-page)
   - [Accessibility](#accessibility)
   - [Technology](#technology)
     - [Frameworks, Libraries \& Programs Used](#frameworks-libraries--programs-used)
@@ -47,7 +46,7 @@
 
 ## Why this project
 
-I built this page for my 5th project in the Code Institute course for the Diploma in Full Stack Software Development. I wanted to build a well designed website where the functionality for online phurchases of wine from the vineyard would be key and where the user and the owner of the site will get the information they need. The project is base on the key elements of the course and the requirements for PP5. The idea of a small family owned vineyard comes from the lonely grapevine in my own backyard that produces large quantities of grapes each year and the winemaking that follows for my small family.
+I built this page for my 5th project in the Code Institute course for the Diploma in Full Stack Software Development. I wanted to build a well designed website where the functionality for online phurchases of wine from the made-up family vineyard would be key. The project is base on the key elements of the course and the requirements for PP5. The idea of a small family owned vineyard comes from the one and only grapevine in my own backyard that produces large quantities of grapes each year. We do make our own wine and the whole family is involved, from picking the grapes to the finished product.
 
 ## Strategy
 
@@ -57,10 +56,11 @@ I built this page for my 5th project in the Code Institute course for the Diplom
 
 - Persons who are looking to buy wine
 - Persons who are interested in winemaking
+- Persons who want quality wine from a family farm
 
 #### Demographics
 
-- Persons in the age over 18 years
+- Persons in the age over 18 years (legal limit in Sweden)
 
 #### Psychographics
 
@@ -180,7 +180,7 @@ problem on the site
 
 ### Imagery
 
-The images for the site are a mix of private photos and downloaded images from [Pexels Free Images](https://www.pexels.com/sv-se/).
+The images for the site are a mix of private photos and downloaded images from [Pexels Free Images](https://www.pexels.com/sv-se/). I used Cloudinary for storage.
 
 ### Wire Frames
 
@@ -193,23 +193,19 @@ The website contains three main pages: Start page, Product page and About page.
 The Product page is accessible through a 'Shop' button the the Start page and
 the About page is accessible from the navigation menu on the top of the page.
 
-#### EPIC | Landing page
+#### EPIC | Landing/start page
 
-- Responsive navigation menu on the top of the page to be able to navigate to
-  the other pages. The links to the pages are placed on the right side of the navigation bar, to the left a logo with the project name is placed.
+- Responsive navigation menu on the top of the page with link and icon to shopping cart and profile for log in / log out.
+- The links are placed on the right side of the navigation bar, to the left the project name is placed.
 - In the footer, social media links to Facebook and Instagram are placed in the form of icons.
 
-#### EPIC | Start/about page
+#### EPIC | Product page
 
 - Short descriptive information along with an image followed by two postcards with a link to the Personal Trainer page and the Member Page.
 
-#### EPIC | Personal Trainer Page
+#### EPIC | About Page
 
-- Short descriptive information along with an image and a button to book a session, below that two postcards with a link to book sessions and the Member Page.
-
-#### EPIC | Member Page
-
-- Short descriptive information along with an image, below that two postcards with a link to the contact form and the login and register form.
+- The same photo as the start page with a descriptive text of the family bussiness along with a contact form.
 
 ## Accessibility
 
@@ -219,8 +215,8 @@ Throughout the process of building the website, I have tried to think of accessi
 - Ensure sufficient color contrasts
 - Use images that fit the purpose
 - Add hover functionality on menu items and buttons
-- Use icons for social media links instead of text
-- Maintain the same layout on all main pages
+- Use icons where possible (ex. shopping cart)
+- Maintain the same layout on all pages
 
 ## Technology
 
@@ -237,7 +233,7 @@ Throughout the process of building the website, I have tried to think of accessi
 - EmailJS - contact
 - Trello - KANBAN Board
 - Miro - wireframes
-- Pexels - images
+- Cloudinary - images
 
 ### Installed packages
 
@@ -257,9 +253,8 @@ Throughout the process of building the website, I have tried to think of accessi
 
 ## Testing
 
-Testing features, accessibility, links, responsiveness have been done throughout the project and after every step of the
-way tests have been performed to make sure that the new inserts has been working correctly and corrected thereafter.
-For complete view of testing please see <href="/bay-lake-winery/TESTING.md">TESTING.md
+Testing features, accessibility, links, responsiveness have been done throughout the project and after every step of the way tests have been performed to make sure that the new inserts has been working correctly and corrected thereafter.
+For an overview of tests performed please see <href="/bay-lake-winery/TESTING.md">TESTING.md
 
 ### Deployment
 
@@ -273,29 +268,41 @@ For complete view of testing please see <href="/bay-lake-winery/TESTING.md">TEST
 
 #### Credits
 
-- Code Used
-- Images
+- Throughout the project I have worked with the walk-through project 'Building an E-Commerce Platform' for the Code Institute. The base of the set up is used from that.
+  
+- Images used for this project are a mix of private photos and free images from Pexels.com
+ @JillWellington
+ @TaryElliott
+ @PolinaTankilevitch
+ @YlaniteKoppens
+ @Nati
+ @TerjeSollie
+ @MariaOrlova
+ @JillBurrow
+ @GrapeThings
+ @CottonbroStudio
+ @MariaPop
+ @BernyceHollingworth
+ @CharlotteMay
 - Acknowledgments
 
 ### Known unsolved bugs
 
 - App looks strange on live site
 - Menu link on smaller screens dont open
-- Images on live site
-- Book session button on Index page
-- Link to Sign in on Register page
-- Link to Register on Sign in page
-- Contact post do not work on live site
 
 ### Credits & Inspiration
 
-Sites and code used for inspiration and test on this project:
+Sites and code used for inspiration, set up and tests on this project:
 
-- <href="https://www.w3schools.com/python/default.asp">W3School Pyhton Tutorial</a> \* Problem solving
-- <href="https://www.python.org/about/help/">Pyhton.org</a> \* Problem solving
-- <href="https://mdbootstrap.com/snippets/standard/mdbootstrap/2515556">Bootstrap</a> \* Templates: 2 columns and PostCard from MDBootstrap
-- <href="https://www.emailjs.com/">EmailJS</a> \* API connection for messages
-- <href="https://www.digitalocean.com">DigitalOcean</a> \* Problem solving and ideas
-
-- I used the walkthrough in the Codeinstitute section "Startbootstrap clean-blog URL change" to add the clean-blog theme from bootstrap to style my pages.
-- Thank you to The Code Institute for material, instructions and connection to the community in Slack
+- <href="https://www.w3schools.com/python/default.asp">W3School Pyhton Tutorial</a>
+- <href="https://www.python.org/about/help/">Pyhton.org</a>
+- <href="https://mdbootstrap.com/snippets/standard/mdbootstrap/2515556">Bootstrap</a>
+- <href="https://www.emailjs.com/">EmailJS</a>
+- <href="https://www.digitalocean.com">DigitalOcean</a>
+- <href="https://app.slack.com">Slack community</a>
+- <href="https://realpython.com/python-debug-idle/">Real Python</a>
+- <href="https://studentrobotics.org/docs/troubleshooting/python">Student Robotics</a>
+- <href=""></a>
+- <href=""></a>
+- <href=""></a>
