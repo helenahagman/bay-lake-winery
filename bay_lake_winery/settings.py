@@ -198,6 +198,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DELIVERY_PERCENTAGE = 5
 
-CLOUDINARY_URL = [
-    'cloudinary://431769971726414:tQzbeZqO7PTNVAW7AWK9iY0TE3c@tQzbeZqO7PTNVAW7AWK9iY0TE3c'
-]
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dbjnqkn07',
+    'API_KEY': '431769971726414',
+    'API_SECRET': 'tQzbeZqO7PTNVAW7AWK9iY0TE3c',
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+# CLOUDINARY_URL = "cloudinary://431769971726414:tQzbeZqO7PTNVAW7AWK9iY0TE3c@dbjnqkn07"
