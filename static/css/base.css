@@ -80,6 +80,10 @@ body {
     background: darkslategray;
 }
 
+.id-save-delivery-info {
+    font-size: 14px;
+}
+
 /* Text and Border Styles*/
 .text-black {
     color: #000 !important;

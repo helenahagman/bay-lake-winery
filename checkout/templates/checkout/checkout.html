@@ -20,7 +20,7 @@
     <div class="row">
         <div class="col">
             <hr />
-            <h2 class="logo-font mb-4">Checkout</h2>
+            <h2 class="logo-font mb-4">Complete your order</h2>
             <hr />
         </div>
     </div>
@@ -90,7 +90,7 @@
                         {{ order_form.county | as_crispy_field }}
                         <div class="form-check form-check-inline float-right mr-0">
                             {% if user.is_authenticated %}
-                                <label class=" form--check-label" for="id-save-info">Save the delivery info in my profile</label>
+                                <label class=" form--check-label" for="id-save-delivery-info">Save the delivery info in my profile</label>
                                 <input class="form-check-input ml-2 mr-0" type="checkbox" id="id_save_info" name="save-info" checked>
                             {% else %}
                                 <label class="form-check-label" for="id-save-info">
