@@ -5,7 +5,7 @@
     CSS from here: 
     https://stripe.com/docs/stripe-js
 */
-var stripe = Stripe('{{ id_stripe_public_key|safe }}');
+var stripe = stripe('{{ id_stripe_public_key|safe }}');
 var elements = stripe.elements();
 var cardElement = elements.create('card');
 cardElement.mount('#card-element');
