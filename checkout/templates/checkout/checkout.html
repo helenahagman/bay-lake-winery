@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
+{% load shopbag_tools %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css %}">
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -93,8 +94,8 @@
                                 <input class="form-check-input ml-2 mr-0" type="checkbox" id="id_save_info" name="save-info" checked>
                             {% else %}
                                 <label class="form-check-label" for="id-save-info">
-                                    <a class="text-info" href="{% url 'account_signup %}">Create an account</a>
-                                    <a class="text-info" href="{% url 'account_login %}">Login</a> to save this information
+                                    <a class="text-info" href="#">Create an account</a>
+                                    <a class="text-info" href="#">Login</a> to save this information
                                 </label>
                             {% endif %}
                     </fieldset>

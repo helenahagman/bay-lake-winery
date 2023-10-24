@@ -1,20 +1,26 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
+from django.conf import settings
 
 from .forms import OrderForm
-from shopbag.contexts import shopbag_contents 
+from shopbag.contexts import shopbag_contents
+
+import stripe
 
 
 def checkout_view(request):
-    bag = request.session.get('bag', {})
-    if not bag:
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
+
+    shopbag = request.session.get('shopbag', {})
+    if not shopbag:
         messages.error(request, 'Your bag is empty')
         return redirect(reverse('products'))
 
     current_shopbag = shopbag_contents(request)
     total = current_shopbag['total']
     stripe_total = round(total * 100)
-    
+
     order_form = OrderForm()
     template = 'checkout/checkout.html'
     context = {
