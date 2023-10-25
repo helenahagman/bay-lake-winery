@@ -42,7 +42,8 @@
         <div class="col-lg-6">
             <div class="card p-4">
                 <h2 class="mb-4">Contact Us</h2>
-                <form>
+                <form method="post" action="{% url 'contact_us' %}">
+                    {% csrf_token %}
                     <div class="form-group">
                         <label for="name">Your Name</label>
                         <input type="text" class="form-control" id="name" placeholder="Enter your name">
@@ -56,8 +57,13 @@
                         <textarea class="form-control" id="message" rows="5"
                             placeholder="Enter your message"></textarea>
                     </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="newsletterCheckbox">
+                        <label class="form-check-label" for="newsletterCheckbox">Sign up for our newsletter!</label>
+                    </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+                {% include 'templates/includes/toasts/toast_thankyou.html' %}
             </div>
         </div>
     </div>
