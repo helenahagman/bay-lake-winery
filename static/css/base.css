@@ -84,6 +84,12 @@ body {
     font-size: 14px;
 }
 
+.about {
+    color: #000;
+    font-size: 15px;
+    background-color: #F0FFCE;
+}
+
 /* Text and Border Styles*/
 .text-black {
     color: #000 !important;
