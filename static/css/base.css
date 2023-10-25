@@ -14,7 +14,11 @@ body {
     height: calc(100vh - 164px);
     color: #555;
     font-family: 'Lato', sans-serif;
-    padding-top: 70px;
+    padding-top: 80px;
+}
+
+header {
+    background-color: white;
 }
 
 /* from Bulma */
@@ -89,6 +93,15 @@ body {
     font-size: 15px;
     background-color: #e0e0cf;
     padding-top: 15px;
+    border-radius: 10px;
+}
+
+.text-box {
+    color: #000;
+    background-color: #e0e0cf;
+    padding: 15px;
+    border-radius: 10px;
+
 }
 
 /* Text and Border Styles*/
