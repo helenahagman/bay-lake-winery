@@ -101,8 +101,16 @@ def edit_product(request, product_id):
     """ Edit an existing product """
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
-        form = ProductForm(request.POST, instance=product)
+        form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
+            # Handle Cloudinary image upload
+            # Assuming your form field is named 'image'
+            image = form.cleaned_data.get('image')
+            if image:
+                uploaded_image = cloudinary.uploader.upload(image)
+                # Set Cloudinary URL to the product instance
+                product.image_url = uploaded_image['secure_url']
+
             form.save()
             messages.success(request, 'Product updated')
             return redirect(reverse('product_detail', args=[product_id]))

@@ -14,6 +14,11 @@ from pathlib import Path
 
 import dj_database_url
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -187,6 +192,21 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dbjnqkn07',
+    'API_KEY': '431769971726414',
+    'API_SECRET': 'tQzbeZqO7PTNVAW7AWK9iY0TE3c',
+}
+
+# Cloudinary configuration
+cloudinary.config(
+    cloud_name=CLOUDINARY_STORAGE['CLOUD_NAME'],
+    api_key=CLOUDINARY_STORAGE['API_KEY'],
+    api_secret=CLOUDINARY_STORAGE['API_SECRET']
+)
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+# CLOUDINARY_URL = "cloudinary://431769971726414:tQzbeZqO7PTNVAW7AWK9iY0TE3c@dbjnqkn07"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -199,12 +219,3 @@ STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
-
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dbjnqkn07',
-    'API_KEY': '431769971726414',
-    'API_SECRET': 'tQzbeZqO7PTNVAW7AWK9iY0TE3c',
-}
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
-# CLOUDINARY_URL = "cloudinary://431769971726414:tQzbeZqO7PTNVAW7AWK9iY0TE3c@dbjnqkn07"
