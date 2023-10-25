@@ -219,6 +219,11 @@ a.category-badge>span.badge:hover {
     .container {
         max-width: 80%;
     }
+    
+    .card-img-top {
+        height: 230px;
+        width: 175px;
+    }
 }
 
 @media (min-width: 992px) {
@@ -235,6 +240,11 @@ a.category-badge>span.badge:hover {
     .header-container {
         padding-top: 164px;
     }
+
+    .card-img-top {
+        height: 230px;
+        width: 175px;
+    }
 }
 
 @media (max-width: 991px) {
@@ -247,6 +257,11 @@ a.category-badge>span.badge:hover {
     body {
         height: calc(100vh - 116px);
     }
+
+    .card-img-top {
+        height: 230px;
+        width: 175px;
+    }
 }
 
 @media (max-width: 991px) {
@@ -254,5 +269,10 @@ a.category-badge>span.badge:hover {
     /* Hide regular top header on smaller scrrens */
     .row.bg-white {
         display: none;
+    }
+
+    .card-img-top {
+        height: 200px;
+        width: 150px;
     }
 }

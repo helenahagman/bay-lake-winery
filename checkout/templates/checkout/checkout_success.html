@@ -21,23 +21,121 @@
             <hr>
             <h2 class="logo-font mb-4">Thank You</h2>
             <hr>
-            <p class="text-black">Your order is complete. A confirmation email will be sent to <strong>{{
-                    order.email }}</strong>.</p>
+            <p class="text-black">
+                Your order is complete. A confirmation email will be sent to
+                <strong>{{ order.email }}</strong>.
+            </p>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-12 col-lg-7"></div>
-    </div>
-    <div class="row">
-        <div class="col-12 col-lg-7 text-right">
-            <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="btn btn-black rounded-0 my-2">
-                <span class="icon mr-2">
-                    <i class="fas fa-gifts"></i>
-                </span>
-                <span class="text-uppercase">Now check out the latest deals!</span>
-            </a>
+        <div class="col-12 col-lg-7 mx-auto">
+            <div class="order-confirmation-wrapper p-2 border">
+                <!-- Order Info Section -->
+                <div class="row">
+                    <div class="col">
+                        <small class="text-blue">Order Info:</small>
+                    </div>
+                </div>
+
+                <!-- Order Number -->
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0 text-black">Order Number</p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-right">
+                        <p class="mb-0">{{ order.order_number }}</p>
+                    </div>
+                </div>
+
+                <!-- Order Date -->
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0 text-black">Order Date</p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-right">
+                        <p class="mb-0">{{ order.date }}</p>
+                    </div>
+                </div>
+
+                <!-- Order Details Section -->
+                <div class="row mt-3">
+                    <div class="col">
+                        <small class="text-blue">Order Details:</small>
+                    </div>
+                </div>
+
+                <!-- Loop through order line items -->
+                {% for item in order.lineitems.all %}
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <p class="mb-0 text-black">{{ item.product.title }}</p>
+                    </div>
+                    <div class="col-12 col-md-6 text-md-right">
+                        <p class="small mb-0">{{ item.quantity }} @ €{{ item.product.price }} each</p>
+                    </div>
+                </div>
+                {% endfor %}
+
+                <!-- Delivering To Section -->
+                <div class="row mt-3">
+                    <div class="col">
+                        <small class="text-blue">Delivering To:</small>
+                    </div>
+                </div>
+
+                <!-- Address and contact details -->
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0 text-black">Full Name</p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-right">
+                        <p class="mb-0">{{ order.full_name }}</p>
+                    </div>
+                </div>
+
+                <!-- Other address fields -->
+                <!-- ... -->
+
+                <!-- Billing Info Section -->
+                <div class="row mt-3">
+                    <div class="col">
+                        <small class="text-blue">Billing Info:</small>
+                    </div>
+                </div>
+
+                <!-- Order Total -->
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0 text-black">Order Total</p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-right">
+                        <p class="mb-0">€{{ order.order_total }}</p>
+                    </div>
+                </div>
+
+                <!-- Delivery Cost -->
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0 text-black">Delivery</p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-right">
+                        <p class="mb-0">€{{ order.delivery_cost }}</p>
+                    </div>
+                </div>
+
+                <!-- Grand Total -->
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0 text-black">Grand Total</p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-right">
+                        <p class="mb-0">€{{ order.grand_total }}</p>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="col-12 col-lg-7"></div>
     </div>
 </div>
 {% endblock %}
