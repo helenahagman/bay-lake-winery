@@ -99,8 +99,17 @@
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class=
-                "list-inline list-unstyled text-center text-lg-right my-0">
-                <li class="list-inline-item dropdown">
+                "list-inline list-unstyled d-flex justify-content-center 
+                justify-content-lg-end align-items-start align-itens-lg-center my-0">
+                <li class="list-inline-item text-center text-lg-left">
+                    <div class="d-flex flex-column align-items-center">
+                    <i class="fa-sharp fa-solid fa-house-heart fa-lg mb-1"></i> 
+                    <a href="{% url 'about' %}" class="text-black nav-link">
+                        About Us
+                    </a>
+                    </div>
+                </li>
+                <li class="list-inline-item dropdown ml-3">
                     <a class="text-black nav-link" href="#" id="user-options"
                     data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">

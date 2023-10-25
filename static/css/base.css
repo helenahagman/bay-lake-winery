@@ -87,7 +87,8 @@ body {
 .about {
     color: #000;
     font-size: 15px;
-    background-color: #F0FFCE;
+    background-color: #e0e0cf;
+    padding-top: 15px;
 }
 
 /* Text and Border Styles*/
