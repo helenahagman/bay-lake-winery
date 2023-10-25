@@ -13,14 +13,18 @@ def about_view(request):
 
     return render(request, 'home/about.html')
 
+
 def contact_us(request):
     if request.method == 'POST':
         form = ContactFormModelForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, 'templates/includes/toasts/toast_thankyou.html', {'message': 'Thank you for your message!'})
-    
+            return render(
+                request, 'templates/includes/toasts/toast_thankyou.html',
+                {'message': 'Thank you for your message!'}
+                )
+
     else:
         form = ContactFormModelForm()
-    
+
     return render(request, '', {'form': form})
