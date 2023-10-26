@@ -53,7 +53,7 @@ form.addEventListener('submit', function (ev) {
     $('#payment-form').fadeToggle(100);
     $('#loading-overlay').fadeToggle(100);
 
-    var saveInfo = Boolean($('#id-save-info').attr('checked'));
+    var saveInfo = $('#id-save-info').prop('checked');
     // From using {% csrf_token %} in the form
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     var postData = {
@@ -100,7 +100,7 @@ form.addEventListener('submit', function (ev) {
                     <i class="fas fa-times"></i>
                     </span>
                     <span>${result.error.message}</span>`;
-                $(errorDiv).html(html);
+                errorDiv.textContent = html;
                 $('#payment-form').fadeToggle(100);
                 $('#loading-overlay').fadeToggle(100);
                 card.update({ 'disabled': false });

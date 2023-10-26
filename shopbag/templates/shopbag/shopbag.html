@@ -143,40 +143,45 @@
 {% block postloadjs %} 
     {{ block.super }}
     <script type="text/javascript">
-        $(".btt-link").click(function (e) {
-            window.scrollTo(0, 0);
-        });
-
-        // Update quantity 
-        $(".update-form").submit(function (e) {
-            e.preventDefault();
-            var form = $(this);
-            $.ajax({
-                url: form.attr("action"),
-                method: form.attr("method"),
-                data: form.serialize(),
-                success: function(data) {
-                    // Handle success, update UI if needed
-                },
-                error: function(xhr, status, error) {
-                    // Handle error
-                }
+        document.addEventListener("DOMContentLoaded", function() {
+            // scroll to top functionality
+            $(".btt-link").click(function (e) {
+                window.scrollTo(0, 0);
             });
-        });
 
-        // Remove item and update UI on click
-        $(".remove-item").click(function (e) {
-            e.preventDefault();
-            var csrfToken = "{{ csrf_token }}";
-            var itemId = $(this).attr("id").split("remove_")[1];
-            var url = `/shopbag/remove/${itemId}/`;
-            var data = { csrfmiddlewaretoken: csrfToken };
+            // Update quantity via AJAX
+            $(".update-form").submit(function (e) {
+                e.preventDefault();
+                var form = $(this);
+                $.ajax({
+                    url: form.attr("action"),
+                    method: form.attr("method"),
+                    data: form.serialize(),
+                    success: function(data) {
+                        // Handle success, update UI if needed
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle error
+                        console.error("Error updating quantity:", error);
+                    }
+                });
+            });
 
-            $.post(url, data).done(function () {
-                // Handle success, update UI if needed
-                $(`#remove_${itemId}`).closest(".row").remove();
-            }).fail(function(xhr, status, error) {
-                // Handle error if needed
+            // Remove item and update UI on click
+            $(".remove-item").click(function (e) {
+                e.preventDefault();
+                var csrfToken = "{{ csrf_token }}";
+                var itemId = $(this).attr("id").split("remove_")[1];
+                var url = `/shopbag/remove/${itemId}/`;
+                var data = { csrfmiddlewaretoken: csrfToken };
+
+                $.post(url, data).done(function () {
+                    // Handle success, update UI if needed
+                    $(`#remove_${itemId}`).closest(".row").remove();
+                }).fail(function(xhr, status, error) {
+                    // Handle error if needed
+                    console.error("Error removing item:", eroor);
+                });
             });
         });
     </script>
