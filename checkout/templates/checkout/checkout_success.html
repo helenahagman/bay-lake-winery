@@ -3,6 +3,16 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+<style>
+    
+    .container {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+</style>
 {% endblock %}
 
 {% block page_header %}
@@ -19,10 +29,10 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="logo-font mb-4">Thank You</h2>
+            <h3 class="logo-font mb-4 text-center">Thank You</h3>
             <hr>
-            <p class="text-black">
-                Your order is complete. A confirmation email will be sent to
+            <p class="text-black text-center">
+                Your order is complet and your confirmation email will be sent to
                 <strong>{{ order.email }}</strong>.
             </p>
         </div>
