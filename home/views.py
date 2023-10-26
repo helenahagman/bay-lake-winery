@@ -9,7 +9,7 @@ def index_view(request):
 
 
 def about_view(request):
-    """ A view to return the index page """
+    """ A view to the about page """
 
     return render(request, 'home/about.html')
 
@@ -19,10 +19,7 @@ def contact_us(request):
         form = ContactFormModelForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(
-                request, 'templates/includes/toasts/toast_thankyou.html',
-                {'message': 'Thank you for your message!'}
-                )
+            return render(request, 'includes/toasts/toast_thankyou.html', {'message': 'Thank you for your message!'})
 
     else:
         form = ContactFormModelForm()
