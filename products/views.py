@@ -104,7 +104,6 @@ def edit_product(request, product_id):
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             # Handle Cloudinary image upload
-            # Assuming your form field is named 'image'
             image = form.cleaned_data.get('image')
             if image:
                 uploaded_image = cloudinary.uploader.upload(image)
