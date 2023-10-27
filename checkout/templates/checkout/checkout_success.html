@@ -3,29 +3,15 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
-<style>
-    
-    .container {
-        background-color: white;
-        border-radius: 10px;
-        padding: 20px;
-        margin-top: 20px;
-    }
-
-</style>
 {% endblock %}
 
 {% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
-</div>
+
 {% endblock %}
 
 {% block content %}
 <div class="overlay"></div>
-<div class="container">
+<div class="container" id="checkout-container">
     <div class="row">
         <div class="col">
             <hr>
