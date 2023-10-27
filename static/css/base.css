@@ -21,6 +21,7 @@ header {
     background-color: white;
 }
 
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -145,7 +146,7 @@ a.category-badge>span.badge:hover {
 
 /* ----- Bootstrap toasts -----*/
 
-.message-container {
+body> .message-container {
     position: fixed;
     top: 72px;
     right: 15px;
@@ -210,6 +211,33 @@ a.category-badge>span.badge:hover {
     overflow-y: auto;
 }
 
+/* ------ Footer ---------- */
+
+.footer {
+    position: absolute;
+    margin-top: auto;
+    background: rgb(116, 115, 115);
+    height: 100px;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    
+}
+
+.social-networks {
+    text-align: center;
+}
+
+.social-networks>li {
+    display: inline;
+}
+
+.social-networks i {
+    font-size: 160%;
+    margin: 1%;
+    padding: 5%;
+    color: #3a3a3a;
+}
 
 /* ------ Media Queries ------ */
 
