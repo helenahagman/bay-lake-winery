@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 if os.path.isfile("env.py"):
     import env
+
 import dj_database_url
 
 from decouple import config
@@ -194,9 +195,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
 
 # Load environment variables from .env file
-CLOUDINARY_CLOUD_NAME = config('CLOUD_NAME')
-CLOUDINARY_API_KEY = config('API_KEY')
-CLOUDINARY_API_SECRET = config('API_SECRET')
+CLOUD_NAME = os.getenv('CLOUD_NAME', 'default_value')
+API_KEY = os.getenv('API_KEY', 'default_value')
+API_SECRET = config('API_SECRET', 'default_value')
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': CLOUD_NAME,
