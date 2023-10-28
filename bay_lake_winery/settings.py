@@ -34,7 +34,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = False
+# 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
     'bay-lake-winery-4b9e6ad86e5e.herokuapp.com',

@@ -73,7 +73,7 @@ def all_products(request):
         })
 
     context = {
-        'products': products,
+        'products': product_list,
         'search_term': query,
         'current_categories': categories,
         'current_sorting': f'{sort}_{direction}',
@@ -84,15 +84,17 @@ def all_products(request):
 
 def product_detail(request, product_id):
     """ A view to return the product details  """
+    try:
+        product = get_object_or_404(Product, pk=product_id)
+        image_url = product.cloudinary_image_url or product.image.url
+        context = {
+            'product': product,
+            'image_url': image_url,
+        }
 
-    product = get_object_or_404(Product, pk=product_id)
-
-    context = {
-        'product': product,
-        'cloudinary_image_url': cloudinary_image_url,
-    }
-
-    return render(request, 'products/product_detail.html', context)
+        return render(request, 'products/product_detail.html', context)
+    except (ValueError, Product.DoesNotExist):
+        return render(request, '404.html')
 
 
 @login_required
@@ -145,10 +147,11 @@ def edit_product(request, product_id):
     else:
         form = ProductForm(instance=product)
 
+    image_url = product.cloudinary_image_url or product.image.url
     context = {
         'form': form,
         'product': product,
-        'cloudinary_image_url': cloudinary_image_url,
+        'image_url': image_url,
     }
     return render(request, 'products/edit_product.html', context)
 

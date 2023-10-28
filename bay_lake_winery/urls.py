@@ -18,6 +18,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from .views import handler404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,6 +29,8 @@ urlpatterns = [
     path('profile/', include('profiles.urls')),
     path('checkout/', include('checkout.urls')),
 ]
+
+handler404 = 'bay_lake_winery.views.handler404'
 
 # Serve media files during development
 if settings.DEBUG:
