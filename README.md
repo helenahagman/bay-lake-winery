@@ -136,24 +136,21 @@ problem on the site
 - Administrator log in
 - Communicate with users/customers that have questions
 - Send emails/sms to registered users
-- See registered users
-- See booked sessions
+- See registered users in the admin
+- See orders
 - Images that contribute to what the site is offering
 - Explanatory texts
-- Registration possibilities
-- Log in possibilities
-- Log out possibilities
-- Online booking for Personal Trainer Sessions
-- Contact
+- Registration possibilities for new users
+- Online contact form
 - Login as a current user
 - Register as a new user
-- See available personal trainer sessions
-- Get information on what is offered on the site
-- Book personal trainer sessions
-- Cancel booked sessions
-- Sign up for membership
-- Get in contact
-- Edit registered user information
+- See available products
+- Add to shopping bag possibility
+- Update shopping bag
+- Easy online payment
+- Sign up for news letters
+- Edit and update products for admin
+- Edit profile information
 
 ### EPIC | Functionality
 
@@ -192,20 +189,27 @@ Wireframes were created using Miro and were created for mobile, tablet, and desk
 The website contains three main pages: Start page, Product page and About page.
 The Product page is accessible through a 'Shop' button the the Start page and
 the About page is accessible from the navigation menu on the top of the page.
+When on the About page the link in the navigation menu changes to go to Home.
+On the About page there is also a contact form for contact. The shopping cart is
+accessible through the navigation menu on the top of all pages as well as the
+search function and profile access. 
 
 #### EPIC | Landing/start page
 
-- Responsive navigation menu on the top of the page with link and icon to shopping cart and profile for log in / log out.
-- The links are placed on the right side of the navigation bar, to the left the project name is placed.
-- In the footer, social media links to Facebook and Instagram are placed in the form of icons.
+- Responsive navigation menu on the top of the page with link and icon to a
+  shopping cart, access to the profile with log in/log out and register 
+  possibility. There is also a search function and a link to an About page.
+- The links are placed on the right side of the navigation bar, to the left the 
+  project name is placed and links to the start page.
 
 #### EPIC | Product page
 
-- Short descriptive information along with an image followed by two postcards with a link to the Personal Trainer page and the Member Page.
+- Short descriptive information along with an image, price and link to make it
+  possible to add products to the shopping cart.
 
 #### EPIC | About Page
 
-- The same photo as the start page with a descriptive text of the family bussiness along with a contact form.
+- A short text about the family bussiness along with a contact form.
 
 ## Accessibility
 
@@ -223,13 +227,14 @@ Throughout the process of building the website, I have tried to think of accessi
 ### Frameworks, Libraries & Programs Used
 
 - HTML, CSS, JavaScript
-- Django, Flask
+- Django
 - GitHub - save & store website files
 - CodeAnywhere - codespace
 - Bootstrap - framework
 - Favicon - icons
 - ElephantSQL - database
 - Heroku - deployment
+- Stripe - payment
 - EmailJS - contact
 - Trello - KANBAN Board
 - Miro - wireframes
@@ -253,8 +258,11 @@ Throughout the process of building the website, I have tried to think of accessi
 
 ## Testing
 
-Testing features, accessibility, links, responsiveness have been done throughout the project and after every step of the way tests have been performed to make sure that the new inserts has been working correctly and corrected thereafter.
-For an overview of tests performed please see <href="/bay-lake-winery/TESTING.md">TESTING.md
+Testing features, accessibility, links, responsiveness have been done throughout
+the project and after every step of the way tests have been performed to make
+sure that the new inserts was working as expected and corrected thereafter.
+For an overview of tests performed please see 
+<href="/bay-lake-winery/TESTING.md">TESTING.md
 
 ### Deployment
 
@@ -268,9 +276,12 @@ For an overview of tests performed please see <href="/bay-lake-winery/TESTING.md
 
 #### Credits
 
-- Throughout the project I have worked with the walk-through project 'Building an E-Commerce Platform' for the Code Institute. The base of the set up is used from that.
+- Throughout the project I have worked with the walk-through project
+  'Building an E-Commerce Platform' for the Code Institute. The base of the set 
+  up is used from the same.
   
-- Images used for this project are a mix of private photos and free images from Pexels.com
+- Images used for this project is a mix of private photos and free images from 
+  Pexels.com, special thank you to:
  @JillWellington
  @TaryElliott
  @PolinaTankilevitch
@@ -284,7 +295,7 @@ For an overview of tests performed please see <href="/bay-lake-winery/TESTING.md
  @MariaPop
  @BernyceHollingworth
  @CharlotteMay
-- Acknowledgments
+
 
 ### Known unsolved bugs
 
