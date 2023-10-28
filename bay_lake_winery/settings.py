@@ -33,9 +33,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
-    '8000-helenahagman-bay-lake-wi-tcijqtegyu.us2.codeanyapp.com',
     'bay-lake-winery-4b9e6ad86e5e.herokuapp.com',
-    'localhost'
+    'localhost',
+    '8000-helenahagman-bay-lake-wi-tcijqtegyu.us2.codeanyapp.com'
 ]
 
 
@@ -139,10 +139,9 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR / 'db.sqlite3'),
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

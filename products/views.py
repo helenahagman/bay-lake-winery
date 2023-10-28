@@ -59,6 +59,7 @@ def all_products(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'cloudinary_image_url': cloudinary_image_url,
     }
 
     return render(request, 'products/products.html', context)
@@ -71,6 +72,7 @@ def product_detail(request, product_id):
 
     context = {
         'product': product,
+        'cloudinary_image_url': cloudinary_image_url,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -129,6 +131,7 @@ def edit_product(request, product_id):
     context = {
         'form': form,
         'product': product,
+        'cloudinary_image_url': cloudinary_image_url,
     }
     return render(request, 'products/edit_product.html', context)
 
