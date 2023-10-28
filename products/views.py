@@ -24,7 +24,7 @@ def all_products(request):
             sort = sortkey
             if sortkey == 'name':
                 sortkey = 'lower_name'
-                products = products.annotate(lower_nameLower=Lower('name'))
+                products = products.annotate(lower_name=Lower('name'))
 
             if sortkey == 'category':
                 sortkey = 'category__name'
@@ -45,7 +45,7 @@ def all_products(request):
             query = request.GET['q']
             if not query:
                 messages.error(
-                    request, "Oops, forgot to enter a search criteria?")
+                    request, ("Oops, forgot to enter a search criteria?"))
                 return redirect(reverse('products'))
 
             queries = Q(name__icontains=query) | Q(
@@ -56,9 +56,9 @@ def all_products(request):
 
     context = {
         'products': products,
-        'search_terms': query,
+        'search_term': query,
         'current_categories': categories,
-        'current_sorting': current_sorting
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'products/products.html', context)
@@ -84,13 +84,13 @@ def add_product(request):
         return redirect(reverse('home'))
 
     if request.method == 'POST':
-        form = ProductForm(request.POST)
+        form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save()
             messages.success(request, 'Product added')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'No product added')
+            messages.error(request, ('No product added'))
     else:
         form = ProductForm()
 
@@ -120,9 +120,9 @@ def edit_product(request, product_id):
 
             form.save()
             messages.success(request, 'Product updated')
-            return redirect(reverse('product_detail', args=[product_id]))
+            return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'No product updated')
+            messages.error(request, ('No product updated'))
     else:
         form = ProductForm(instance=product)
 
@@ -139,7 +139,7 @@ def delete_product(request, product_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
-        
+
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, 'Product removed')
