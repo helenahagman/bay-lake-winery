@@ -1,0 +1,1 @@
+web: gunicorn bay_lake_winery.wsgi:application

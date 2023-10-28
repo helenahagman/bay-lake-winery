@@ -35,7 +35,9 @@ SECRET_KEY = [
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-helenahagman-bay-lake-wi-tcijqtegyu.us2.codeanyapp.com'
+    '8000-helenahagman-bay-lake-wi-tcijqtegyu.us2.codeanyapp.com',
+    'https://bay-lake-winery-4b9e6ad86e5e.herokuapp.com/',
+    'localhost'
 ]
 
 
