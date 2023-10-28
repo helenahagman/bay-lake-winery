@@ -54,12 +54,29 @@ def all_products(request):
 
     current_sorting = f'{sort}_{direction}'
 
+    product_list = []
+    for product in products:
+        if product.cloudinary_image_url:
+            image_url = product.cloudinary_image_url
+        elif product.image:
+            upload_image = cloudinary.uploader.upload(product.image)
+            image_url = uploaded_image['secure_url']
+            product.cloudinary_image_url = image_url
+            product.save()
+        else:
+            image_url = ''
+        
+        product_list.append({
+            'product': product,
+            'image_url': image_url,
+
+        })
+
     context = {
         'products': products,
         'search_term': query,
         'current_categories': categories,
-        'current_sorting': current_sorting,
-        'cloudinary_image_url': cloudinary_image_url,
+        'current_sorting': f'{sort}_{direction}',
     }
 
     return render(request, 'products/products.html', context)
