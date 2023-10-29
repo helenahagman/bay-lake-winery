@@ -225,6 +225,11 @@ body> .message-container {
     
 }
 
+.social-box {
+    background: #e0e0cf;
+    padding: 10px;
+}
+
 .social-networks {
     text-align: center;
 }
