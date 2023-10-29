@@ -65,7 +65,7 @@ def all_products(request):
             product.save()
         else:
             image_url = ''
-        
+
         product_list.append({
             'product': product,
             'image_url': image_url,
@@ -73,10 +73,10 @@ def all_products(request):
         })
 
     context = {
-        'products': product_list,
+        'products': products,
         'search_term': query,
         'current_categories': categories,
-        'current_sorting': f'{sort}_{direction}',
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'products/products.html', context)
@@ -93,7 +93,7 @@ def product_detail(request, product_id):
         }
 
         return render(request, 'products/product_detail.html', context)
-    except (ValueError, Product.DoesNotExist):
+    except Product.DoesNotExist:
         return render(request, '404.html')
 
 

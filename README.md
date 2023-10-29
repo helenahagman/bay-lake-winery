@@ -192,14 +192,14 @@ the About page is accessible from the navigation menu on the top of the page.
 When on the About page the link in the navigation menu changes to go to Home.
 On the About page there is also a contact form for contact. The shopping cart is
 accessible through the navigation menu on the top of all pages as well as the
-search function and profile access. 
+search function and profile access.
 
 #### EPIC | Landing/start page
 
 - Responsive navigation menu on the top of the page with link and icon to a
-  shopping cart, access to the profile with log in/log out and register 
+  shopping cart, access to the profile with log in/log out and register
   possibility. There is also a search function and a link to an About page.
-- The links are placed on the right side of the navigation bar, to the left the 
+- The links are placed on the right side of the navigation bar, to the left the
   project name is placed and links to the start page.
 
 #### EPIC | Product page
@@ -261,7 +261,7 @@ Throughout the process of building the website, I have tried to think of accessi
 Testing features, accessibility, links, responsiveness have been done throughout
 the project and after every step of the way tests have been performed to make
 sure that the new inserts was working as expected and corrected thereafter.
-For an overview of tests performed please see 
+For an overview of tests performed please see
 <href="/bay-lake-winery/TESTING.md">TESTING.md
 
 ### Deployment
@@ -277,10 +277,10 @@ For an overview of tests performed please see
 #### Credits
 
 - Throughout the project I have worked with the walk-through project
-  'Building an E-Commerce Platform' for the Code Institute. The base of the set 
+  'Building an E-Commerce Platform' for the Code Institute. The base of the set
   up is used from the same.
   
-- Images used for this project is a mix of private photos and free images from 
+- Images used for this project is a mix of private photos and free images from
   Pexels.com, special thank you to:
  @JillWellington
  @TaryElliott
@@ -296,7 +296,6 @@ For an overview of tests performed please see
  @BernyceHollingworth
  @CharlotteMay
 
-
 ### Known unsolved bugs
 
 - App looks strange on live site
@@ -304,7 +303,7 @@ For an overview of tests performed please see
 
 ### Credits & Inspiration
 
-Sites and code used for inspiration, trouble shooting, set up and tests for 
+Sites and code used for inspiration, trouble shooting, set up and tests for
 this project:
 
 - <href="https://www.w3schools.com/python/default.asp">W3School Pyhton Tutorial</a>
