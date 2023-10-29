@@ -217,9 +217,9 @@ body> .message-container {
 .footer {
     position: absolute;
     margin-top: auto;
-    background: rgb(186, 184, 184);
+    background: #e0e0cf;
     height: 100px;
-    width: max-content;
+    width: 100%;
     bottom: 0;
     text-align: center;
     
