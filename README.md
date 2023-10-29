@@ -37,6 +37,8 @@
   - [Technology](#technology)
     - [Frameworks, Libraries \& Programs Used](#frameworks-libraries--programs-used)
     - [Installed packages](#installed-packages)
+  - [Facebook](#facebook)
+  - [SEO](#seo)
   - [Testing](#testing)
     - [Deployment](#deployment)
       - [Deployment to heroku](#deployment-to-heroku)
@@ -255,6 +257,15 @@ Throughout the process of building the website, I have tried to think of accessi
 - pytz                2023.3.post1
 - requests-oauthlib   1.3.1
 - sqlparse            0.4.4
+
+## Facebook
+- <href="https://res.cloudinary.com/dbjnqkn07/image/upload/v1698570051/PP5/FB-1_qp2lgs.png">
+  Facebook Business Page</a>
+- <href="https://res.cloudinary.com/dbjnqkn07/image/upload/v1698570067/PP5/FB-2_mnxcsy.png">
+  Facebook Post</a>
+
+## SEO
+- I used WordTracker to find meta keywords and I used the result as help. 
 
 ## Testing
 

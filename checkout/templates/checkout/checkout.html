@@ -78,12 +78,16 @@
                 <div class="col-3">
                     <p class="my-0">${{ total | floatformat:2 }}</p>
                     <p class="my-0">${{ delivery | floatformat:2 }}</p>
-                    <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
+                    <p class="my-0">
+                        <strong>${{ grand_total | floatformat:2 }}</strong>
+                    </p>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-lg-6">
-                <p class="text_muted">Fill in the form to complete your phurchase</p>
+                <p class="text_muted">
+                    Fill in the form to complete your phurchase
+                </p>
                 <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
                     <fieldset class="rounded px-3 mb-5">
