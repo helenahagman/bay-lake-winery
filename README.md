@@ -304,7 +304,8 @@ For an overview of tests performed please see
 
 ### Credits & Inspiration
 
-Sites and code used for inspiration, set up and tests on this project:
+Sites and code used for inspiration, trouble shooting, set up and tests for 
+this project:
 
 - <href="https://www.w3schools.com/python/default.asp">W3School Pyhton Tutorial</a>
 - <href="https://www.python.org/about/help/">Pyhton.org</a>
@@ -314,6 +315,6 @@ Sites and code used for inspiration, set up and tests on this project:
 - <href="https://app.slack.com">Slack community</a>
 - <href="https://realpython.com/python-debug-idle/">Real Python</a>
 - <href="https://studentrobotics.org/docs/troubleshooting/python">Student Robotics</a>
-- <href=""></a>
+- <href="https://www.freecodecamp.org">Free Codecamp</a>
 - <href=""></a>
 - <href=""></a>
