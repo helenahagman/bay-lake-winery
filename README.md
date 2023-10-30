@@ -1,10 +1,10 @@
 # Bay Lake Winery
 
-![AmIResponsive](/add link/orImg.jpg)
+![AmIResponsive](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698654566/PP5/AmIResponsive_i6lwqn.jpg)
 
-![View the Bay Lake Winrey Project on Github Pages](//github.com/helenahagman/bay-lake-winery)
+[View the Bay Lake Winery Project on Github Pages](//github.com/helenahagman/bay-lake-winery)
 
-![Live site](https://bay-lake-winery-4b9e6ad86e5e.herokuapp.com/)
+[Live site](https://bay-lake-winery-4b9e6ad86e5e.herokuapp.com/)
 
 ## CONTENTS
 
@@ -39,12 +39,26 @@
     - [Installed packages](#installed-packages)
   - [Facebook](#facebook)
   - [SEO](#seo)
-  - [Testing](#testing)
+- [Topics \& possible keywords](#topics--possible-keywords)
+  - [Marketing Strategy](#marketing-strategy)
     - [Deployment](#deployment)
       - [Deployment to heroku](#deployment-to-heroku)
       - [Credits](#credits)
     - [Known unsolved bugs](#known-unsolved-bugs)
     - [Credits \& Inspiration](#credits--inspiration)
+  - [Other](#other)
+  - [TESTING](#testing)
+  - [Contents](#contents-1)
+  - [Validators](#validators)
+  - [User Story Testing](#user-story-testing)
+  - [Feature Testing](#feature-testing)
+    - [Home page](#home-page)
+    - [Product Page](#product-page)
+    - [About Page](#about-page)
+    - [Shopping Cart](#shopping-cart)
+  - [BUGS](#bugs)
+
+
 
 ## Why this project
 
@@ -174,7 +188,9 @@ problem on the site
 ### Link to KANBAN Board with User Stories on Trello
 
 I activated the feature for colorblind that enhances the colors chosen with dots
-[Trello KANBAN Board](https://trello.com/b/Vkxp5qMA/kanban-board-pp5-bay-lake-winery)
+[Trello KANBAN Board](https://trello.com/b/Vkxp5qMA/kanban-board-pp5-bay-lake-winery).
+
+![Colorblind example](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698654799/PP5/colorblind_y5oq7v.jpg)
 
 ## Design
 
@@ -190,6 +206,7 @@ Wireframes were created using Miro and were created for mobile, tablet, and desk
 I used them as a basis of the pages but using the agile approach the final project 
 is not looking the exact same way-
 [Miro Wire Frames](https://miro.com/app/board/uXjVMklWzgE=/)
+![Wire frames](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698655768/PP5/wireframes_miro_ldtcfa.jpg)
 
 ### Features
 
@@ -226,7 +243,8 @@ Throughout the process of building the website, I have tried to think of accessi
 - Ensure sufficient color contrasts
 - Use images that fit the purpose
 - Add hover functionality on menu items and buttons
-- Use icons where possible (ex. shopping cart)
+- Use icons where possible 
+  ![Icons](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698656006/PP5/icons_ncjj1d.jpg)
 - Maintain the same layout on all pages
 
 ## Technology
@@ -245,7 +263,7 @@ Throughout the process of building the website, I have tried to think of accessi
 - EmailJS - contact
 - Trello - KANBAN Board
 - Miro - wireframes
-- Cloudinary - images
+- Cloudinary - image storage
 
 ### Installed packages
 
@@ -264,23 +282,28 @@ Throughout the process of building the website, I have tried to think of accessi
 - sqlparse            0.4.4
 
 ## Facebook
-- <href="https://res.cloudinary.com/dbjnqkn07/image/upload/v1698570051/PP5/FB-1_qp2lgs.png">
-  Facebook Business Page</a>
-- <href="https://res.cloudinary.com/dbjnqkn07/image/upload/v1698570067/PP5/FB-2_mnxcsy.png">
-  Facebook Post</a>
+- Facebook Business Page 
+![Facebook](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698570051/PP5/FB-1_qp2lgs.png)
+- Facebook first post  
+![First post](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698570067/PP5/FB-2_mnxcsy.png)
 
 ## SEO
 - I used WordTracker to find meta keywords and I used the result as help. 
+![Wordtracker](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698656524/PP5/wordtracker_i8ndad.jpg)
 
-## Testing
+# Topics & possible keywords
+- Wineyard - wine lovers, wine, wine shop, organic, grapewine
+- Wine products - wine, bottles, wine-making kit
+- Family farm - high quality, winemaking, wine tours, wine tasting
 
-Testing features, accessibility, links, responsiveness have been done throughout
-the project and after every step of the way tests have been performed to make
-sure that the new inserts was working as expected and corrected thereafter.
-For an overview of tests performed please see
-<href="/bay-lake-winery/TESTING.md">TESTING.md
+## Marketing Strategy
+- I think that the best marketing strategy for this project would be to be active on social media such as Facebook, Instagram and Snapchat.
+- Set up a google ads account with google analytics to really get the knowledge of what customers want and search for.
+- Possibly ads in local newspapers
+- It would be very important for regular and high quality posts on social media and work more on the meta tags for the site to drive trafic even more.
 
 ### Deployment
+For deployment I followed the steps in the walkthrough.
 
 #### Deployment to heroku
 
@@ -322,14 +345,76 @@ For an overview of tests performed please see
 Sites and code used for inspiration, trouble shooting, set up and tests for
 this project:
 
-- <href="https://www.w3schools.com/python/default.asp">W3School Pyhton Tutorial</a>
-- <href="https://www.python.org/about/help/">Pyhton.org</a>
-- <href="https://mdbootstrap.com/snippets/standard/mdbootstrap/2515556">Bootstrap</a>
-- <href="https://www.emailjs.com/">EmailJS</a>
-- <href="https://www.digitalocean.com">DigitalOcean</a>
-- <href="https://app.slack.com">Slack community</a>
-- <href="https://realpython.com/python-debug-idle/">Real Python</a>
-- <href="https://studentrobotics.org/docs/troubleshooting/python">Student Robotics</a>
-- <href="https://www.freecodecamp.org">Free Codecamp</a>
-- <href=""></a>
-- <href=""></a>
+- [W3Schools Pyhton Tutorial](https://www.w3schools.com/python/default.asp)
+- [Python.org](https://www.python.org/about/help/)
+- [Bootrtrap](https://mdbootstrap.com/snippets/standard/mdbootstrap/2515556)
+- [DigitalOcean](https://www.digitalocean.com)
+- [Slack Community](https://app.slack.com)
+- [Real Pyhton](https://realpython.com/python-debug-idle/)
+- [Student Robotics](https://studentrobotics.org/docs/troubleshooting/python)
+- [Free Codecamp](https://www.freecodecamp.org)
+- [Mailchimp](https://login.mailchimp.com/?logout=1)
+
+
+
+## Other
+
+- For my privacy policy 
+![Free Privacy Policy](https://app.freeprivacypolicy.com/download/3e8de0c8-0fe7-4c30-98ee-02853f3e787d)
+- I used [Mailchimp](https://login.mailchimp.com/?logout=1) for the newsletter signup form
+- For the Site Map I used [XML-Sitemaps](https://www.xml-sitemaps.com/details-bay-lake-winery-4b9e6ad86e5e.herokuapp.com-eedee477b.html)
+- For icons I used [Favicon](https://favicon.io/)
+
+## TESTING
+
+Testing features, accessibility, links, responsiveness have been done throughout
+the project and after every step of the way tests have been performed to make
+sure that the new inserts was working as expected and corrected thereafter.
+
+## Contents
+
+- [Validators](#validators)
+- [User story testing](#user-story-testing)
+- [Feature Testing](#feature-testing)
+  - [Home page](#home-page)
+  - [Products page](#product-page)
+  - [About page](#about-page)
+  - [Shopping Cart](#shopbag-page)
+- [Bugs](#bugs)
+
+## Validators
+
+- Html test in the [W3 Validator](https://validator.w3.org/) warnings for Django Template Syntax nature
+![W3 Validator](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698657778/PP5/w3c_y4oypq.jpg)
+
+
+## User Story Testing
+
+- register as a new user - was working and then stopped -
+- As a user I want to be able to log in as a current user
+- As a user I want to be able to log out as a logged-in user
+- As a user I want to have the possibility to choose a custom username and password
+- As the administrator I want to display easy navigation on the site
+- As the owner I want to give the user the possibility to phurchase my products
+- As the user I want to be able to get in contact if I have queries
+- As the owner I want to be able to send customized messages to registered
+  customers
+- As the owner I want to be able to manage the customer database
+- As the user I want to be abel to search for products on the site
+- As the user I want to be able to filter categories and products on the site
+
+## Feature Testing
+
+### Home page
+
+### Product Page
+
+### About Page
+
+### Shopping Cart
+
+
+## BUGS
+
+
+
