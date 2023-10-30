@@ -56,7 +56,7 @@
     - [Product Page](#product-page)
     - [About Page](#about-page)
     - [Shopping Cart](#shopping-cart)
-  - [BUGS](#bugs)
+  - [BUGS \& Future fixes](#bugs--future-fixes)
 
 
 
@@ -386,6 +386,8 @@ sure that the new inserts was working as expected and corrected thereafter.
 
 - Html test in the [W3 Validator](https://validator.w3.org/) warnings for Django Template Syntax nature
 ![W3 Validator](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698657778/PP5/w3c_y4oypq.jpg)
+- CSS validator [W3C validation](https://jigsaw.w3.org/css-validator/validator)
+![Css validation](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698664722/PP5/cssvalidation_bvrtmv.jpg)
 
 
 ## User Story Testing
@@ -403,6 +405,14 @@ sure that the new inserts was working as expected and corrected thereafter.
 - filter categories and products on the site - working as expected - Pass
 
 ## Feature Testing
+- search bar - working as expected - Pass
+- Login - working as expected - Pass
+- Register - working as expected - Pass
+- Log out - working as expected - Pass
+- newsletter signup - working as expected - Pass
+- sorting feature - working as expected - Pass
+- profile update - working as expected - Pass
+
 
 ### Home page
 All links on the home/Index page is working as expected - links in navbar, search, about, my account, shopping bag, shop now button, facebook  link, sign up form, privacy policy
@@ -414,7 +424,11 @@ Contact form is not working as expected - error when submitting the form ![Conta
 ### Shopping Cart
 All links on the page is working as expected - however the shoppingbag need some improvement for the error in the confirmation when a phurchase has been made ![Delivery error](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698661466/PP5/confirmation_g6yrtf.jpg)
 
-## BUGS
+## BUGS & Future fixes
 
-
-
+- Contact form on about page - not working - needs more implementation
+- Positioniong of images on product page needs some improvement as they are not centered
+- Rating function is not working - will be set to future implementations
+- Plus and minus buttons when in the shopping cart is not working properly
+- The update and remove buttons in the checkout form is not working
+- The delivery and therefor also the total is not being updated properly in the order confirmation
