@@ -1,26 +1,21 @@
-from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Submit
-from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Submit
 from django import forms
-from .models import ContactForm
+from .models import Contact
 
 
-class ContactFormModelForm(forms.ModelForm):
+class ContactForm(forms.ModelForm):
+
+    name = forms.CharField()
+    message = forms.CharField(
+        widget=forms.Textarea(attrs={"rows": 5, "cols": 20}))
+
     class Meta:
-        model = ContactForm
-        fields = ['name', 'email', 'message', 'subscribe_to_newsletter']
-        widgets = {
-            'message': forms.Textarea(attrs={'rows': 8}),
-        }
-
-    def __init__(self, *args, **kwargs):
-        super(ContactFormModelForm, self).__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.layout = Layout(
-            'name',
-            'email',
-            'message',
-            'subscripe_to_newsletter',
-            Submit('submit', 'Submit', css_class='btn btn-primary')
+        model = Contact
+        fields = (
+            "name",
+            "email",
+            "message",
         )
+
+    def clean(self):
+        cleaned_data = super().clean()
+        return cleaned_data

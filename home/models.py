@@ -1,11 +1,13 @@
 from django.db import models
 
 
-class ContactForm(models.Model):
-    name = models.CharField(max_length=100)
-    email = models.EmailField(max_length=150)
-    message = models.TextField()
-    subscribe_to_newsletter = models.BooleanField(default=False)
+class Contact(models.Model):
+    email = models.EmailField(blank=False)
+    name = models.CharField(max_length=50, blank=False)
+    message = models.TextField(blank=False)
 
     def __str__(self):
-        return self.name
+        return f"{self.name}, {self.email}"
+
+    class Meta:
+        verbose_name = "Contact Form Submission"

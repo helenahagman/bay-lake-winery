@@ -4,7 +4,7 @@
 
 ![View the Bay Lake Winrey Project on Github Pages](//github.com/helenahagman/bay-lake-winery)
 
-![Live site](//xxxxxxxxx.herokuapp.com/)
+![Live site](https://bay-lake-winery-4b9e6ad86e5e.herokuapp.com/)
 
 ## CONTENTS
 
@@ -62,7 +62,7 @@ I built this page for my 5th project in the Code Institute course for the Diplom
 
 #### Demographics
 
-- Persons in the age over 18 years (legal limit in Sweden)
+- Persons in the age over 18 years (legal limit in Sweden for alcohol)
 
 #### Psychographics
 
@@ -173,18 +173,23 @@ problem on the site
 
 ### Link to KANBAN Board with User Stories on Trello
 
-[Trello KANBAN Board](https://trello.com/b/yxkUuMp3/kanban-board)
+I activated the feature for colorblind that enhances the colors chosen with dots
+[Trello KANBAN Board](https://trello.com/b/Vkxp5qMA/kanban-board-pp5-bay-lake-winery)
 
 ## Design
 
 ### Imagery
 
-The images for the site are a mix of private photos and downloaded images from [Pexels Free Images](https://www.pexels.com/sv-se/). I used Cloudinary for storage.
+The images for the site are a mix of private photos and downloaded images from 
+[Pexels Free Images](https://www.pexels.com/sv-se/). 
+I used [Cloudinary](https://cloudinary.com/) for storage.
 
 ### Wire Frames
 
 Wireframes were created using Miro and were created for mobile, tablet, and desktop views.
-[Miro Wire Frames](https://miro.com/app/board/uXjVM94tSQs=/?share_link_id=555048984575)
+I used them as a basis of the pages but using the agile approach the final project 
+is not looking the exact same way-
+[Miro Wire Frames](https://miro.com/app/board/uXjVMklWzgE=/)
 
 ### Features
 
