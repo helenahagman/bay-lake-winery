@@ -57,6 +57,7 @@
     - [About Page](#about-page)
     - [Shopping Cart](#shopping-cart)
   - [BUGS \& Future fixes](#bugs--future-fixes)
+- [Future features](#future-features)
 
 
 
@@ -432,3 +433,7 @@ All links on the page is working as expected - however the shoppingbag need some
 - Plus and minus buttons when in the shopping cart is not working properly
 - The update and remove buttons in the checkout form is not working
 - The delivery and therefor also the total is not being updated properly in the order confirmation
+
+# Future features
+
+![Future implementations](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698666166/PP5/future_cvjv5b.jpg)
