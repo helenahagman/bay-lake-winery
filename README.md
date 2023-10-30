@@ -390,29 +390,29 @@ sure that the new inserts was working as expected and corrected thereafter.
 
 ## User Story Testing
 
-- register as a new user - was working and then stopped -
-- As a user I want to be able to log in as a current user
-- As a user I want to be able to log out as a logged-in user
-- As a user I want to have the possibility to choose a custom username and password
-- As the administrator I want to display easy navigation on the site
-- As the owner I want to give the user the possibility to phurchase my products
-- As the user I want to be able to get in contact if I have queries
-- As the owner I want to be able to send customized messages to registered
-  customers
-- As the owner I want to be able to manage the customer database
-- As the user I want to be abel to search for products on the site
-- As the user I want to be able to filter categories and products on the site
+- register as a new user - working as expected with confirmation email sent to the user ![confirmation email](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698661455/PP5/confirmmail_szo8ac.jpg) then shows on the screen as expected - Pass
+- log in as a current user - working as expected - Pass
+- log out as a logged-in user - working as expected - Pass
+- choose a custom username and password - working as expected - Pass
+- display easy navigation on the site - working as expected - could add the link to home/about on more pages - Pass
+- phurchase - working but needs improvement, the delivery cost is not displaying in the confirmation letter  - Error/Improvement needed
+- get in contact - no contact form is throwing a form submission error - Error/Improvement needed
+- customized messages to registered users - can be done via mailchimp after user has registerd for newsletter - Pass/not fully implemented
+- manage the customer database - working via the admin panel - Improvement to add to the website so the admin dont have do go in via the admin panel and just log in.
+- search for products on the site - wroking as expected - Pass
+- filter categories and products on the site - working as expected - Pass
 
 ## Feature Testing
 
 ### Home page
-
+All links on the home/Index page is working as expected - links in navbar, search, about, my account, shopping bag, shop now button, facebook  link, sign up form, privacy policy
 ### Product Page
-
+All links on the product page is working as expected - links in navbar, footer links, sort by, tags, images
 ### About Page
-
+The following links on the about page is working as expected - links in navbar, footer links, shop now button.
+Contact form is not working as expected - error when submitting the form ![Contact form](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698662751/PP5/formfail_v7jnnr.jpg)
 ### Shopping Cart
-
+All links on the page is working as expected - however the shoppingbag need some improvement for the error in the confirmation when a phurchase has been made ![Delivery error](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698661466/PP5/confirmation_g6yrtf.jpg)
 
 ## BUGS
 
