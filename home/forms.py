@@ -18,4 +18,6 @@ class ContactForm(forms.ModelForm):
 
     def clean(self):
         cleaned_data = super().clean()
+        name = cleaned_data.get("name")
+        message = cleaned_data.get("message")
         return cleaned_data

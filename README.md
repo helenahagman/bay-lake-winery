@@ -62,8 +62,6 @@
   - [BUGS \& Future fixes](#bugs--future-fixes)
 - [Future features](#future-features)
 
-
-
 ## Why this project
 
 I built this page for my 5th project in the Code Institute course for the Diploma in Full Stack Software Development. I wanted to build a well designed website where the functionality for online phurchases of wine from the made-up family vineyard would be key. The project is base on the key elements of the course and the requirements for PP5. The idea of a small family owned vineyard comes from the one and only grapevine in my own backyard that produces large quantities of grapes each year. We do make our own wine and the whole family is involved, from picking the grapes to the finished product.
@@ -160,7 +158,6 @@ OrderLineItem Model
 | ForeignKey | product          | ProductModel    |
 |            | quantity         | IntegerField    |
 |            | lineitem_total   | DecimalField[6] |
-
 
 ## Strategy
 
@@ -294,14 +291,14 @@ I activated the feature for colorblind that enhances the colors chosen with dots
 
 ### Imagery
 
-The images for the site are a mix of private photos and downloaded images from 
-[Pexels Free Images](https://www.pexels.com/sv-se/). 
+The images for the site are a mix of private photos and downloaded images from
+[Pexels Free Images](https://www.pexels.com/sv-se/).
 I used [Cloudinary](https://cloudinary.com/) for storage.
 
 ### Wire Frames
 
 Wireframes were created using Miro and were created for mobile, tablet, and desktop views.
-I used them as a basis of the pages but using the agile approach the final project 
+I used them as a basis of the pages but using the agile approach the final project
 is not looking the exact same way-
 [Miro Wire Frames](https://miro.com/app/board/uXjVMklWzgE=/)
 ![Wire frames](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698655768/PP5/wireframes_miro_ldtcfa.jpg)
@@ -341,7 +338,7 @@ Throughout the process of building the website, I have tried to think of accessi
 - Ensure sufficient color contrasts
 - Use images that fit the purpose
 - Add hover functionality on menu items and buttons
-- Use icons where possible 
+- Use icons where possible
   ![Icons](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698656006/PP5/icons_ncjj1d.jpg)
 - Maintain the same layout on all pages
 
@@ -380,27 +377,32 @@ Throughout the process of building the website, I have tried to think of accessi
 - sqlparse            0.4.4
 
 ## Facebook
-- Facebook Business Page 
+
+- Facebook Business Page
 ![Facebook](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698570051/PP5/FB-1_qp2lgs.png)
-- Facebook first post  
+- Facebook first post
 ![First post](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698570067/PP5/FB-2_mnxcsy.png)
 
 ## SEO
-- I used WordTracker to find meta keywords and I used the result as help. 
+
+- I used WordTracker to find meta keywords and I used the result as help.
 ![Wordtracker](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698656524/PP5/wordtracker_i8ndad.jpg)
 
 # Topics & possible keywords
+
 - Wineyard - wine lovers, wine, wine shop, organic, grapewine
 - Wine products - wine, bottles, wine-making kit
 - Family farm - high quality, winemaking, wine tours, wine tasting
 
 ## Marketing Strategy
+
 - I think that the best marketing strategy for this project would be to be active on social media such as Facebook, Instagram and Snapchat.
 - Set up a google ads account with google analytics to really get the knowledge of what customers want and search for.
 - Possibly ads in local newspapers
 - It would be very important for regular and high quality posts on social media and work more on the meta tags for the site to drive trafic even more.
 
 ### Deployment
+
 For deployment I followed the steps in the walkthrough.
 
 #### Deployment to heroku
@@ -453,11 +455,9 @@ this project:
 - [Free Codecamp](https://www.freecodecamp.org)
 - [Mailchimp](https://login.mailchimp.com/?logout=1)
 
-
-
 ## Other
 
-- For my privacy policy 
+- For my privacy policy
 ![Free Privacy Policy](https://app.freeprivacypolicy.com/download/3e8de0c8-0fe7-4c30-98ee-02853f3e787d)
 - I used [Mailchimp](https://login.mailchimp.com/?logout=1) for the newsletter signup form
 - For the Site Map I used [XML-Sitemaps](https://www.xml-sitemaps.com/details-bay-lake-winery-4b9e6ad86e5e.herokuapp.com-eedee477b.html)
@@ -487,7 +487,6 @@ sure that the new inserts was working as expected and corrected thereafter.
 - CSS validator [W3C validation](https://jigsaw.w3.org/css-validator/validator)
 ![Css validation](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698664722/PP5/cssvalidation_bvrtmv.jpg)
 
-
 ## User Story Testing
 
 - register as a new user - working as expected with confirmation email sent to the user ![confirmation email](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698661455/PP5/confirmmail_szo8ac.jpg) then shows on the screen as expected - Pass
@@ -503,6 +502,7 @@ sure that the new inserts was working as expected and corrected thereafter.
 - filter categories and products on the site - working as expected - Pass
 
 ## Feature Testing
+
 - search bar - working as expected - Pass
 - Login - working as expected - Pass
 - Register - working as expected - Pass
@@ -511,15 +511,21 @@ sure that the new inserts was working as expected and corrected thereafter.
 - sorting feature - working as expected - Pass
 - profile update - working as expected - Pass
 
-
 ### Home page
+
 All links on the home/Index page is working as expected - links in navbar, search, about, my account, shopping bag, shop now button, facebook  link, sign up form, privacy policy
+
 ### Product Page
+
 All links on the product page is working as expected - links in navbar, footer links, sort by, tags, images
+
 ### About Page
+
 The following links on the about page is working as expected - links in navbar, footer links, shop now button.
 Contact form is not working as expected - error when submitting the form ![Contact form](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698662751/PP5/formfail_v7jnnr.jpg)
+
 ### Shopping Cart
+
 All links on the page is working as expected - however the shoppingbag need some improvement for the error in the confirmation when a phurchase has been made ![Delivery error](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698661466/PP5/confirmation_g6yrtf.jpg)
 
 ## BUGS & Future fixes
