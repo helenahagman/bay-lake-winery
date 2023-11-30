@@ -11,6 +11,9 @@
 - [Bay Lake Winery](#bay-lake-winery)
   - [CONTENTS](#contents)
   - [Why this project](#why-this-project)
+  - [E-Commerce Business Model - B2C](#e-commerce-business-model---b2c)
+- [Possible features](#possible-features)
+- [Database tables](#database-tables)
   - [Strategy](#strategy)
     - [Target audiences that the website will focus on](#target-audiences-that-the-website-will-focus-on)
       - [Roles](#roles)
@@ -64,6 +67,100 @@
 ## Why this project
 
 I built this page for my 5th project in the Code Institute course for the Diploma in Full Stack Software Development. I wanted to build a well designed website where the functionality for online phurchases of wine from the made-up family vineyard would be key. The project is base on the key elements of the course and the requirements for PP5. The idea of a small family owned vineyard comes from the one and only grapevine in my own backyard that produces large quantities of grapes each year. We do make our own wine and the whole family is involved, from picking the grapes to the finished product.
+
+## E-Commerce Business Model - B2C
+
+# Possible features
+
+- Log in and log out for both user and admin
+- Authentication system  
+- Search function for customers looking for a specific product
+- Filter function for customers looking for a product type
+- Product display with images and descriptions
+- Payment function for phurchase possibility
+- Shopping cart for the user to add multiple products
+- Contact possibilities
+- News letter sign up
+
+# Database tables
+
+User Profile Model
+
+| Key        | Name                 | Type          |
+| ---------- | -------------------- | ------------- |
+| PrimaryKey | user_profile_id      | AutoField     |
+| ForeignKey | user                 | User model    |
+|            | default_phone_number | CharField[20] |
+|            | default_address1     | CharField[80] |
+|            | default_address2     | CharField[80] |
+|            | default_town_city    | CharField[40] |
+|            | default_county       | CharField[80] |
+|            | default_postcode     | CharField[20] |
+|            | default_country      | CountryField  |
+
+Category Model
+
+| Key        | Name          | Type           |
+| ---------- | ------------- | -------------- |
+| PrimaryKey | category_id   | AutoField      |  
+|            | name          | CharField[254] |
+|            | friendly_name | CharField[254] |
+
+Product Model
+
+| Key        | Name         | Type              |
+| ---------- | -----------  | --------------    |
+| PrimaryKey | product_id   | AutoField         |
+| ForeignKey | category     | CategoryModel     |
+|            | sku          | CharField[254]    |
+|            | name         | CharField[254]    |
+|            | description  | TextField         |
+|            | price        | DecimalField[6]   |
+|            | rating       | DecimalField[6]   |
+|            | image        | CloudinaryField   |
+
+Contact Model
+
+| Key        | Name        | Type           |
+| ---------- | ----------- | -------------- |
+| PrimaryKey | contact_id  | AutoField      |
+|	     | email       | EmailField     |
+|            | name        | CharField[50]  |
+|            | message     | TextField      |
+
+Order Model
+
+| Key        | Name            | Type               |
+| ---------- | --------------- | ------------------ |
+| PrimaryKey | order_id        | AutoField          |
+|            | order_number    | CharField[32]      |
+| ForeignKey | user_profile    | UserProfileModel   |
+|            | full_name       | CharField[50]      |
+|            | email           | EmailField[254]    |
+|            | phone_number    | CharField[20]      |
+|            | country         | CountryField       |
+|            | postcode        | CharField[20]      |
+|            | town_or_city    | CharField[40]      |
+|            | street_address1 | CharField[80]      |
+|            | street_address2 | CharField[80]      |
+|            | county          | CharField[80]      |
+|            | date            | DateTimeField      |
+|            | delivery_cost   | DecimalField[6]    |
+|            | order_total     | DecimalField[10]   |
+|            | grand_total     | DecimalField[10]   |
+|            | original_shopbag| TextField          |
+|            | stripe_pid      | CharField[254]     |
+
+OrderLineItem Model
+
+| Key        | Name             | Type            |
+| ---------- | ---------------- | --------------- |
+| PrimaryKey | OrderLineItem_id | AutoField       |
+| ForeignKey | order            | OrderModel      |
+| ForeignKey | product          | ProductModel    |
+|            | quantity         | IntegerField    |
+|            | lineitem_total   | DecimalField[6] |
+
 
 ## Strategy
 
