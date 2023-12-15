@@ -1,8 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.conf import settings
-from .forms import ContactForm
 from django.contrib import messages
 from django.http import JsonResponse
+from .forms import ContactForm
 
 
 def index_view(request):
@@ -22,7 +22,10 @@ def contact_us_view(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save()
+            contact_instance = form.save(commit=False)
+
+            contact_instance.save()
+
             messages.success(
                 request,
                 "Your message has been sent. We will contact you shortly.",

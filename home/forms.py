@@ -4,20 +4,14 @@ from .models import Contact
 
 class ContactForm(forms.ModelForm):
 
-    name = forms.CharField()
+    class Meta:
+        model = Contact
+        fields = ['name', 'email', 'message']
+
+    name = forms.CharField(required=True)
+    email = forms.EmailField(required=True)
     message = forms.CharField(
         widget=forms.Textarea(attrs={"rows": 5, "cols": 20}))
 
-    class Meta:
-        model = Contact
-        fields = (
-            "name",
-            "email",
-            "message",
-        )
-
-    def clean(self):
-        cleaned_data = super().clean()
-        name = cleaned_data.get("name")
-        message = cleaned_data.get("message")
-        return cleaned_data
+    def __init__(self, *args, **kwargs):
+        super(ContactForm, self).__init__(*args, **kwargs)

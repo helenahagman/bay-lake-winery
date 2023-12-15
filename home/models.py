@@ -13,3 +13,4 @@ class Contact(models.Model):
 
     class Meta:
         verbose_name = "Contact Form Submission"
+

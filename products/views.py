@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, Category
+from .models import Product, Category, Wishlist
 from .forms import ProductForm
 
 import cloudinary.uploader
@@ -172,3 +172,30 @@ def delete_product(request, product_id):
 def render_quantity_input_script(request):
     """ A view to render the quantity input script template """
     return render(request, 'products/includes/quantity_input_script.html')
+
+
+@login_required
+def wishlist(request):
+    user_wishlist, created = Wishlist.objects.get_or_create(user=request.user)
+
+    return render(request, 'wishlist.html', {'wishlist': user_wishlist})
+
+
+@login_required
+def add_to_wishlist(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    user_wishlist, created = Wishlist.objects.get_or_create(user=request.user)
+    user_wishlist.products.add(product)
+    user_wishlist.save()
+
+    return redirect('wishlist')
+
+
+@login_required
+def remove_from_wishlist(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    user_wishlist = Wishlist.objects.get(user=request.user)
+    user_wishlist.products.remove(product)
+    user_wishlist.save()
+
+    return redirect('wishlist')
