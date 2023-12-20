@@ -139,6 +139,29 @@
                                                     <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                                                 </small>
                                             {% endif %}
+                                            <br>
+                                            <div class="d-flex align-items-center">
+                                                <a class="wishlist-btn" data-product_id="{{ product.id }}" 
+                                                    data-action="{% if product in user_wishlist.products.all %}remove
+                                                    {% else %}add{% endif %}">
+                                                    {% if product in user_wishlist.products.all %}
+                                                        <i class="fas fa-heart"></i>
+                                                    {% else %}
+                                                        <i class="far fa-heart"></i>
+                                                    {% endif %}
+                                                </a>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <button class="add-to-bag-btn"
+                                                        data-product_id="{{ product.id }}" 
+                                                        data-action="{% if product in user_shopbag.products.all %}remove{% else %}add{% endif %}">
+                                                    {% if product in user_shopbag.products.all %}
+                                                        Remove from Bag
+                                                    {% else %}
+                                                        Add to Bag
+                                                    {% endif %}
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
