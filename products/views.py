@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.http import JsonResponse
 from .models import Product, Category, Wishlist
 from .forms import ProductForm
 
@@ -87,9 +88,16 @@ def product_detail(request, product_id):
     try:
         product = get_object_or_404(Product, pk=product_id)
         image_url = product.cloudinary_image_url or product.image.url
+        
+        # Calculate the number of filled stars based on the product's rating
+        filled_stars = range(int(product.rating))
+        empty_stars = range(5 - int(product.rating))
+
         context = {
             'product': product,
             'image_url': image_url,
+            'filled_stars': filled_stars,
+            'empty_stars': empty_stars,
         }
 
         return render(request, 'products/product_detail.html', context)
@@ -175,27 +183,46 @@ def render_quantity_input_script(request):
 
 
 @login_required
+def toggle_wishlist(request):
+    if request.method == 'POST' and request.is_ajax():
+        product_id = request.POST.get('product_id')
+        product = Product.objects.get(id=product_id)
+        product.is_in_wishlist = not product.is_in_wishlist
+        product.save()
+
+        return JsonResponse({'is_in_wishlist': product.is_in_wishlist})
+
+    return JsonResponse({'error': 'Invalid request'})
+
+
 def wishlist(request):
+    """ A view to display the user's wishlist """
     user_wishlist, created = Wishlist.objects.get_or_create(user=request.user)
+    wishlist_products = user_wishlist.product.all()
 
-    return render(request, 'wishlist.html', {'wishlist': user_wishlist})
+    context = {
+        'wishlist': user_wishlist,
+        'wishlist_products': wishlist_products,
+    }
+
+    return render(request, 'products/wishlist.html', context)
 
 
-@login_required
 def add_to_wishlist(request, product_id):
-    product = get_object_or_404(Product, id=product_id)
+    """ A view to add a product to the wishlist """
+    product = get_object_or_404(Product, pk=product_id)
     user_wishlist, created = Wishlist.objects.get_or_create(user=request.user)
-    user_wishlist.products.add(product)
-    user_wishlist.save()
+    user_wishlist.product.add(product)
 
-    return redirect('wishlist')
+    messages.success(request, 'Product added to wishlist')
+    return redirect(reverse('product_detail', args=[product.id]))
 
 
-@login_required
 def remove_from_wishlist(request, product_id):
-    product = get_object_or_404(Product, id=product_id)
-    user_wishlist = Wishlist.objects.get(user=request.user)
-    user_wishlist.products.remove(product)
-    user_wishlist.save()
+    """ A view to remove a product from the wishlist """
+    product = get_object_or_404(Product, pk=product_id)
+    user_wishlist, created = Wishlist.objects.get_or_create(user=request.user)
+    user_wishlist.product.remove(product)
 
-    return redirect('wishlist')
+    messages.success(request, 'Product removed from wishlist')
+    return redirect(reverse('wishlist'))

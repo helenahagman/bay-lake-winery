@@ -43,7 +43,7 @@ class Product(models.Model):
 
 class Wishlist(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    products = models.ManyToManyField('Product')
+    product = models.ManyToManyField('Product')
 
     def __str__(self):
         return f'Wishlist for {self.user.username}'

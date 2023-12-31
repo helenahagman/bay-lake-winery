@@ -122,7 +122,7 @@ Contact Model
 | Key        | Name        | Type           |
 | ---------- | ----------- | -------------- |
 | PrimaryKey | contact_id  | AutoField      |
-|	     | email       | EmailField     |
+|	         | email       | EmailField     |
 |            | name        | CharField[50]  |
 |            | message     | TextField      |
 
@@ -158,6 +158,15 @@ OrderLineItem Model
 | ForeignKey | product          | ProductModel    |
 |            | quantity         | IntegerField    |
 |            | lineitem_total   | DecimalField[6] |
+
+Wishlist Model
+
+| Key        | Name             | Type            |
+| ---------- | ---------------- | --------------- |
+| PrimaryKey | wishlist_id      | AutoField       |
+| ForeignKey | user             | User model      |
+|            | product         | ProductModel    |
+
 
 ## Strategy
 

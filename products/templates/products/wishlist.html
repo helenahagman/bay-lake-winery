@@ -16,7 +16,10 @@
     {% if wishlist.products.all %}
     <ul>
         {% for product in wishlist.products.all %}
-        <li>{{ product.name }} - <a href="{% url 'remove_from_wishlist' product.id %}">Remove</a></li>
+        <li>
+            <span class="heart-icon {% if product.is_in_wishlist %}red{% endif %}" data-product-id="{{ product.id }}"></span>
+            {{ product.name }} - <a href="{% url 'remove_from_wishlist' product.id %}">Remove</a>
+        </li>
         {% endfor %}
     </ul>
     {% else %}
@@ -29,9 +32,27 @@
 {% block postloadjs %}
     {{ block.super }}
     <script type="text/javascript">
-                $('.btt-link').click(function (e) {
-                        window.scrollTo(0, 0);
-                })
+                $(document).ready(function () {
+                    $('.heart-icon').click(function () {
+                        var productId = $(this).data('product-id');
+                        
+                        $.ajax({
+                            type: 'POST',
+                            url: '{% url "toggle_wishlist" %}',
+                            data: {
+                                'product_id': productId,
+                                'csrfmiddlewaretoken': '{{ csrf_token }}'
+                            },
+                            success: function (data) {
+                                if (data.is_in_wishlist) {
+                                   $('.heart-icon[data-product-id=' + productId + ']').addClass('red');
+                                } else {
+                                    $('.heart-icon[data-product-id=' + productId + ']').removeClass('red');
+                                }
+                            }
+                        });
+                    });
+                });
         </script>
 
     <script type="text/javascript">
