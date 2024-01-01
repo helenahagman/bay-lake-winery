@@ -37,6 +37,8 @@ class Product(models.Model):
 
     objects = models.Manager()
 
+    is_in_wishlist = models.BooleanField(default=False)
+
     def __str__(self):
         return self.name
 
@@ -44,6 +46,7 @@ class Product(models.Model):
 class Wishlist(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     product = models.ManyToManyField('Product')
+    objects = models.Manager()
 
     def __str__(self):
         return f'Wishlist for {self.user.username}'

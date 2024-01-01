@@ -32,30 +32,32 @@
 {% block postloadjs %}
     {{ block.super }}
     <script type="text/javascript">
-                $(document).ready(function () {
-                    $('.heart-icon').click(function () {
-                        var productId = $(this).data('product-id');
-                        
-                        $.ajax({
-                            type: 'POST',
-                            url: '{% url "toggle_wishlist" %}',
-                            data: {
-                                'product_id': productId,
-                                'csrfmiddlewaretoken': '{{ csrf_token }}'
-                            },
-                            success: function (data) {
-                                if (data.is_in_wishlist) {
-                                   $('.heart-icon[data-product-id=' + productId + ']')
-                                   .addClass('red');
-                                } else {
-                                    $('.heart-icon[data-product-id=' + productId + ']')
-                                    .removeClass('red');
-                                }
-                            }
-                        });
-                    });
+        $(document).ready(function () {
+            $('.wishlist-btn').click(function () {
+                var productId = $(this).data('product_id');
+
+                $.ajax({
+                    type: 'POST',
+                    url: '{% url "toggle_wishlist" %}',
+                    data: {
+                        'product_id': productId,
+                        'csrfmiddlewaretoken': '{{ csrf_token }}'
+                    },
+                    success: function (data) {
+                        if (data.is_in_wishlist) {
+                            $('.wishlist-btn[data-product_id=' + productId + '] i')
+                                .removeClass('far fa-heart')
+                                .addClass('fas fa-heart');
+                        } else {
+                            $('.wishlist-btn[data-product_id=' + productId + '] i')
+                                .removeClass('fas fa-heart')
+                                .addClass('far fa-heart');
+                        }
+                    }
                 });
-        </script>
+            });
+        });
+    </script>
 
     <script type="text/javascript">
         $('#sort-selector').change(function () {

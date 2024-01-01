@@ -61,7 +61,7 @@ def all_products(request):
             image_url = product.cloudinary_image_url
         elif product.image:
             upload_image = cloudinary.uploader.upload(product.image)
-            image_url = uploaded_image['secure_url']
+            image_url = upload_image['secure_url']
             product.cloudinary_image_url = image_url
             product.save()
         else:
@@ -87,6 +87,7 @@ def product_detail(request, product_id):
     """ A view to return the product details  """
     try:
         product = get_object_or_404(Product, pk=product_id)
+        is_in_wishlist = request.user.is_authenticated and product in request.user.wishlist.product.all()
         image_url = product.cloudinary_image_url or product.image.url
 
         # Calculate the number of filled stars based on the product's rating
@@ -98,6 +99,7 @@ def product_detail(request, product_id):
             'image_url': image_url,
             'filled_stars': filled_stars,
             'empty_stars': empty_stars,
+            'is_in_wishlist': is_in_wishlist,
         }
 
         return render(request, 'products/product_detail.html', context)
@@ -187,9 +189,14 @@ def toggle_wishlist(request):
     if request.method == 'POST' and request.is_ajax():
         product_id = request.POST.get('product_id')
         product = Product.objects.get(id=product_id)
-        product.is_in_wishlist = not product.is_in_wishlist
-        product.save()
-
+        
+        if request.user.is_authenticated:
+            user_wishlist, created = Wishlist.objects.get_or_create(user=request.user)
+            if product in user_wishlist.product.all():
+                user_wishlist.product.remove(product)
+            else:
+                user_wishlist.product.add(product)
+                
         return JsonResponse({'is_in_wishlist': product.is_in_wishlist})
 
     return JsonResponse({'error': 'Invalid request'})

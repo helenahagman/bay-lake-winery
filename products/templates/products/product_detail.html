@@ -59,12 +59,12 @@
             <br>
             <div class="d-flex align-items-center">
                 <a class="wishlist-btn" data-product_id="{{ product.id }}" 
-                    data-action="{% if product in user_wishlist.products.all %}remove
+                    data-action="{% if is_in_wishlist %}remove
                     {% else %}add{% endif %}">
-                    {% if product in user_wishlist.products.all %}
-                        <i class="fas fa-heart"></i> Remove form Wishlist
+                    {% if is_in_wishlist %}
+                        <i class="fas fa-heart"></i>
                     {% else %}
-                        <i class="far fa-heart"></i> Add to Wishlist
+                        <i class="far fa-heart"></i>
                     {% endif %}
                 </a>
             </div>
