@@ -144,6 +144,12 @@ a.category-badge>span.badge:hover {
     cursor: pointer;
 }
 
+/* ----- wishlist heart ----- */
+
+.heart-icon.red {
+    color: red;
+}
+
 /* ----- Bootstrap toasts -----*/
 
 body> .message-container {

@@ -45,9 +45,11 @@
                             },
                             success: function (data) {
                                 if (data.is_in_wishlist) {
-                                   $('.heart-icon[data-product-id=' + productId + ']').addClass('red');
+                                   $('.heart-icon[data-product-id=' + productId + ']')
+                                   .addClass('red');
                                 } else {
-                                    $('.heart-icon[data-product-id=' + productId + ']').removeClass('red');
+                                    $('.heart-icon[data-product-id=' + productId + ']')
+                                    .removeClass('red');
                                 }
                             }
                         });

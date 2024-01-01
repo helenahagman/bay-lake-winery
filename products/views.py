@@ -88,7 +88,7 @@ def product_detail(request, product_id):
     try:
         product = get_object_or_404(Product, pk=product_id)
         image_url = product.cloudinary_image_url or product.image.url
-        
+
         # Calculate the number of filled stars based on the product's rating
         filled_stars = range(int(product.rating))
         empty_stars = range(5 - int(product.rating))
