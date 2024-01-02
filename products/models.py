@@ -45,7 +45,7 @@ class Product(models.Model):
 
 class Wishlist(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    product = models.ManyToManyField('Product')
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     objects = models.Manager()
 
     def __str__(self):

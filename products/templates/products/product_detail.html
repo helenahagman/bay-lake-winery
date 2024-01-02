@@ -52,22 +52,17 @@
                 <small class="text-muted">
                     <i class="fas fa-star mr-1"></i>
                     {{ product.rating }} / 5
+                    <small class="ml-3">
+                        <a class="btn-sm btn-outline-primary rounded-0 wishlist-btn" href="{% url 'add_to_wishlist' product.id %}"
+                            data-product-id="{{ product.id }}" aria-label="Add to Wishlist Heart">
+                            <i class="fa-regular fa-heart heart-icon"></i>
+                        </a>
+                    </small>
                 </small>
             {% else %}
                 <small class="text-muted">No Rating</small>
             {% endif %}
-            <br>
-            <div class="d-flex align-items-center">
-                <a class="wishlist-btn" data-product_id="{{ product.id }}" 
-                    data-action="{% if is_in_wishlist %}remove
-                    {% else %}add{% endif %}">
-                    {% if is_in_wishlist %}
-                        <i class="fas fa-heart"></i>
-                    {% else %}
-                        <i class="far fa-heart"></i>
-                    {% endif %}
-                </a>
-            </div>
+            
             <p class="mt-3">{{ product.description }}</p>
             <form class="form" action="{% url 'add_to_shopbag' product.id %}"
             method="POST">
@@ -149,6 +144,7 @@
         }
 
         function updateWishlist(productId, action) {
+            console.log('Updating wishlist:', productId, action);
             const url = '/update_wishlist/';
             fetch(url, {
                 method: 'POST',
@@ -161,10 +157,14 @@
                     'action': action
                 })
             })
-                .then((response) => response.json())
-                .then((data) => {
-                    console.log('data:', data);
-                });
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('data:', data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
         }
     });
 </script>
