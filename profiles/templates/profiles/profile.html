@@ -71,6 +71,31 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <p class="text-muted">Wishlist</p>
+                    <div class="wishlist table-responsive">
+                        <table class="table table-sm table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for product in wishlist_products %}
+                                <tr>
+                                    <td>
+                                        <a href="{% url 'product_detail' product.id %}" title="{{ product.name }}">
+                                            {{ product.name }}
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
 {% endblock %}
 

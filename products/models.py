@@ -41,12 +41,3 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
-
-
-class Wishlist(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    objects = models.Manager()
-
-    def __str__(self):
-        return f'Wishlist for {self.user.username}'
