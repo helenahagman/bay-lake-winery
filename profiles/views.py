@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 
-from .models import UserProfile, Wishlist
+from .models import UserProfile, Wishlist, SiteRecommendation
 from .forms import UserProfileForm
 
 from checkout.models import Order
@@ -120,3 +120,24 @@ def remove_from_wishlist(request, product_id):
         messages.info(request, 'Product is not in wishlist')
 
     return redirect('product_detail', product_id=product_id)
+
+
+def about(request):
+    recommendations = SiteRecommendation.objects.all()[:5]
+    return render(request, 'about.html', {'recommendations': recommendations})
+
+
+def profile_with_recommendation(request):
+    if request.method == 'POST':
+        form = RecommendationForm(request.POST)
+        if form.is_valid():
+            recommendation = form.save(commit=False)
+            recommendation.user = request.User
+            recommendation.save()
+            messages.success(request, 'Recommendation added')
+            return redirect('profile')
+    else:
+        form = RecommendationForm()
+    
+    recommendation = SiteRecommendation.objects.filter(user=request.user)
+    return render(request, 'profile_with_recommendation.html', {'form': form, 'recommendation': recommendation})
