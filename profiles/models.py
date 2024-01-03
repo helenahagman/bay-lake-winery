@@ -33,8 +33,7 @@ class UserProfile(models.Model):
     def __str__(self):
         return (
             self.user.username
-            if self.user and hasattr(self.user, 'username')
-            else "UserProfile without user"
+            if self.user else "UserProfile without user"
         )
 
 
@@ -63,6 +62,7 @@ class Wishlist(models.Model):
             else 'Wishlist without user'
         )
 
+
 class SiteRecommendation(models.Model):
     """
     User recommendations
@@ -73,6 +73,6 @@ class SiteRecommendation(models.Model):
 
     class Meta:
         ordering = ['-created_at']
-    
+
     def __str__(self):
         return f"Recommendation by {self.user.username} on {self.created_at}"

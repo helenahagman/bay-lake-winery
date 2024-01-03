@@ -41,6 +41,7 @@
                 </h5>
             </div>
         </div>
+        
         <div class="col-lg-6">
             <div class="card p-4">
                 <h2 class="mb-4">Contact Us</h2>
@@ -62,6 +63,15 @@
                     <br>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <!-- Display Recommendations -->
+            <div class="card p-4">
+                <h3 class="mb-4">Customer Recommendations</h3>
+                {% for recommendation in recommendations %}
+                <p><strong>{{ recommendation.user.username }}:</strong> {{ recommendation.recommendation_text }}</p>
+                {% endfor %}
             </div>
         </div>
     </div>

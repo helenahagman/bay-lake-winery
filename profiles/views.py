@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 
 from .models import UserProfile, Wishlist, SiteRecommendation
-from .forms import UserProfileForm
+from .forms import UserProfileForm, RecommendationForm
 
 from checkout.models import Order
 from products.models import Product
@@ -21,7 +21,7 @@ def profile(request):
             form.save()
             messages.success(request, 'Profile updated successfully')
         else:
-            messages.error(request, 'Update failed, Please ensure the form is valid.')
+            messages.error(request, 'Update failed, ensure the form is valid.')
     else:
         form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
@@ -132,12 +132,17 @@ def profile_with_recommendation(request):
         form = RecommendationForm(request.POST)
         if form.is_valid():
             recommendation = form.save(commit=False)
-            recommendation.user = request.User
+            recommendation.user = request.user
             recommendation.save()
             messages.success(request, 'Recommendation added')
+            
             return redirect('profile')
     else:
         form = RecommendationForm()
-    
-    recommendation = SiteRecommendation.objects.filter(user=request.user)
-    return render(request, 'profile_with_recommendation.html', {'form': form, 'recommendation': recommendation})
+
+    recommendations = SiteRecommendation.objects.filter(user=request.user)
+
+    return render(
+        request, 'profile_with_recommendation.html',
+        {'form': form, 'recommendation': recommendations}
+    )

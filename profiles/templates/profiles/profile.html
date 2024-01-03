@@ -24,14 +24,7 @@
                     <hr>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <h3>Recommendations</h3>
-                    {% for recommendation in recommendations %}
-                    <p>{{ recommendation.recommendation_text }} - {{ recommendation.user.username }}</p>
-                    {% endfor %}
-                </div>
-            </div>
+            
             <div class="row">
                 <div class="col-12 col-lg-6">
                     <p class="text-muted">Default Delivery Information</p>
@@ -102,6 +95,22 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h3>Add a Recommendation</h3>
+                    <form method="post" action="{% url 'profile_with_recommendation' %}">
+                        {% csrf_token %}
+                        {{ form.non_field_errors }}
+                        <div class="form-group">
+                            <textarea name="{{ form.recommendation_text.name }}" rows="{{ form.recommendation_text.rows }}"
+                                cols="{{ form.recommendation_text.cols }}" id="{{ form.recommendation_text.id_for_label }}"
+                                placeholder="Add your recommendation here">{{ form.recommendation_text.value }}</textarea>
+                            {{ form.recommendation_text.errors }}
+                        </div>
+                        <button type="submit">Add Recommendation</button>
+                    </form>
                 </div>
             </div>
         </div>
