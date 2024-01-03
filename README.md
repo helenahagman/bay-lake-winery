@@ -165,7 +165,16 @@ Wishlist Model
 | ---------- | ---------------- | --------------- |
 | PrimaryKey | wishlist_id      | AutoField       |
 | ForeignKey | user             | User model      |
-|            | product         | ProductModel    |
+|            | product          | ProductModel    |
+
+Site Recommendation Model
+
+| Key        | Name                 | Type            |
+| ---------- | ----------------     | --------------- |
+| PrimaryKey | siterecommendation_id| AutoField       |
+| ForeignKey | user                 | User model      |
+|            | recommendation_text  | TextField       |
+|            | created_at           | DateTimeField   |
 
 
 ## Strategy
