@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.utils import timezone
 
 from django_countries.fields import CountryField
 
@@ -33,7 +34,7 @@ class UserProfile(models.Model):
         return (
             self.user.username
             if self.user and hasattr(self.user, 'username')
-            else ""
+            else "UserProfile without user"
         )
 
 
@@ -53,9 +54,25 @@ class Wishlist(models.Model):
         User, on_delete=models.CASCADE, blank=True, null=True)
     product = models.ManyToManyField(Product, blank=True)
 
+    objects = models.Manager()
+
     def __str__(self):
         return (
             f'Wishlist for {self.user.username}'
-            if self.user and self.user.username
+            if self.user and hasattr(self.user, 'username')
             else 'Wishlist without user'
         )
+
+class SiteRecommendation(models.Model):
+    """
+    User recommendations
+    """
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    recommendation_text = models.TextField()
+    created_at = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        ordering = ['-created_at']
+    
+    def __str__(self):
+        return f"Recommendation by {self.user.username} on {self.created_at}"

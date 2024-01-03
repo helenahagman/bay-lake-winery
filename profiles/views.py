@@ -26,10 +26,16 @@ def profile(request):
         form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
 
+    try:
+        wishlist = Wishlist.objects.get(user=request.user)
+    except Wishlist.DoesNotExist:
+        wishlist = None
+
     template = 'profiles/profile.html'
     context = {
         'form': form,
         'orders': orders,
+        'wishlist': wishlist,
         'on_profile_page': True
     }
 
@@ -60,21 +66,21 @@ def toggle_wishlist(request):
         product = Product.objects.get(id=product_id)
 
         if request.user.is_authenticated:
-            user_wishlist, created = Wishlist.objects.get_or_create(
+            user_wishlist, _ = Wishlist.objects.get_or_create(
                 user=request.user)
             if product in user_wishlist.products.all():
                 user_wishlist.products.remove(product)
             else:
                 user_wishlist.products.add(product)
 
-        return JsonResponse({'is_in_wishlist': product.is_in_wishlist})
+        return JsonResponse({'is_in_wishlist': product in user_wishlist.products.all()})
 
     return JsonResponse({'error': 'Invalid request'})
 
 
 def wishlist(request):
     """ A view to display the user's wishlist """
-    user_wishlist, created = Wishlist.objects.get_or_create(user=request.user)
+    user_wishlist, _ = Wishlist.objects.get_or_create(user=request.user)
     wishlist_products = user_wishlist.products.all()
 
     template = 'profiles/wishlist.html'
@@ -83,14 +89,14 @@ def wishlist(request):
         'wishlist_products': wishlist_products,
     }
 
-    return render(request, 'profiles/wishlist.html', context)
+    return render(request, template, context)
 
 
 @login_required
 def add_to_wishlist(request, product_id):
     """ A view to add a product to the wishlist """
     product = get_object_or_404(Product, id=product_id)
-    wishlist, created = Wishlist.product.get_or_create(user=request.user)
+    wishlist, created = Wishlist.objects.get_or_create(user=request.user)
 
     if product not in wishlist.products.all():
         wishlist.products.add(product)
@@ -105,7 +111,7 @@ def add_to_wishlist(request, product_id):
 def remove_from_wishlist(request, product_id):
     """ A view to remove a product from the wishlist """
     product = get_object_or_404(Product, id=product_id)
-    wishlist, created = Wishlist.product.get_or_create(user=request.user)
+    wishlist, created = Wishlist.objects.get_or_create(user=request.user)
 
     if product in wishlist.products.all():
         wishlist.products.remove(product)
