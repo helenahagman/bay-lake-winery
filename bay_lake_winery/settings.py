@@ -36,15 +36,15 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-if 'DEVELOPMENT' in os.environ and os.environ['DEVELOPMENT'].lower() == 'true':
-    DEBUG: True
-else:
-    DEBUG = False
+# if 'DEVELOPMENT' in os.environ and os.environ['DEVELOPMENT'].lower() == 'true':
+#    DEBUG = True
+# else:
+#    DEBUG = False
 
 ALLOWED_HOSTS = [
     'bay-lake-winery-4b9e6ad86e5e.herokuapp.com',
     'localhost',
-    '8000-helenahagman-bay-lake-wi-tcijqtegyu.us2.codeanyapp.com'
+    '8000-helenahagman-bay-lake-wi-j5smhbpfnb.us2.codeanyapp.com'
 ]
 
 
@@ -80,7 +80,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    'allauth.account.middleware.AccountMiddleware',
 
 ]
 
