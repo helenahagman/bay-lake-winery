@@ -11,6 +11,7 @@ from checkout.models import Order
 from products.models import Product
 
 
+@login_required()
 def profile(request):
     """ Display the user's profile. """
     profile = get_object_or_404(UserProfile, user=request.user)
@@ -31,11 +32,14 @@ def profile(request):
     except Wishlist.DoesNotExist:
         wishlist = None
 
+    recommendations = SiteRecommendation.objects.filter(user=request.user)
+
     template = 'profiles/profile.html'
     context = {
         'form': form,
         'orders': orders,
         'wishlist': wishlist,
+        'recommendations': recommendations,
         'on_profile_page': True
     }
 
@@ -127,6 +131,7 @@ def about(request):
     return render(request, 'about.html', {'recommendations': recommendations})
 
 
+@login_required()
 def profile_with_recommendation(request):
     if request.method == 'POST':
         form = RecommendationForm(request.POST)
@@ -135,14 +140,13 @@ def profile_with_recommendation(request):
             recommendation.user = request.user
             recommendation.save()
             messages.success(request, 'Recommendation added')
-            
-            return redirect('profile')
+
     else:
         form = RecommendationForm()
 
     recommendations = SiteRecommendation.objects.filter(user=request.user)
 
     return render(
-        request, 'profile_with_recommendation.html',
+        request, 'profiles/profile.html',
         {'form': form, 'recommendation': recommendations}
     )
