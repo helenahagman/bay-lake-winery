@@ -128,6 +128,7 @@ def remove_from_wishlist(request, product_id):
 
 def about(request):
     recommendations = SiteRecommendation.objects.all()[:5]
+    print(recommendations)
     return render(request, 'about.html', {'recommendations': recommendations})
 
 

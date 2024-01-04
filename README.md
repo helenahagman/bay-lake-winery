@@ -11,9 +11,9 @@
 - [Bay Lake Winery](#bay-lake-winery)
   - [CONTENTS](#contents)
   - [Why this project](#why-this-project)
-  - [E-Commerce Business Model - B2C](#e-commerce-business-model---b2c)
-- [Possible features](#possible-features)
-- [Database tables](#database-tables)
+- [E-Commerce Business Model - B2C](#e-commerce-business-model---b2c)
+  - [Possible features](#possible-features)
+  - [Database tables](#database-tables)
   - [Strategy](#strategy)
     - [Target audiences that the website will focus on](#target-audiences-that-the-website-will-focus-on)
       - [Roles](#roles)
@@ -66,12 +66,12 @@
 
 I built this page for my 5th project in the Code Institute course for the Diploma in Full Stack Software Development. I wanted to build a well designed website where the functionality for online phurchases of wine from the made-up family vineyard would be key. The project is base on the key elements of the course and the requirements for PP5. The idea of a small family owned vineyard comes from the one and only grapevine in my own backyard that produces large quantities of grapes each year. We do make our own wine and the whole family is involved, from picking the grapes to the finished product.
 
-## E-Commerce Business Model - B2C
+# E-Commerce Business Model - B2C
 
-# Possible features
+## Possible features
 
 - Log in and log out for both user and admin
-- Authentication system  
+- Authentication system
 - Search function for customers looking for a specific product
 - Filter function for customers looking for a product type
 - Product display with images and descriptions
@@ -79,8 +79,10 @@ I built this page for my 5th project in the Code Institute course for the Diplom
 - Shopping cart for the user to add multiple products
 - Contact possibilities
 - News letter sign up
+- Possibility to add products to wishlist
+- possibility to add recommendations on the site
 
-# Database tables
+## Database tables
 
 User Profile Model
 
@@ -100,54 +102,54 @@ Category Model
 
 | Key        | Name          | Type           |
 | ---------- | ------------- | -------------- |
-| PrimaryKey | category_id   | AutoField      |  
+| PrimaryKey | category_id   | AutoField      |
 |            | name          | CharField[254] |
 |            | friendly_name | CharField[254] |
 
 Product Model
 
-| Key        | Name         | Type              |
-| ---------- | -----------  | --------------    |
-| PrimaryKey | product_id   | AutoField         |
-| ForeignKey | category     | CategoryModel     |
-|            | sku          | CharField[254]    |
-|            | name         | CharField[254]    |
-|            | description  | TextField         |
-|            | price        | DecimalField[6]   |
-|            | rating       | DecimalField[6]   |
-|            | image        | CloudinaryField   |
+| Key        | Name        | Type            |
+| ---------- | ----------- | --------------- |
+| PrimaryKey | product_id  | AutoField       |
+| ForeignKey | category    | CategoryModel   |
+|            | sku         | CharField[254]  |
+|            | name        | CharField[254]  |
+|            | description | TextField       |
+|            | price       | DecimalField[6] |
+|            | rating      | DecimalField[6] |
+|            | image       | CloudinaryField |
 
 Contact Model
 
-| Key        | Name        | Type           |
-| ---------- | ----------- | -------------- |
-| PrimaryKey | contact_id  | AutoField      |
-|	         | email       | EmailField     |
-|            | name        | CharField[50]  |
-|            | message     | TextField      |
+| Key        | Name       | Type          |
+| ---------- | ---------- | ------------- |
+| PrimaryKey | contact_id | AutoField     |
+|            | email      | EmailField    |
+|            | name       | CharField[50] |
+|            | message    | TextField     |
 
 Order Model
 
-| Key        | Name            | Type               |
-| ---------- | --------------- | ------------------ |
-| PrimaryKey | order_id        | AutoField          |
-|            | order_number    | CharField[32]      |
-| ForeignKey | user_profile    | UserProfileModel   |
-|            | full_name       | CharField[50]      |
-|            | email           | EmailField[254]    |
-|            | phone_number    | CharField[20]      |
-|            | country         | CountryField       |
-|            | postcode        | CharField[20]      |
-|            | town_or_city    | CharField[40]      |
-|            | street_address1 | CharField[80]      |
-|            | street_address2 | CharField[80]      |
-|            | county          | CharField[80]      |
-|            | date            | DateTimeField      |
-|            | delivery_cost   | DecimalField[6]    |
-|            | order_total     | DecimalField[10]   |
-|            | grand_total     | DecimalField[10]   |
-|            | original_shopbag| TextField          |
-|            | stripe_pid      | CharField[254]     |
+| Key        | Name             | Type             |
+| ---------- | ---------------- | ---------------- |
+| PrimaryKey | order_id         | AutoField        |
+|            | order_number     | CharField[32]    |
+| ForeignKey | user_profile     | UserProfileModel |
+|            | full_name        | CharField[50]    |
+|            | email            | EmailField[254]  |
+|            | phone_number     | CharField[20]    |
+|            | country          | CountryField     |
+|            | postcode         | CharField[20]    |
+|            | town_or_city     | CharField[40]    |
+|            | street_address1  | CharField[80]    |
+|            | street_address2  | CharField[80]    |
+|            | county           | CharField[80]    |
+|            | date             | DateTimeField    |
+|            | delivery_cost    | DecimalField[6]  |
+|            | order_total      | DecimalField[10] |
+|            | grand_total      | DecimalField[10] |
+|            | original_shopbag | TextField        |
+|            | stripe_pid       | CharField[254]   |
 
 OrderLineItem Model
 
@@ -161,21 +163,20 @@ OrderLineItem Model
 
 Wishlist Model
 
-| Key        | Name             | Type            |
-| ---------- | ---------------- | --------------- |
-| PrimaryKey | wishlist_id      | AutoField       |
-| ForeignKey | user             | User model      |
-|            | product          | ProductModel    |
+| Key        | Name        | Type         |
+| ---------- | ----------- | ------------ |
+| PrimaryKey | wishlist_id | AutoField    |
+| ForeignKey | user        | User model   |
+|            | product     | ProductModel |
 
 Site Recommendation Model
 
-| Key        | Name                 | Type            |
-| ---------- | ----------------     | --------------- |
-| PrimaryKey | siterecommendation_id| AutoField       |
-| ForeignKey | user                 | User model      |
-|            | recommendation_text  | TextField       |
-|            | created_at           | DateTimeField   |
-
+| Key        | Name                  | Type          |
+| ---------- | --------------------- | ------------- |
+| PrimaryKey | siterecommendation_id | AutoField     |
+| ForeignKey | user                  | User model    |
+|            | recommendation_text   | TextField     |
+|            | created_at            | DateTimeField |
 
 ## Strategy
 
@@ -198,7 +199,7 @@ Site Recommendation Model
   - Make their own wine
   - Buy wine related products
   - Visit a vineyard
-  
+
 ## User Stories
 
 ### EPIC | Web Pages & Aesthetics
@@ -380,31 +381,31 @@ Throughout the process of building the website, I have tried to think of accessi
 
 ### Installed packages
 
-- asgiref             3.7.2
-- cloudinary          1.36.0
-- dj-database-url     2.1.0
-- Django              3.2.22
-- django-allauth      0.41.0
-- django-countries    7.5.1
+- asgiref 3.7.2
+- cloudinary 1.36.0
+- dj-database-url 2.1.0
+- Django 3.2.22
+- django-allauth 0.41.0
+- django-countries 7.5.1
 - django-crispy-forms 1.14.0
-- oauthlib            3.2.2
-- Pillow              10.1.0
-- python3-openid      3.2.0
-- pytz                2023.3.post1
-- requests-oauthlib   1.3.1
-- sqlparse            0.4.4
+- oauthlib 3.2.2
+- Pillow 10.1.0
+- python3-openid 3.2.0
+- pytz 2023.3.post1
+- requests-oauthlib 1.3.1
+- sqlparse 0.4.4
 
 ## Facebook
 
 - Facebook Business Page
-![Facebook](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698570051/PP5/FB-1_qp2lgs.png)
+  ![Facebook](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698570051/PP5/FB-1_qp2lgs.png)
 - Facebook first post
-![First post](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698570067/PP5/FB-2_mnxcsy.png)
+  ![First post](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698570067/PP5/FB-2_mnxcsy.png)
 
 ## SEO
 
 - I used WordTracker to find meta keywords and I used the result as help.
-![Wordtracker](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698656524/PP5/wordtracker_i8ndad.jpg)
+  ![Wordtracker](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698656524/PP5/wordtracker_i8ndad.jpg)
 
 # Topics & possible keywords
 
@@ -436,22 +437,21 @@ For deployment I followed the steps in the walkthrough.
 - Throughout the project I have worked with the walk-through project
   'Building an E-Commerce Platform' for the Code Institute. The base of the set
   up is used from the same.
-  
 - Images used for this project is a mix of private photos and free images from
   Pexels.com, special thank you to:
- @JillWellington
- @TaryElliott
- @PolinaTankilevitch
- @YlaniteKoppens
- @Nati
- @TerjeSollie
- @MariaOrlova
- @JillBurrow
- @GrapeThings
- @CottonbroStudio
- @MariaPop
- @BernyceHollingworth
- @CharlotteMay
+  @JillWellington
+  @TaryElliott
+  @PolinaTankilevitch
+  @YlaniteKoppens
+  @Nati
+  @TerjeSollie
+  @MariaOrlova
+  @JillBurrow
+  @GrapeThings
+  @CottonbroStudio
+  @MariaPop
+  @BernyceHollingworth
+  @CharlotteMay
 
 ### Known unsolved bugs
 
@@ -476,7 +476,7 @@ this project:
 ## Other
 
 - For my privacy policy
-![Free Privacy Policy](https://app.freeprivacypolicy.com/download/3e8de0c8-0fe7-4c30-98ee-02853f3e787d)
+  ![Free Privacy Policy](https://app.freeprivacypolicy.com/download/3e8de0c8-0fe7-4c30-98ee-02853f3e787d)
 - I used [Mailchimp](https://login.mailchimp.com/?logout=1) for the newsletter signup form
 - For the Site Map I used [XML-Sitemaps](https://www.xml-sitemaps.com/details-bay-lake-winery-4b9e6ad86e5e.herokuapp.com-eedee477b.html)
 - For icons I used [Favicon](https://favicon.io/)
@@ -501,9 +501,9 @@ sure that the new inserts was working as expected and corrected thereafter.
 ## Validators
 
 - Html test in the [W3 Validator](https://validator.w3.org/) warnings for Django Template Syntax nature
-![W3 Validator](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698657778/PP5/w3c_y4oypq.jpg)
+  ![W3 Validator](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698657778/PP5/w3c_y4oypq.jpg)
 - CSS validator [W3C validation](https://jigsaw.w3.org/css-validator/validator)
-![Css validation](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698664722/PP5/cssvalidation_bvrtmv.jpg)
+  ![Css validation](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698664722/PP5/cssvalidation_bvrtmv.jpg)
 
 ## User Story Testing
 
@@ -512,7 +512,7 @@ sure that the new inserts was working as expected and corrected thereafter.
 - log out as a logged-in user - working as expected - Pass
 - choose a custom username and password - working as expected - Pass
 - display easy navigation on the site - working as expected - could add the link to home/about on more pages - Pass
-- phurchase - working but needs improvement, the delivery cost is not displaying in the confirmation letter  - Error/Improvement needed
+- phurchase - working but needs improvement, the delivery cost is not displaying in the confirmation letter - Error/Improvement needed
 - get in contact - no contact form is throwing a form submission error - Error/Improvement needed
 - customized messages to registered users - can be done via mailchimp after user has registerd for newsletter - Pass/not fully implemented
 - manage the customer database - working via the admin panel - Improvement to add to the website so the admin dont have do go in via the admin panel and just log in.
@@ -531,7 +531,7 @@ sure that the new inserts was working as expected and corrected thereafter.
 
 ### Home page
 
-All links on the home/Index page is working as expected - links in navbar, search, about, my account, shopping bag, shop now button, facebook  link, sign up form, privacy policy
+All links on the home/Index page is working as expected - links in navbar, search, about, my account, shopping bag, shop now button, facebook link, sign up form, privacy policy
 
 ### Product Page
 
