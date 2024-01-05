@@ -155,7 +155,7 @@
                                             </small>
                                             {% endif %}
                                             <div class="d-flex align-items-center">
-                                                <button class="btn btn-black rounded-0 text-uppercase mt-5" onclick="addToBag('{{ product.id }}')">
+                                                <button class="btn btn-black rounded-0 text-uppercase mt-5" onclick="addToShopbag('{{ product.id }}')">
                                                     Add to Bag
                                                 </button>
                                             </div>
@@ -227,6 +227,31 @@
                 window.location.replace(currentUrl);
             }
         })
+    </script>
+
+    <script type="text/javascript">
+        function addToShopbag(productId) {
+            var quantity = 1;
+            var url = "{% url 'add_to_shopbag' 0 %}".replace('0', productId);
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: {
+                    'quantity': quantity,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}',
+                    'redirect_url': window.location.pathname
+                },
+                success: function (data) {
+                    // Handle success, e.g., show a message or update the UI
+                    console.log("Product added to shopbag");
+                },
+                error: function (xhr, errmsg, err) {
+                    // Handle errors, e.g., show an error message
+                    console.log("Error adding product to shopbag");
+                }
+            });
+        }
     </script>
     
 {% endblock %}

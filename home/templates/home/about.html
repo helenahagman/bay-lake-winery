@@ -1,80 +1,101 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block page_header %}
+{% extends "base.html" %} {% load static %} {% block page_header %}
 <div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
+  <div class="row">
+    <div class="col"></div>
+  </div>
 </div>
-{% endblock %}
-
-{% block extra_title %}
-    <title>About us</title>
-{% endblock %}
-
-{% block content %}
-<div class="container header-container"
-    style="background: url('https://res.cloudinary.com/dbjnqkn07/image/upload/v1698496364/PP5/pexels-jill-wellington-39351_jd1apk.jpg') no-repeat center center fixed; background-size: cover;">
-    <div class="text-box">
+{% endblock %} {% block extra_title %}
+<title>About us</title>
+{% endblock %} {% block content %}
+<div
+  class="container header-container"
+  style="
+    background: url('https://res.cloudinary.com/dbjnqkn07/image/upload/v1698496364/PP5/pexels-jill-wellington-39351_jd1apk.jpg')
+      no-repeat center center fixed;
+    background-size: cover;
+  "
+>
+  <div class="text-box">
     <div class="row">
-        <div class="col-lg-6">
-            <h3 class="display-4 logo-font text-black text-center">
-                The short story</h3>
-                <br>
-                <div class="container">
-                <p>The Bay Lake Winery is a family business and 
-                    produces a small quantity of quality wine each year. 
-                    Our goal is to offer a selection of wine and wine products 
-                    with high quality. 
-                    All our wine is completely organic and produced in a very
-                    small scale to ensure the quality. 
-                    We can offer tours and wine tasting on demand. 
-                    Contact us for more information.</p>
-                </div>
-            <div class="my-5 text-center">
-                <p><strong>Have a look at our current selection</strong></p>
-                <h5>
-                    <a href="{% url 'products' %}" class="buy-button btn btn-lg rounded-0 text-uppercase py-3">
-                        Shop
-                    </a>
-                </h5>
-            </div>
+      <div class="col-lg-6">
+        <h3 class="display-4 logo-font text-black text-center">
+          The short story
+        </h3>
+        <br />
+        <div class="container">
+          <p>
+            The Bay Lake Winery is a family business and produces a small
+            quantity of quality wine each year. Our goal is to offer a selection
+            of wine and wine products with high quality. All our wine is
+            completely organic and produced in a very small scale to ensure the
+            quality. We can offer tours and wine tasting on demand. Contact us
+            for more information.
+          </p>
         </div>
-        
-        <div class="col-lg-6">
-            <div class="card p-4">
-                <h2 class="mb-4">Contact Us</h2>
-                <form method="post" action="{% url 'contact_us' %}">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter your name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email address</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea class="form-control" id="message" rows="5"
-                            placeholder="Enter your message"></textarea>
-                    </div>
-                    <br>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
+        <div class="my-5 text-center">
+          <p><strong>Have a look at our current selection</strong></p>
+          <h5>
+            <a
+              href="{% url 'products' %}"
+              class="buy-button btn btn-lg rounded-0 text-uppercase py-3"
+            >
+              Shop
+            </a>
+          </h5>
         </div>
-        <div class="col-lg-6">
-            <!-- Display Recommendations -->
-            <div class="card p-4">
-                <h3 class="mb-4">Customer Recommendations</h3>
-                {% for recommendation in recommendations %}
-                <p><strong>{{ recommendation.user.username }}:</strong> {{ recommendation.recommendation_text }}</p>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</div>
+      </div>
 
-{% endblock %}
+      <div class="col-lg-6">
+        <div class="card p-4">
+          <h2 class="mb-4">Contact Us</h2>
+          <form method="post" action="{% url 'contact_us' %}">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="Enter your name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="Enter your email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                class="form-control"
+                id="message"
+                rows="5"
+                placeholder="Enter your message"
+              ></textarea>
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <!-- Display Recommendations -->
+        <div class="card p-4">
+          <h3 class="mb-4">Customer Recommendations</h3>
+          {% for recommendation in recommendations %}
+          <p>
+            <strong>{{ recommendation.user.username }}:</strong> {{
+            recommendation.recommendation_text }}
+          </p>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}
+</div>
