@@ -23,14 +23,13 @@ def contact_us_view(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             contact_instance = form.save(commit=False)
-
             contact_instance.save()
 
             messages.success(
                 request,
                 "Your message has been sent. We will contact you shortly.",
             )
-            return redirect("contact")
+            return redirect("contact_us")
         else:
             messages.error(
                 request, "Form submission failed. Please check and try again."
