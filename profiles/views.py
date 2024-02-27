@@ -2,6 +2,8 @@ from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login, authenticate
 from django.http import JsonResponse
 
 from .models import UserProfile, Wishlist, SiteRecommendation
@@ -151,3 +153,15 @@ def profile_with_recommendation(request):
         request, 'profiles/profile.html',
         {'form': form, 'recommendation': recommendations}
     )
+
+
+def signup_view(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if forms.is_valid():
+            user = forms.save()
+            login(request, user)
+            return redirect('profile_view')
+    else:
+        form = UserCreationForm()
+    return render(request, 'signup.html', {'form': form})
