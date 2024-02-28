@@ -2,8 +2,8 @@ from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth.models import User
+from django.contrib.auth import login, authenticate, get_user_model
 from django.http import JsonResponse
 
 from .models import UserProfile, Wishlist, SiteRecommendation
@@ -12,6 +12,16 @@ from .forms import UserProfileForm, RecommendationForm
 from checkout.models import Order
 from products.models import Product
 
+from django.core.mail import send_mail
+from django.urls import reverse
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.utils.encoding import force_bytes, force_text
+from django.template.loader import render_to_string
+from django.contrib.auth.tokens import default_token_generator
+from django.contrib.sites.shortcuts import get_current_site
+from django.conf import settings
+
+UserModel = get_user_model()
 
 @login_required()
 def profile(request):
@@ -157,11 +167,40 @@ def profile_with_recommendation(request):
 
 def signup_view(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if forms.is_valid():
-            user = forms.save()
-            login(request, user)
-            return redirect('profile_view')
+        form = UserProfileForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.is_active = False
+            user.email = form.cleaned_data.get('email')
+            user.save()
+
+            current_site = get_current_site(request)
+            subject = 'Activate your account'
+            message = render_to_string('account_activation_email.html', {
+                'user': user,
+                'domain': current_site.domain,
+                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                'token': default_token_generator.make_token(user),
+            })
+            user.email_user(subject, message)
+
+            return redirect('account_activation_sent')
     else:
-        form = UserCreationForm()
+        form = UserProfileForm()
     return render(request, 'signup.html', {'form': form})
+
+
+def activate(request, uidb64, token):
+    try:
+        uid = force_text(urlsafe_base64_decode(uidb64))
+        user = UserModel.objects.get(pk=uid)
+    except (TypeError, ValueError, OverflowError, UserModel.DoesNotExist):
+        user = None
+
+    if user is not None and default_token_generator.check_token(user, token):
+        user.is_active = True
+        user.save()
+        login(request, user)
+        return redirect('profile')
+    else:
+        return render(request, 'account_activation_invalid.html')
