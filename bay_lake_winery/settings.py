@@ -40,7 +40,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'bay-lake-winery-4b9e6ad86e5e.herokuapp.com',
     'localhost',
-    '8000-helenahagma-baylakewine-ivkghcme30y.ws-eu108.gitpod.io'
+    '8000-helenahagma-baylakewine-ivkghcme30y.ws-eu110.gitpod.io'
 ]
 
 
