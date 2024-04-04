@@ -7,51 +7,53 @@
         <div class="col"></div>
     </div>
 </div>
-{% endblock%}
+{% endblock %}
 
 {% block content %}
 <div class="container header-container"
     style="background: url('https://res.cloudinary.com/dbjnqkn07/image/upload/v1698496364/PP5/pexels-jill-wellington-39351_jd1apk.jpg') no-repeat center center fixed; background-size: cover;">
     <div class="text-box">
-        <div class="row ">
-        <div class="col-12 col-md-6">
-        <hr />
-        <h2 class="logo-font mb-4">Manage Products</h2>
-        <h5 class="text-muted">Add new products</h5>
-        <hr />
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h3 class="mb-3">Select Existing Product</h3>
+                <div class="dropdown mb-3">
+                    <select class="form-control" id="existing-products-dropdown">
+                        <option value="">--- Select Product ---</option>
+                        {% for product in products %}
+                            <option value="{{ product.id }}">{{ product.name }}</option>
+                        {% empty %}
+                            <option value="">No products found.</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <hr />
+                <h2 class="logo-font mb-4">Manage Products</h2>
+                <h5 class="text-muted">Add new products</h5>
+                <hr />
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-12 col-md-6">
-        <form
-            method="POST"
-            action="{% url 'add_product' %}"
-            class="form mb-2"
-            enctype="multipart/form-data">
-
-        {% csrf_token %}
-        {% for field in form %}
-        {% if field.name != 'image' %}
-        {{ field | as_crispy_field }}
-        {% else %}
-        {{ field }}
-        {% endif %}
-        {% if field.name == 'price' %}
-        <!-- Check if the field is 'price' -->
-            <div class="form-group">
-                <label for="{{ field.id_for_label }}">Price</label>
-                {{ field }}
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="form-group">
+                            {% if field.name != 'image' %}
+                                {{ field | as_crispy_field }}
+                            {% else %}
+                                {{ field }}
+                            {% endif %}
+                            {% if field.help_text %}
+                                <small class="form-text text-muted">{{ field.help_text }}</small>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                    <div class="text-right">
+                        <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
+                        <button class="btn btn-black rounded-0" type="submit">Add Product</button>
+                    </div>
+                </form>
             </div>
-            {% endif %}
-            {% endfor %}
-            <div class="text-right">
-                <a class="btn btn-outline-black rounded-0"
-                href="{% url 'products' %}">Cancel</a>
-                <button class="btn btn-black rounded-0" type="submit">
-                    Add Product
-                </button>
-            </div>
-        </form>
         </div>
     </div>
 </div>

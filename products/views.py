@@ -125,8 +125,11 @@ def add_product(request):
     else:
         form = ProductForm()
 
+    products = Product.objects.all()
+
     context = {
         'form': form,
+        'products': products,        
     }
     return render(request, 'products/add_product.html', context)
 
