@@ -422,15 +422,34 @@ Throughout the process of building the website, I have tried to think of accessi
 
 ### Deployment
 
-For deployment I followed the steps in the walkthrough.
+#### Deployment on Github
+- Github was used for of data and version control. Updates, changes and additions of the code was done using these commands in the IDE
+  1. git add .
+  2. git commit -m "commit message"
+  3. git push
 
+#### Creating a Fork or Copying
+- To clone, fork or copying the repository you can click on the fork tab in the top right corner of the page
+- To make a clone you can do the following:
+  1. Click the code tab, left to the Gitpod tab
+  2. Click the clipboard icon to the tifght of the repository name
+  3. In the IED open GitBash
+  4. Change the working directory to the location you prefer
+  5. Add Git Clone with the copy of the repository name
+  
 #### Deployment to heroku
+- First you need to create a new app on the Heroku dashboard page.
+  1. Click New
+  2. Create App - found in the drop-down menu
+  3. Add app name and select region
+  4. Create app
+  5. When the app has been created go to the settings tab and add config vars by clicking the "Reveal configvars" button.
 
-1. Account settings
-2. Copy the API key
-3. Enter the command: heroku_config , and enter the API key
-4. Enter heroku username
-5. Enter the API key
+#### Deployment of the app:
+  1. Click on the Deploy tab and the connect to Github option
+  2. Select the correct repository
+  3. You can use automatic or manual deployment, I used manual for this project
+  4. When deployed you can open the app in the top right corner
 
 #### Credits
 
@@ -452,6 +471,8 @@ For deployment I followed the steps in the walkthrough.
   @MariaPop
   @BernyceHollingworth
   @CharlotteMay
+- Thank you to The Slack community for help and idéas
+- Thank you to @hampusrosenquist for points on improvement and bug-fix tips
 
 ### Known unsolved bugs
 
