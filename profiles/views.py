@@ -7,7 +7,7 @@ from django.contrib.auth import login, authenticate, get_user_model
 from django.http import JsonResponse
 
 from .models import UserProfile, Wishlist, SiteRecommendation
-from .forms import UserProfileForm, RecommendationForm
+from .forms import UserProfileForm, RecommendationForm, CustomUserCreationForm
 
 from checkout.models import Order
 from products.models import Product
@@ -165,17 +165,46 @@ def profile_with_recommendation(request):
     )
 
 
+# def signup_view(request):
+#     if request.method == 'POST':
+#         form = UserProfileForm(request.POST)
+#         if form.is_valid():
+#             user = form.save(commit=False)
+#             user.is_active = False
+#             user.email = form.cleaned_data.get('email')
+#             user.save()
+
+#             current_site = get_current_site(request)
+#             subject = 'Activate your account'
+#             message = render_to_string('account_activation_email.html', {
+#                 'user': user,
+#                 'domain': current_site.domain,
+#                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+#                 'token': default_token_generator.make_token(user),
+#             })
+#             user.email_user(subject, message)
+
+#             return redirect('account_activation_sent')
+#     else:
+#         form = UserProfileForm()
+#     return render(request, 'signup.html', {'form': form})
+
 def signup_view(request):
     if request.method == 'POST':
-        form = UserProfileForm(request.POST)
-        if form.is_valid():
-            user = form.save(commit=False)
-            user.is_active = False
-            user.email = form.cleaned_data.get('email')
+        user_form = CustomUserCreationForm(request.POST)
+        profile_form = UserProfileForm(request.POST)
+        if user_form.is_valid() and profile_form.is_valid():
+            user = user_form.save(commit=False)
+            user.is_active = False  # User will be activated after email confirmation
             user.save()
 
+            profile = profile_form.save(commit=False)
+            profile.user = user  # Link the user profile with the created user
+            profile.save()
+
+            # Send an email for account activation
             current_site = get_current_site(request)
-            subject = 'Activate your account'
+            subject = 'Activate Your Account'
             message = render_to_string('account_activation_email.html', {
                 'user': user,
                 'domain': current_site.domain,
@@ -184,10 +213,14 @@ def signup_view(request):
             })
             user.email_user(subject, message)
 
+            messages.success(request, 'Please confirm your email address to complete the registration.')
             return redirect('account_activation_sent')
     else:
-        form = UserProfileForm()
-    return render(request, 'signup.html', {'form': form})
+        user_form = CustomUserCreationForm()
+        profile_form = UserProfileForm()
+
+    context = {'user_form': user_form, 'profile_form': profile_form}
+    return render(request, 'signup.html', context)
 
 
 def activate(request, uidb64, token):
