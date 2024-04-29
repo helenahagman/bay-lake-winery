@@ -9,7 +9,9 @@ html {
 }
 
 body {
-    background: url('/static/media/pexels-jill-wellington-39351.jpg') no-repeat center center fixed;
+    background-image: url('https://res.cloudinary.com/dbjnqkn07/image/upload/v1698496364/PP5/pexels-jill-wellington-39351_jd1apk.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
