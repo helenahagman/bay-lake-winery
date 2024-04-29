@@ -563,8 +563,9 @@ All links on the product page is working as expected - links in navbar, footer l
 
 ### About Page
 
-The following links on the about page is working as expected - links in navbar, footer links, shop now button.
-Contact form is not working as expected - error when submitting the form ![Contact form](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698662751/PP5/formfail_v7jnnr.jpg)
+The following links on the about page is working as expected - links in navbar, footer links, shop now button, contact form.
+Customer Recommendations - is not working as expected, the message can be added by the user but it is not displayed on the site.
+
 
 ### Shopping Cart
 
@@ -572,7 +573,6 @@ All links on the page is working as expected - however the shoppingbag need some
 
 ## BUGS & Future fixes
 
-- Positioniong of images on product page needs some improvement as they are not centered
 - Rating function is not working - will be set to future implementations
 - Plus and minus buttons when in the shopping cart is not working properly
 - The update and remove buttons in the checkout form is not working
@@ -581,3 +581,7 @@ All links on the page is working as expected - however the shoppingbag need some
 # Future features
 
 ![Future implementations](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698666166/PP5/future_cvjv5b.jpg)
+- User Story - track of stock
+- User Story - display testimonials
+- User Story - wine garden tours
+
