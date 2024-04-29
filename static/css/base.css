@@ -294,6 +294,11 @@ body> .message-container {
     .card-img-top {
         height: 230px;
         width: 175px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        margin-top: 10px;
     }
 }
 
@@ -372,6 +377,11 @@ body> .message-container {
     .card-img-top {
         height: 230px;
         width: 175px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        margin-top: 10px;
     }
 }
 
@@ -389,6 +399,11 @@ body> .message-container {
     .card-img-top {
         height: 230px;
         width: 175px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        margin-top: 5px;
     }
 }
 
@@ -402,5 +417,10 @@ body> .message-container {
     .card-img-top {
         height: 200px;
         width: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        margin-top: 5px;
     }
 }
