@@ -69,6 +69,16 @@
                     ftypes[5] = 'birthday';
                 }(jQuery)); var $mcj = jQuery.noConflict(true);
             </script>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                  // Automatically hide messages after 5 seconds (5000 milliseconds)
+                  setTimeout(function() {
+                    $('.alert').fadeTo(500, 0).slideUp(500, function(){
+                      $(this).remove();
+                    });
+                  }, 5000);
+                });
+              </script>
             {% endblock %}
 
             {% block extra_js %}
@@ -205,6 +215,19 @@
             {% endif %}
             {% endwith %}
             {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if messages %}
+        <div class="container mt-5">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
         </div>
         {% endif %}
 

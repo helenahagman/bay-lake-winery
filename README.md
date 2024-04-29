@@ -546,9 +546,12 @@ sure that the new inserts was working as expected and corrected thereafter.
 - Login - working as expected - Pass
 - Register - working as expected - Pass
 - Log out - working as expected - Pass
-- newsletter signup - working as expected - Pass
+- newsletter signup - working as expected - Pass 
+  User adds email address and clicks on the Subscribe button. The email is added to mailchimp and the user is presented with this ![message](https://res.cloudinary.com/dbjnqkn07/image/upload/v1714380151/PP5/mailchimpconfirm_azjp3f.jpg) 
 - sorting feature - working as expected - Pass
 - profile update - working as expected - Pass
+- contact form - working as expected - pass
+  The form is working and the message is added to admin, however there are a few extra features that can improve the user experience such as a confirmation on the screen the user so they know the form has been sent correctly.
 
 ### Home page
 
@@ -569,7 +572,6 @@ All links on the page is working as expected - however the shoppingbag need some
 
 ## BUGS & Future fixes
 
-- Contact form on about page - not working - needs more implementation
 - Positioniong of images on product page needs some improvement as they are not centered
 - Rating function is not working - will be set to future implementations
 - Plus and minus buttons when in the shopping cart is not working properly
