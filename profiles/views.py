@@ -161,33 +161,10 @@ def profile_with_recommendation(request):
 
     return render(
         request, 'profiles/profile.html',
-        {'form': form, 'recommendation': recommendations}
+        {'form': form, 'recommendations': recommendations}
     )
 
 
-# def signup_view(request):
-#     if request.method == 'POST':
-#         form = UserProfileForm(request.POST)
-#         if form.is_valid():
-#             user = form.save(commit=False)
-#             user.is_active = False
-#             user.email = form.cleaned_data.get('email')
-#             user.save()
-
-#             current_site = get_current_site(request)
-#             subject = 'Activate your account'
-#             message = render_to_string('account_activation_email.html', {
-#                 'user': user,
-#                 'domain': current_site.domain,
-#                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
-#                 'token': default_token_generator.make_token(user),
-#             })
-#             user.email_user(subject, message)
-
-#             return redirect('account_activation_sent')
-#     else:
-#         form = UserProfileForm()
-#     return render(request, 'signup.html', {'form': form})
 
 def signup_view(request):
     if request.method == 'POST':

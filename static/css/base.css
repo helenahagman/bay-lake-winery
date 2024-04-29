@@ -1,7 +1,13 @@
-html,
-body {
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
+    background-image: url('https://res.cloudinary.com/dbjnqkn07/image/upload/v1698496364/PP5/pexels-jill-wellington-39351_jd1apk.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #555;
+    font-family: 'Lato', sans-serif;
 }
 
 html {
@@ -9,13 +15,6 @@ html {
 }
 
 body {
-    background-image: url('https://res.cloudinary.com/dbjnqkn07/image/upload/v1698496364/PP5/pexels-jill-wellington-39351_jd1apk.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: calc(100vh - 164px);
-    color: #555;
-    font-family: 'Lato', sans-serif;
     padding-top: 80px;
 }
 
@@ -223,9 +222,9 @@ body> .message-container {
 /* ------ Footer ---------- */
 
 .footer {
-    position: absolute;
+    position: fixed;
     margin-top: auto;
-    background: #e0e0cf;
+    background: transparent;
     height: 100px;
     width: 100%;
     bottom: 0;
