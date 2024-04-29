@@ -551,7 +551,7 @@ sure that the new inserts was working as expected and corrected thereafter.
 - sorting feature - working as expected - Pass
 - profile update - working as expected - Pass
 - contact form - working as expected - pass
-  The form is working and the message is added to admin, however there are a few extra features that can improve the user experience such as a confirmation on the screen the user so they know the form has been sent correctly.
+  The form is working and the message is added to admin, a confirmation message is displayd on the screen for the user so they know the form has been sent correctly and the message is only displayed for 5 sec.
 
 ### Home page
 
