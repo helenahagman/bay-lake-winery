@@ -4,7 +4,7 @@ html, body {
     padding: 0;
     background-image: url('https://res.cloudinary.com/dbjnqkn07/image/upload/v1698496364/PP5/pexels-jill-wellington-39351_jd1apk.jpg');
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-size: cover;
     color: #555;
     font-family: 'Lato', sans-serif;
@@ -15,6 +15,9 @@ html {
 }
 
 body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
     padding-top: 60px;
     margin: 0;
     padding: 0;
@@ -230,7 +233,6 @@ body> .message-container {
 /* ------ Footer ---------- */
 
 .footer {
-    position: fixed;
     margin-top: auto;
     background: transparent;
     height: 100px;
