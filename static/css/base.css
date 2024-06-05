@@ -4,14 +4,10 @@ html, body {
     padding: 0;
     background-image: url('https://res.cloudinary.com/dbjnqkn07/image/upload/v1698496364/PP5/pexels-jill-wellington-39351_jd1apk.jpg');
     background-position: center;
-    background-repeat: repeat-y;
+    background-repeat: no-repeat;
     background-size: cover;
     color: #555;
     font-family: 'Lato', sans-serif;
-}
-
-html {
-    height: 100%;
 }
 
 body {
@@ -19,14 +15,6 @@ body {
     display: flex;
     flex-direction: column;
     padding-top: 60px;
-    margin: 0;
-    padding: 0;
-    background-image: url('https://res.cloudinary.com/dbjnqkn07/image/upload/v1698496364/PP5/pexels-jill-wellington-39351_jd1apk.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #555;
-    font-family: 'Lato', sans-serif;
 }
 
 header {
