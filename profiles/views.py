@@ -4,13 +4,6 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate, get_user_model
-from django.http import JsonResponse
-
-from .models import UserProfile, Wishlist, SiteRecommendation
-from .forms import UserProfileForm, RecommendationForm, CustomUserCreationForm
-
-from checkout.models import Order
-from products.models import Product
 
 from django.core.mail import send_mail
 from django.urls import reverse
@@ -21,9 +14,15 @@ from django.contrib.auth.tokens import default_token_generator
 from django.contrib.sites.shortcuts import get_current_site
 from django.conf import settings
 
+from .models import UserProfile, Wishlist, SiteRecommendation
+from .forms import UserProfileForm, RecommendationForm, CustomUserCreationForm
+
+from checkout.models import Order
+from products.models import Product
+
 UserModel = get_user_model()
 
-@login_required()
+@login_required
 def profile(request):
     """ Display the user's profile. """
     profile = get_object_or_404(UserProfile, user=request.user)
@@ -83,7 +82,8 @@ def toggle_wishlist(request):
 
         if request.user.is_authenticated:
             user_wishlist, _ = Wishlist.objects.get_or_create(
-                user=request.user)
+                user=request.user
+                )
             if product in user_wishlist.products.all():
                 user_wishlist.products.remove(product)
             else:
@@ -144,7 +144,7 @@ def about(request):
     return render(request, 'about.html', {'recommendations': recommendations})
 
 
-@login_required()
+@login_required
 def profile_with_recommendation(request):
     if request.method == 'POST':
         form = RecommendationForm(request.POST)
