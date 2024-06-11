@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 
 class Contact(models.Model):
@@ -13,3 +14,12 @@ class Contact(models.Model):
 
     class Meta:
         verbose_name = "Contact Form Submission"
+
+
+class Recommendation(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    recommendation_text = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Recommendation by {self.user.username}"

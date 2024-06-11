@@ -10,39 +10,13 @@
 {% endblock %}
 
 {% block extra_title %}
-About us
+Contact us
 {% endblock %}
 
 {% block content %}
 <div class="container header-container">
   <div class="text-box">
     <div class="row">
-      <div class="col-lg-6">
-        <h3 class="display-4 logo-font text-black text-center">
-          The short story
-        </h3>
-        <br />
-        <div class="container">
-          <p>
-            The Bay Lake Winery is a family business and produces a small
-            quantity of quality wine each year. Our goal is to offer a selection
-            of wine and wine products with high quality. All our wine is
-            completely organic and produced in a very small scale to ensure the
-            quality. We can offer tours and wine tasting on demand. Contact us
-            for more information.
-          </p>
-        </div>
-        <div class="my-5 text-center">
-          <p><strong>Have a look at our current selection</strong></p>
-          <h5>
-            <a href="{% url 'products' %}"
-              class="buy-button btn btn-lg rounded-0 text-uppercase py-3">
-              Shop
-            </a>
-          </h5>
-        </div>
-      </div>
-
       <div class="col-lg-6">
         <div class="card p-4">
           <h2 class="mb-4">Contact Us</h2>
@@ -94,17 +68,6 @@ About us
         
         <br />
           </form>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <!-- Display Recommendations -->
-        <div class="card p-4">
-          <h3 class="mb-4">What people say about us</h3>
-          {% for recommendation in recommendations %}
-          <p>
-            <strong>{{ recommendation.user.username }}:</strong> {{ recommendation.recommendation_text }}
-          </p>
-          {% endfor %}
         </div>
       </div>
     </div>

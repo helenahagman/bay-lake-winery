@@ -3,6 +3,7 @@ from django.conf import settings
 from django.contrib import messages
 from django.http import JsonResponse
 from .forms import ContactForm
+from .models import Recommendation
 
 
 def index_view(request):
@@ -12,7 +13,11 @@ def index_view(request):
 
 def about_view(request):
     """ A view to the about page """
-    return render(request, 'home/about.html')
+    recommendations = Recommendation.objects.all()
+    context = {
+        'recommendations': recommendations,
+    }
+    return render(request, 'home/about.html', context)
 
 
 def contact_us_view(request):
@@ -41,4 +46,4 @@ def contact_us_view(request):
         "form": form,
     }
 
-    return render(request, "home/about.html", context)
+    return render(request, "home/contact_us.html", context)
