@@ -1,18 +1,11 @@
 html, body {
     height: 100%;
-    margin: 0;
-    padding: 0;
 }
 
 body {
-    /* min-height: 100%; */
-    display: flex;
-    flex-direction: column;
-    padding-top: 60px;
-    background-image: url('https://res.cloudinary.com/dbjnqkn07/image/upload/v1698496364/PP5/pexels-jill-wellington-39351_jd1apk.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url('https://res.cloudinary.com/dbjnqkn07/image/upload/v1698496364/PP5/pexels-jill-wellington-39351_jd1apk.jpg') no-repeat;
     background-size: cover;
+    height: 100vh;
     color: #555;
     font-family: 'Lato', sans-serif;
 }
@@ -220,14 +213,18 @@ body> .message-container {
 
 /* ------ Footer ---------- */
 
+body>footer {
+    position: sticky;
+    top: 100vh;
+}
+
 .footer {
     margin-top: auto;
-    background: transparent;
-    height: 100px;
+    background: #e0e0cf;
+    height: 80px;
     width: 100%;
     bottom: 0;
-    text-align: center;
-    
+    text-align: center; 
 }
 
 .social-box {
