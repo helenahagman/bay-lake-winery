@@ -29,13 +29,26 @@ def profile(request):
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
+        rec_form = RecommendationForm(request.POST)
         if form.is_valid():
             form.save()
             messages.success(request, 'Profile updated successfully')
         else:
+            print(form.errors)
             messages.error(request, 'Update failed, ensure the form is valid.')
+
+        if rec_form.is_valid():
+            recommendation = rec_form.save(commit=False)
+            recommendation.user = request.user
+            recommendation.save()
+            messages.success(request, 'Thank you for your feedback')
+        else:
+            print(rec_form.errors)
+            messages.error(request, 'Something went wrong, please try again')
     else:
         form = UserProfileForm(instance=profile)
+        rec_form = RecommendationForm()
+
     orders = profile.orders.all()
 
     try:
@@ -48,6 +61,7 @@ def profile(request):
     template = 'profiles/profile.html'
     context = {
         'form': form,
+        'rec_form': rec_form,
         'orders': orders,
         'wishlist': wishlist,
         'recommendations': recommendations,

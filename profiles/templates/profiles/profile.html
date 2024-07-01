@@ -1,15 +1,22 @@
-{% extends "base.html" %} {% load static %} {% block extra_css %}
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
 <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}" />
-{% endblock %} {% block page_header %}
+{% endblock %}
+
+{% block page_header %}
 <div class="container header-container">
   <div class="row">
     <div class="col"></div>
   </div>
 </div>
-{% endblock %} 
+{% endblock %}
+
 {% block extra_title %}
 Profile
 {% endblock %}
+
 {% block content %}
 <div
   class="container header-container">
@@ -110,20 +117,17 @@ Profile
       <div class="col">
         <h3>Add a Recommendation</h3>
         <form method="post" action="{% url 'profile' %}">
-          {% csrf_token %} {{ form.non_field_errors }}
+          {% csrf_token %} 
+          {{ rec_form.non_field_errors }}
           <div class="form-group">
-            <textarea
-              name="{{ form.recommendation_text.name }}"
-              rows="{{ form.recommendation_text.rows }}"
-              cols="{{ form.recommendation_text.cols }}"
-              id="{{ form.recommendation_text.id_for_label }}"
-              placeholder="Add your recommendation here"
-            >
-{{ form.recommendation_text.value }}</textarea
-            >
-            {{ form.recommendation_text.errors }}
+            <textarea name="{{ rec_form.recommendation_text.name }}"
+                      rows="4"
+                      cols="50"
+                      id="{{ rec_form.recommendation_text.id_for_label }}"
+                      placeholder="Add your recommendation here">{{ rec_form.recommendation_text.value }}</textarea>
+            {{ rec_form.recommendation_text.errors }}
           </div>
-          <button type="submit">Add Recommendation</button>
+          <button type="submit">Add your recommendation</button>
         </form>
       </div>
     </div>

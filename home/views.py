@@ -3,7 +3,7 @@ from django.conf import settings
 from django.contrib import messages
 from django.http import JsonResponse
 from .forms import ContactForm
-from .models import Recommendation
+from profiles.models import SiteRecommendation
 
 
 def index_view(request):
@@ -13,7 +13,7 @@ def index_view(request):
 
 def about_view(request):
     """ A view to the about page """
-    recommendations = Recommendation.objects.all()
+    recommendations = SiteRecommendation.objects.all()[:5]
     context = {
         'recommendations': recommendations,
     }
