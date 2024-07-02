@@ -1,17 +1,26 @@
-html, body {
+body, html {
     height: 100%;
+    margin: 0;
 }
 
 body {
-    background: url('https://res.cloudinary.com/dbjnqkn07/image/upload/v1698496364/PP5/pexels-jill-wellington-39351_jd1apk.jpg') no-repeat;
-    background-size: cover;
-    height: 100vh;
     color: #555;
     font-family: 'Lato', sans-serif;
 }
 
 header {
     background-color: white;
+}
+
+.background-container {
+    background: url('https://res.cloudinary.com/dbjnqkn07/image/upload/v1698496364/PP5/pexels-jill-wellington-39351_jd1apk.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -219,10 +228,11 @@ body>footer {
 }
 
 .footer {
-    margin-top: auto;
     background: #e0e0cf;
     height: 80px;
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     bottom: 0;
     text-align: center; 
 }
