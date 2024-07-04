@@ -17,8 +17,7 @@
         <link rel="icon" type="image/png" sizes="16x16" href="{% static 'media/baylake-icon-16x16.png' %}">
         {% endblock %}
 
-        {% block extra_meta %}
-        {% endblock %}
+        {% block extra_meta %}{% endblock %}
 
         {% block corecss %}
             <link rel="stylesheet" 
@@ -32,8 +31,7 @@
             <link rel="stylesheet" href="{% static 'css/base.css' %}">
         {% endblock %}
 
-        {% block extra_css %}
-        {% endblock %}
+        {% block extra_css %}{% endblock %}
 
         {% block corejs %}
             <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
@@ -81,8 +79,7 @@
               </script>
             {% endblock %}
 
-            {% block extra_js %}
-            {% endblock %}
+            {% block extra_js %}{% endblock %}
 
             <title>Bay Lake Winery {% block extra_title %}{% endblock %}</title>
         </head>
@@ -116,7 +113,7 @@
                         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                             <ul class="list-inline list-unstyled d-flex justify-content-center 
                                 justify-content-lg-end align-items-start align-items-lg-center my-0">
-                                {% if request.path == '/' %}
+                                {% if request.path != '/about/' %}
                                 <li class="list-inline-item">
                                     <a href="{% url 'about' %}" class="text-black nav-link">
                                         <div class="d-flex flex-column align-items-center">
@@ -219,12 +216,9 @@
             </div>
             {% endif %}
 
-            {% block page_header %}
-            {% endblock %}
+            {% block page_header %}{% endblock %}
 
-            {% block content %}
-            {% endblock %}
-
+            {% block content %}{% endblock %}
            
             {% block postloadjs %}
             <script type="text/javascript">
