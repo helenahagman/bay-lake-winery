@@ -7,10 +7,11 @@
             <div class="col"></div>
         </div>
     </div>
-{% endblock%}
+{% endblock %}
 {% block extra_title %}
 Products
 {% endblock %}
+
 {% block content %}
 <div class="container header-container">
     <div class="text-box">
@@ -196,16 +197,17 @@ Products
             <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
         </a>
     </div>
+</div>
 {% endblock %}
 
 {% block postloadjs %}
     {{ block.super }}
     
     <script type="text/javascript">
-                $('.btt-link').click(function (e) {
-                        window.scrollTo(0, 0);
-                })
-        </script>
+        $('.btt-link').click(function (e) {
+            window.scrollTo(0, 0);
+        })
+    </script>
 
     <script type="text/javascript">
         $('#sort-selector').change(function () {
@@ -227,7 +229,7 @@ Products
 
                 window.location.replace(currentUrl);
             }
-        })
+        });
     </script>
 
     <script type="text/javascript">
@@ -254,5 +256,8 @@ Products
             });
         }
     </script>
-    
+{% endblock %}
+
+{% block footer %}
+    {{ block.super }}
 {% endblock %}
