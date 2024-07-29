@@ -161,7 +161,7 @@ OrderLineItem Model
 |            | quantity         | IntegerField    |
 |            | lineitem_total   | DecimalField[6] |
 
-Wishlist Model
+Wishlist Model 
 
 | Key        | Name        | Type         |
 | ---------- | ----------- | ------------ |
@@ -534,10 +534,10 @@ sure that the new inserts was working as expected and corrected thereafter.
 - choose a custom username and password - working as expected - Pass
 - display easy navigation on the site - working as expected - could add the link to home/about on more pages - Pass
 - phurchase - working but needs improvement, the delivery cost is not displaying in the confirmation letter - Error/Improvement needed
-- get in contact - no contact form is throwing a form submission error - Error/Improvement needed
+- get in contact - contact form is working as expected, message is added to the admin - Pass
 - customized messages to registered users - can be done via mailchimp after user has registerd for newsletter - Pass/not fully implemented
 - manage the customer database - working via the admin panel - Improvement to add to the website so the admin dont have do go in via the admin panel and just log in.
-- search for products on the site - wroking as expected - Pass
+- search for products on the site - working as expected - Pass
 - filter categories and products on the site - working as expected - Pass
 
 ## Feature Testing
@@ -550,8 +550,12 @@ sure that the new inserts was working as expected and corrected thereafter.
   User adds email address and clicks on the Subscribe button. The email is added to mailchimp and the user is presented with this ![message](https://res.cloudinary.com/dbjnqkn07/image/upload/v1714380151/PP5/mailchimpconfirm_azjp3f.jpg) 
 - sorting feature - working as expected - Pass
 - profile update - working as expected - Pass
-- contact form - working as expected - pass
-  The form is working and the message is added to admin, a confirmation message is displayd on the screen for the user so they know the form has been sent correctly and the message is only displayed for 5 sec.
+- contact form - working as expected - pass/improvemnet needed
+  The form is working and the message is added to admin, a confirmation message is displayd on the screen for the user so they know the form has been sent correctly.
+- add product to wishlist - working as expected as a logged in user - Pass
+- remove a product from wishlist - working as expected as a logged in user - Pass
+- display testimonials - working as expected - Pass/improvements can be done
+
 
 ### Home page
 
@@ -564,7 +568,7 @@ All links on the product page is working as expected - links in navbar, footer l
 ### About Page
 
 The following links on the about page is working as expected - links in navbar, footer links, shop now button, contact form.
-Customer Recommendations - is not working as expected, the message can be added by the user but it is not displayed on the site.
+Customer Recommendations - is working as expected, the message can be added by the user and it is displayed on the site.
 
 
 ### Shopping Cart
@@ -577,11 +581,11 @@ All links on the page is working as expected - however the shoppingbag need some
 - Plus and minus buttons when in the shopping cart is not working properly
 - The update and remove buttons in the checkout form is not working
 - The delivery and therefor also the total is not being updated properly in the order confirmation
+- The wishlist heart is not filled when added to the wishlist
 
 # Future features
 
 ![Future implementations](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698666166/PP5/future_cvjv5b.jpg)
 - User Story - track of stock
-- User Story - display testimonials
 - User Story - wine garden tours
 
