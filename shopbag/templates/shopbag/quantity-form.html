@@ -11,7 +11,7 @@
                     </span>
                 </button>
             </div>
-            <input class="form-control form-control-sm qty_input id_qty_{{ item.item_id }" 
+            <input class="form-control form-control-sm qty_input id_qty_{{ item.item_id }}" 
                    type="number" name="quantity" value="{{ item.quantity }}" 
                    min="1" max="10" data-item_id="{{ item.item_id }}">
             <div class="input-group-append">
@@ -25,7 +25,7 @@
         </div>
     </div>
 </form>
-<a class="update-link text-info" id="update-link-{{ item.idem_id }}">
+<a class="update-form text-info" id="update-form-{{ item.item_id }}">
     <small>Update</small>
 </a>
 <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}">
