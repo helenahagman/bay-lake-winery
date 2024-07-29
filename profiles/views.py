@@ -53,8 +53,10 @@ def profile(request):
 
     try:
         wishlist = Wishlist.objects.get(user=request.user)
+        wishlist_products = wishlist.product.all()
     except Wishlist.DoesNotExist:
         wishlist = None
+        wishlist_products = []
 
     recommendations = SiteRecommendation.objects.filter(user=request.user)
 
@@ -64,6 +66,7 @@ def profile(request):
         'rec_form': rec_form,
         'orders': orders,
         'wishlist': wishlist,
+        'wishlist_products': wishlist_products,
         'recommendations': recommendations,
         'on_profile_page': True
     }
@@ -75,7 +78,7 @@ def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (
-        f'this is a past confirmation for order number {order_number}.'
+        f'This is a past confirmation for order number {order_number}.'
         'A confirmation email was sent on the order date.'
     ))
 
@@ -98,20 +101,21 @@ def toggle_wishlist(request):
             user_wishlist, _ = Wishlist.objects.get_or_create(
                 user=request.user
                 )
-            if product in user_wishlist.products.all():
-                user_wishlist.products.remove(product)
+            if product in user_wishlist.product.all():
+                user_wishlist.product.remove(product)
             else:
-                user_wishlist.products.add(product)
+                user_wishlist.product.add(product)
 
-        return JsonResponse({'is_in_wishlist': product in user_wishlist.products.all()})
+        return JsonResponse({'is_in_wishlist': product in user_wishlist.product.all()})
 
     return JsonResponse({'error': 'Invalid request'})
 
 
+@login_required
 def wishlist(request):
     """ A view to display the user's wishlist """
     user_wishlist, _ = Wishlist.objects.get_or_create(user=request.user)
-    wishlist_products = user_wishlist.products.all()
+    wishlist_products = user_wishlist.product.all()
 
     template = 'profiles/wishlist.html'
     context = {
@@ -128,8 +132,8 @@ def add_to_wishlist(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     wishlist, created = Wishlist.objects.get_or_create(user=request.user)
 
-    if product not in wishlist.products.all():
-        wishlist.products.add(product)
+    if product not in wishlist.product.all():
+        wishlist.product.add(product)
         messages.success(request, 'Product added to wishlist')
     else:
         messages.info(request, 'Product already added to wishlist')
@@ -143,8 +147,8 @@ def remove_from_wishlist(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     wishlist, created = Wishlist.objects.get_or_create(user=request.user)
 
-    if product in wishlist.products.all():
-        wishlist.products.remove(product)
+    if product in wishlist.product.all():
+        wishlist.product.remove(product)
         messages.success(request, 'Product removed from wishlist')
     else:
         messages.info(request, 'Product is not in wishlist')
