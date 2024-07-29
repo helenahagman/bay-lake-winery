@@ -95,7 +95,7 @@ def order_history(request, order_number):
 def toggle_wishlist(request):
     if request.method == 'POST' and request.is_ajax():
         product_id = request.POST.get('product_id')
-        product = Product.objects.get(id=product_id)
+        product = get_object_or_404(Product, id=product_id)
 
         if request.user.is_authenticated:
             user_wishlist, _ = Wishlist.objects.get_or_create(
@@ -130,7 +130,7 @@ def wishlist(request):
 def add_to_wishlist(request, product_id):
     """ A view to add a product to the wishlist """
     product = get_object_or_404(Product, id=product_id)
-    wishlist, created = Wishlist.objects.get_or_create(user=request.user)
+    wishlist, _ = Wishlist.objects.get_or_create(user=request.user)
 
     if product not in wishlist.product.all():
         wishlist.product.add(product)
@@ -145,15 +145,19 @@ def add_to_wishlist(request, product_id):
 def remove_from_wishlist(request, product_id):
     """ A view to remove a product from the wishlist """
     product = get_object_or_404(Product, id=product_id)
-    wishlist, created = Wishlist.objects.get_or_create(user=request.user)
+    wishlist, _ = Wishlist.objects.get_or_create(user=request.user)
 
     if product in wishlist.product.all():
         wishlist.product.remove(product)
+        if request.is_ajax():
+            return JsonResponse({'success': True, 'product_id': product_id})
         messages.success(request, 'Product removed from wishlist')
     else:
+        if request.is_ajax():
+            return JsonResponse({'success': False, 'product_id': product_id})
         messages.info(request, 'Product is not in wishlist')
 
-    return redirect('product_detail', product_id=product_id)
+    return redirect('profile')
 
 
 def about(request):

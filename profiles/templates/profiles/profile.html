@@ -103,11 +103,12 @@ Profile
             <thead>
               <tr>
                 <th>Product</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
               {% for product in wishlist_products %}
-              <tr>
+              <tr id="product-{{ product.id }}">
                 <td>
                   <a
                     href="{% url 'product_detail' product.id %}"
@@ -115,6 +116,11 @@ Profile
                   >
                     {{ product.name }}
                   </a>
+                </td>
+                <td>
+                  <button class="btn btn-sm btn-danger remove-from-wishlist" data-product-id="{{ product.id }}">
+                    Remove
+                  </button>
                 </td>
               </tr>
               {% endfor %}
@@ -148,4 +154,29 @@ Profile
     type="text/javascript"
     src="{% static 'profiles/js/countryfield.js' %}"
   ></script>
+  <script>
+    $(document).ready(function(){
+      $('.remove-from-wishlist').click(function(){
+        var productId = $(this).data('product-id');
+        var row = $('#product-' + productId);
+        $.ajax({
+          url: '{% url "remove_from_wishlist" 0 %}'.replace('/0/', '/' + productId + '/'),
+          method: 'POST',
+          data: {
+            csrfmiddlewaretoken: '{{ csrf_token }}'
+          },
+          success: function(response) {
+            if (response.success) {
+              row.remove();
+            } else {
+              alert('Failed to remove product from wishlist.');
+            }
+          },
+          error: function() {
+            alert('Failed to remove product from wishlist.');
+          }
+        });
+      });
+    });
+  </script>
   {% endblock %}
