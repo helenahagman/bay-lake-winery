@@ -34,7 +34,7 @@ def contact_us_view(request):
                 request,
                 "Your message has been sent. We will contact you shortly.",
             )
-            return redirect("contact_us")
+            return about_view(request)
         else:
             messages.error(
                 request, "Form submission failed. Please check and try again."
