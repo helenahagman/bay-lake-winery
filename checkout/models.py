@@ -3,8 +3,10 @@ from django.db import models
 from django.db.models import Sum
 from django.conf import settings
 from django_countries.fields import CountryField
+
 from products.models import Product
 from profiles.models import UserProfile
+from decimal import Decimal
 
 
 class Order(models.Model):
@@ -45,7 +47,10 @@ class Order(models.Model):
         """
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))[
             'lineitem_total__sum'] or 0
-        self.delivery_cost = 0
+        
+        delivery_percentage = Decimal(settings.DELIVERY_PERCENTAGE)
+
+        self.delivery_cost = self.order_total * (delivery_percentage / 100)
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
 
