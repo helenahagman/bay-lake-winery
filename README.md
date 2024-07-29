@@ -1,6 +1,6 @@
 # Bay Lake Winery
 
-![AmIResponsive](https://res.cloudinary.com/dbjnqkn07/image/upload/v1698654566/PP5/AmIResponsive_i6lwqn.jpg)
+![AmIResponsive](https://res.cloudinary.com/dbjnqkn07/image/upload/v1722287552/AmIResponsivePP5_pwhjc0.jpg)
 
 [View the Bay Lake Winery Project on Github Pages](//github.com/helenahagman/bay-lake-winery)
 
