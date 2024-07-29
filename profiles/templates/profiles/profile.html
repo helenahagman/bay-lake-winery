@@ -87,13 +87,16 @@ Profile
     </div>
     <div class="row">
       <div class="col-12 col-lg-6">
-        <p class="text-muted">Address Information</p>
+        <p class="text-muted">Your Information</p>
         <div class="address-info">
-          <p>Name: {{ form.default_phone_number.name }}</p>
-          <p>Address: {{ default_phone_number }}</p>
-          <p>City: {{ user.profile.city }}</p>
-          <p>Postal Code: {{ user.profile.postal_code }}</p>
-          <p>Country: {{ user.profile.country }}</p>
+          <!-- <p>First Name: {{ form.first_name.value }}</p>
+          <p>Last Name: {{ form.last_name.value }}</p> -->
+          <p>Phone number: {{ form.default_phone_number.value }}</p>
+          <p>Address 1: {{ form.default_street_address1.value }}</p>
+          <p>Address 2: {{ form.default_street_address2.value }}</p>
+          <p>City: {{ form.default_town_or_city.value }}</p>
+          <p>Postal Code: {{ form.default_postal_code.value }}</p>
+          <p>Country: {{ form.default_country.value }}</p>
         </div>
       </div>
       <div class="col-12 col-lg-6">
