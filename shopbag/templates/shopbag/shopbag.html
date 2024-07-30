@@ -159,6 +159,7 @@
                     data: form.serialize(),
                     success: function(data) {
                         // Handle success, update UI if needed
+                        location.reload();
                     },
                     error: function(xhr, status, error) {
                         // Handle error
@@ -177,10 +178,11 @@
 
                 $.post(url, data).done(function () {
                     // Handle success, update UI if needed
+                    location.reload();
                     $(`#remove_${itemId}`).closest(".row").remove();
                 }).fail(function(xhr, status, error) {
                     // Handle error if needed
-                    console.error("Error removing item:", eroor);
+                    console.error("Error removing item:", error);
                 });
             });
         });

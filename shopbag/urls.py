@@ -5,7 +5,7 @@ urlpatterns = [
     path(
         'shopbag/',
         views.view_shopbag,
-        name='shopbag'
+        name='view_shopbag'
         ),
     path(
         'add/<item_id>/',
