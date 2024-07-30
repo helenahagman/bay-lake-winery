@@ -124,8 +124,7 @@
                                         </div>
                                     </a>
                                 </li>
-                            {% endif %}
-                            {% if request.path == '/about/' %}
+                            {% else %}
                             <li class="list-inline-item">
                                 <a href="{% url 'index' %}" class="text-black nav-link">
                                     <div class="d-flex flex-column align-items-center">
