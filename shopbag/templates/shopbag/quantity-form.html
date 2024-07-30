@@ -1,10 +1,10 @@
-<form id="update-form-{{ item.idem_id }}" class="form update-form" method="POST" 
+<form id="update-form-{{ item.item_id }}" class="form update-form" method="POST" 
     action="{% url 'adjust_shopbag' item.item_id %}">
     {% csrf_token %}
     <div class="form-group">
         <div class="input-group input-group-{{ item.item_id }}">
             <div class="input-group-prepend">
-                <button class="decrement-qty btn btn-sm btn-black rounded-0 decrement-qty_{{ item.item_id }}"
+                <button type="button" class="decrement-qty btn btn-sm btn-black rounded-0 decrement-qty_{{ item.item_id }}"
                 data-item_id="{{ item.item_id }}">
                     <span>
                         <i class="fas fa-minus fa-sm"></i>
@@ -15,7 +15,7 @@
                    type="number" name="quantity" value="{{ item.quantity }}" 
                    min="1" max="10" data-item_id="{{ item.item_id }}">
             <div class="input-group-append">
-                <button class="increment-qty btn btn-sm btn-black rounded-0 increment-qty_{{ item.item_id }}"
+                <button type="button" class="increment-qty btn btn-sm btn-black rounded-0 increment-qty_{{ item.item_id }}"
                     data-item_id="{{ item.item_id }}">
                     <span>
                         <i class="fas fa-plus fa-sm"></i>
@@ -25,7 +25,7 @@
         </div>
     </div>
 </form>
-<a class="update-form text-info" id="update-form-{{ item.item_id }}">
+<a class="update-form text-info" data-form-id="update-form-{{ item.item_id }}">
     <small>Update</small>
 </a>
 <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}">

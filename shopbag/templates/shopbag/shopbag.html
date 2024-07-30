@@ -149,10 +149,37 @@
                 window.scrollTo(0, 0);
             });
 
-            // Update quantity via AJAX
-            $(".update-form").submit(function (e) {
+            // Function to update the quantity and submit the form
+            function updateQuantity(item_id, increment) {
+                var input = $(".id_qty_" + item_id);
+                var newValue = parseInt(input.val()) + increment;
+                if (newValue < 1) {
+                    newValue = 1;
+                }
+                input.val(newValue);
+                $("#update-form-" + item_id).submit();
+            }
+
+            // Handle increment button click
+            $(".increment-qty").click(function (e) {
                 e.preventDefault();
-                var form = $(this);
+                var item_id = $(this).data("item_id");
+                updateQuantity(item_id, 1);
+            });
+
+            // Handle decrement button click
+            $(".decrement-qty").click(function (e) {
+                e.preventDefault();
+                var item_id = $(this).data("item_id");
+                updateQuantity(item_id, -1);
+            });
+
+
+            // Update quantity via AJAX
+            $("a.update-form").click(function (e) {
+                e.preventDefault();
+                var form_id = $(this).data("form_id");
+                var form = $("#" + form_id);
                 $.ajax({
                     url: form.attr("action"),
                     method: form.attr("method"),
