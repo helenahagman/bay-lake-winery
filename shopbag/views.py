@@ -36,8 +36,7 @@ def add_to_shopbag(request, item_id):
         logger.error(error_message)
         messages.error(request, error_message)
 
-    # request.session['shopbag']
-    return redirect(redirect_url)
+    return redirect(request.POST.get('redirect_url', 'products'))
 
 
 def adjust_shopbag(request, item_id):
