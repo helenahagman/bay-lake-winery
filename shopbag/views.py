@@ -24,6 +24,7 @@ def add_to_shopbag(request, item_id):
             shopbag = request.session.get('shopbag', {})
             shopbag[item_id] = shopbag.get(item_id, 0) + quantity
             request.session['shopbag'] = shopbag
+            request.session.modified = True
 
             success_message = f'Added {product.name} to your shopping bag'
             messages.success(request, success_message)
@@ -35,7 +36,7 @@ def add_to_shopbag(request, item_id):
         logger.error(error_message)
         messages.error(request, error_message)
 
-    print(request.session['shopbag'])
+    # request.session['shopbag']
     return redirect(redirect_url)
 
 
@@ -49,11 +50,14 @@ def adjust_shopbag(request, item_id):
             shopbag = request.session.get('shopbag', {})
             shopbag[item_id] = quantity
             request.session['shopbag'] = shopbag
+            request.session.modified = True
             success_message = f'Updated {product.name} quantity to {quantity}'
+            messages.success(request, success_message)
         else:
             shopbag = request.session.get('shopbag', {})
             shopbag.pop(item_id, None)
             request.session['shopbag'] = shopbag
+            request.session.modified = True
             success_message = f'Removed {product.name} from the shopping bag'
             messages.success(request, success_message)
 
@@ -62,7 +66,7 @@ def adjust_shopbag(request, item_id):
         logger.error(error_message)
         messages.error(request, error_message)
 
-    return redirect(reverse('shopbag'))
+    return redirect(reverse('view_shopbag'))
 
 
 def remove_from_shopbag(request, item_id):
@@ -78,7 +82,8 @@ def remove_from_shopbag(request, item_id):
 
     except Exception as e:
         error_message = f'Error removing item: {e}'
+        logger.error(error_message)
         messages.error(request, error_message)
         return HttpResponse(status=500)
 
-    return redirect(reverse('shopbag'))
+    return redirect(reverse('view_shopbag'))
