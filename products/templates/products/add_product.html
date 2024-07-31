@@ -16,21 +16,7 @@
             <div class="col-12 col-md-6">
                 
                 <hr />
-                <h2 class="logo-font mb-4">Manage Products</h2>
-                <hr />
-                <h5 class="text-muted">Select Existing Product</h5>
-                <div class="dropdown mb-3">
-                    <select class="form-control" id="existing-products-dropdown">
-                        <option value="">--- Select Product ---</option>
-                        {% for product in products %}
-                            <option value="{{ product.id }}">{{ product.name }}</option>
-                        {% empty %}
-                            <option value="">No products found.</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <hr />
-                <h5 class="text-muted">Add new products</h5>
+                <h2 class="logo-font mb-4">Add New Products</h2>
             </div>
         </div>
         <div class="row">
