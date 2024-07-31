@@ -6,9 +6,15 @@ from django.db.models.functions import Lower
 from django.http import JsonResponse
 from .models import Product, Category
 from .forms import ProductForm
+from profiles.models import Wishlist
 
+import cloudinary
 import cloudinary.uploader
+from django.core.files.uploadedfile import InMemoryUploadedFile
+from django.db.models.fields.files import FieldFile
 
+
+DEFAULT_IMAGE_URL = 'https://res.cloudinary.com/dbjnqkn07/image/upload/v1722456608/bpnhpld8snwttlmaiynq.jpg'
 
 def all_products(request):
     """ A view to return the product page """
@@ -59,13 +65,13 @@ def all_products(request):
     for product in products:
         if product.cloudinary_image_url:
             image_url = product.cloudinary_image_url
-        elif product.image:
-            upload_image = cloudinary.uploader.upload(product.image)
+        elif isinstance(product.image, (InMemoryUploadedFile, FieldFile)):
+            upload_image = cloudinary.uploader.upload(product.image.file)
             image_url = upload_image['secure_url']
             product.cloudinary_image_url = image_url
             product.save()
         else:
-            image_url = ''
+            image_url = DEFAULT_IMAGE_URL
 
         product_list.append({
             'product': product,
@@ -78,6 +84,7 @@ def all_products(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'product_list': product_list,
     }
 
     return render(request, 'products/products.html', context)
@@ -87,7 +94,12 @@ def product_detail(request, product_id):
     """ A view to return the product details  """
     try:
         product = get_object_or_404(Product, pk=product_id)
-        is_in_wishlist = request.user.is_authenticated and product in request.user.wishlist.product.all()
+        is_in_wishlist = False
+        if request.user.is_authenticated:
+            try: 
+                is_in_wishlist = product in request.user.wishlist.product.all()
+            except Wishlist.DoesNotExist:
+                is_in_wishlist = False
         image_url = product.cloudinary_image_url or product.image.url
 
         # Calculate the number of filled stars based on the product's rating
