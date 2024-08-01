@@ -157,22 +157,21 @@ def edit_product(request, product_id):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
-            # Handle Cloudinary image upload
-            image = form.cleaned_data.get('image')
+            product = form.save(commit=False)
+            image = request.FILES.get('image')
             if image:
+            # Handle Cloudinary image upload
                 uploaded_image = cloudinary.uploader.upload(image)
-                # Set Cloudinary URL to the product instance
-                product.image_url = uploaded_image['secure_url']
-
-            form.save()
+                product.cloudinary_image_url = uploaded_image['secure_url']
+            product.save()
             messages.success(request, 'Product updated')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, ('No product updated'))
+            messages.error(request, 'No product updated')
     else:
         form = ProductForm(instance=product)
 
-    image_url = product.cloudinary_image_url or product.image.url
+    image_url = product.cloudinary_image_url or (product.image.url if product.image else DEFAULT_IMAGE_URL)
     context = {
         'form': form,
         'product': product,

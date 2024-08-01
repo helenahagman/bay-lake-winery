@@ -29,19 +29,17 @@
                 enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form %}
-                    {% if field.name != 'image' %}
-                        {{ field | as_crispy_field }}
-                    {% else %}
-                        {{ field }}
-                    {% endif %}
-                {% if field.name == 'price' %}
-                <!-- Check if the field is 'price' -->
-            <div class="form-group">
-                <label for="{{ field.id_for_label }}">Price</label>
-                {{ field }}
-            </div>
-                {% endif %}
-                {% endfor %}
+                        <div class="form-group">
+                            {% if field.name != 'image' %}
+                                {{ field | as_crispy_field }}
+                            {% else %}
+                                {{ field }}
+                            {% endif %}
+                            {% if field.help_text %}
+                                <small class="form-text text-muted">{{ field.help_text }}</small>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
             <div class="text-right">
                 <a class="btn btn-outline-black rounded-0"
                 href="{% url 'products' %}">Cancel</a>
