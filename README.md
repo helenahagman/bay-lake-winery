@@ -578,9 +578,6 @@ All links on the page is working as expected - however the shoppingbag need some
 ## BUGS & Future fixes
 
 - Rating function is not working - will be set to future implementations
-- Plus and minus buttons when in the shopping cart is not working properly
-- The update and remove buttons in the checkout form is not working
-- The delivery and therefor also the total is not being updated properly in the order confirmation
 - The wishlist heart is not filled when added to the wishlist
 
 # Future features

@@ -33,7 +33,10 @@
                             {% if field.name != 'image' %}
                                 {{ field | as_crispy_field }}
                             {% else %}
-                                {{ field }}
+                            {{ field.lable_tag }}
+                            <small class="form-text text-muted">
+                                Please save the image to our cloudinary account and retrieve the link from there
+                            </small>
                             {% endif %}
                             {% if field.help_text %}
                                 <small class="form-text text-muted">{{ field.help_text }}</small>
